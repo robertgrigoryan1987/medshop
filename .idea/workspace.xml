@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a168ac6b-06e7-45b8-938f-0e1c7eb0b0e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductControllers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/medshop/js/shop_cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/medshop/product_order.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/OrderingProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/OrderingProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/product_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/product_order.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/arrilot/laravel-widgets/" />
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
@@ -182,8 +175,8 @@
       <file leaf-file-name="ShopController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="340">
+              <caret line="56" column="85" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="85" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -191,19 +184,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_order.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product_order.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/medshop/product_order.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="221">
+              <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="29" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shopping-cart.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shopping-cart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/medshop/shopping-cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1785" />
+            <state relative-caret-position="120">
+              <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="340" selection-end-column="18" />
+              <folding>
+                <element signature="n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -423,8 +421,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="143" />
-    <option name="y" value="109" />
+    <option name="x" value="134" />
+    <option name="y" value="334" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -598,15 +596,15 @@
       <workItem from="1586979543741" duration="129000" />
       <workItem from="1587016825897" duration="7011000" />
       <workItem from="1587035699078" duration="27309000" />
-      <workItem from="1587216608595" duration="24964000" />
+      <workItem from="1587216608595" duration="27001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59284000" />
+    <option name="totallyTimeSpent" value="61321000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="143" y="109" width="1400" height="1000" extended-state="0" />
+    <frame x="124" y="543" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -615,8 +613,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49850747" visible="true" weight="0.359447" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26567164" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49850747" visible="true" weight="0.359447" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26567164" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -936,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -977,16 +965,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/medshop/product_order.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/medshop/shopping-cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="120">
+          <caret line="190" column="8" selection-start-line="190" selection-start-column="8" selection-end-line="340" selection-end-column="18" />
+          <folding>
+            <element signature="n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/medshop/shopping-cart.html">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1785" />
+        <state relative-caret-position="340">
+          <caret line="56" column="85" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="85" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/medshop/product_order.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="29" selection-end-column="59" />
+        </state>
       </provider>
     </entry>
   </component>
