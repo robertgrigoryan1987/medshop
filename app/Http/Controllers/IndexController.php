@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Product;
+use App\Category;
+use App\Ordering;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
+use App\OrderingProduct;
+use Session;
 
 class IndexController extends Controller
 {
@@ -13,6 +21,14 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('medshop.index');
+//        $cookie_name = "customer";
+//        $cookie_value = Str::random(12);
+//        setcookie($cookie_name, $cookie_value, time() + (86400 * 30)); // 86400 = 1 day
+        $products = Product::where('id','>',0)->paginate(9);
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+
+        $categories = Category::where('parent_id',null)->with('children')->get();
+        return view('medshop.shop')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+
     }
 }

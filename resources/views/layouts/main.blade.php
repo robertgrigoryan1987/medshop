@@ -57,11 +57,11 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="login" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -89,6 +89,7 @@
                                 <option value="Arm">Arm</option>
                                 <option value="Rus">Rus</option>
                                 <option value="Eng">Eng</option>
+
                             </select>
                         </ul>
                     </div>
@@ -215,7 +216,7 @@
                     </nav>
                     <div class="mainmenu-right-box pull-right">
                         <div class="cart_select">
-                            <button><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>(0)</span></button>
+                            <button><a href="{{route('product_order')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>(<span  class="count-product">{{$ordering_products_count}}</span>)</span></a></button>
                         </div>
                         <div class="consultation-button">
                             <a href="#">ТЕКСТ</a>
@@ -473,5 +474,6 @@
 
         <!-- thm custom script -->
         <script src="{{asset('/medshop/js/custom.js')}}"></script>
+        <script src="{{asset('/medshop/js/shop_cart.js')}}"></script>
 </body>
 </html>

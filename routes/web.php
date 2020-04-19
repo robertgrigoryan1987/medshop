@@ -32,7 +32,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/service', 'ServiceController@index')->name('service');
     Route::get('/blog', 'BlogController@index')->name('blog');
     Route::get('/shop', 'ShopController@index')->name('shop');
+    Route::post('/shop_cart', 'ShopController@shop_cart')->name('shop_cart');
     Route::get('/contact', 'ContactController@index')->name('contact');
+    Route::get('/product_order', 'ShopController@product_order')->name('product_order');
+    Route::get('/product/{id}', 'ProductController@product');
+    Route::post('/product-add/{id}', 'ProductController@product_add');
+
 
 
 });
