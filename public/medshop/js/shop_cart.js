@@ -15,6 +15,8 @@ $( document ).ready(function() {
         let product_name = $(this).data('name');
         let product_price = $(this).data('price');
         let product_image = $(this).data('image');
+        console.log(product_image);
+
 
         $.ajax({
             type: 'POST',

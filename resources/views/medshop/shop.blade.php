@@ -33,7 +33,7 @@
 
                                         <div class="single-product-item">
                                             <div class="img-holder">
-                                                <img src="storage/{{$product->image_path}}" alt="">
+                                                <img src="/storage/{{$product->image_path}}" alt="">
                                                 <div class="overlay-style-one">
                                                     <div class="box">
                                                         <div class="content">

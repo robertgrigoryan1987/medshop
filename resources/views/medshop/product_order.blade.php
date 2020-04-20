@@ -24,7 +24,7 @@
                                 <td colspan="2" class="prod-column">
                                     <div class="column-box">
                                         <div class="prod-thumb">
-                                            <a href="#"><img src="storage/{{$product->image}}" alt=""></a>
+                                            <a href="#"><img src="/storage/{{$product->image}}" alt=""></a>
                                         </div>
                                         <div class="title">
                                             <h3 class="prod-title">{{$product->product_name}}</h3>
