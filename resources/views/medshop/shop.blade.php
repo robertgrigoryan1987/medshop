@@ -37,7 +37,7 @@
                                                 <div class="overlay-style-one">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" href="#">Добавить в корзину</a>
+                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}" href="#">Добавить в корзину</a>
                                                         </div>
                                                     </div>
                                                 </div>

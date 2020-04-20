@@ -14,11 +14,12 @@ $( document ).ready(function() {
         let product_id = $(this).data('id');
         let product_name = $(this).data('name');
         let product_price = $(this).data('price');
+        let product_image = $(this).data('image');
 
         $.ajax({
             type: 'POST',
             url: '/shop_cart',
-            data:{product_id:product_id, product_name:product_name, product_price:product_price} ,
+            data:{product_id:product_id, product_name:product_name, product_price:product_price, product_image:product_image} ,
             error: function(data){
                 var errors = data.responseJSON;
                console.log(errors);

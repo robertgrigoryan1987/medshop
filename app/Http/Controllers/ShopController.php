@@ -42,6 +42,7 @@ class ShopController extends Controller
         $ordering_product->order_id =  null ;
         $ordering_product->product_name =  $request->product_name ;
         $ordering_product->product_price =  $request->product_price  ;
+        $ordering_product->image =  $request->product_image  ;
         $ordering_product->quantity =  1 ;
         $ordering_product->session =  Session::getId();
 
