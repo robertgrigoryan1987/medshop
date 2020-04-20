@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a168ac6b-06e7-45b8-938f-0e1c7eb0b0e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-    </list>
+    <list default="true" id="a168ac6b-06e7-45b8-938f-0e1c7eb0b0e9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/vendor/arrilot/laravel-widgets/" />
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/vendor/brick/math/" />
@@ -184,7 +181,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
@@ -193,20 +190,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="2017_01_14_005015_create_translations_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/tcg/voyager/migrations/2017_01_14_005015_create_translations_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153" />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProductControllers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductControllers.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderingProduct.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/OrderingProduct.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -248,6 +243,7 @@
       <find>basket-place</find>
       <find>armen</find>
       <find>'charset' =&gt; 'utf8'</find>
+      <find>collation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -428,7 +424,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
+    <option name="x" value="272" />
+    <option name="y" value="192" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -465,6 +462,17 @@
             <path>
               <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -476,6 +484,32 @@
               <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="medshop" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="tcg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="tcg" type="462c0819:PsiDirectoryNode" />
+              <item name="voyager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="medshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="medshop" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="tcg" type="462c0819:PsiDirectoryNode" />
+              <item name="voyager" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -540,15 +574,16 @@
       <workItem from="1586979543741" duration="129000" />
       <workItem from="1587016825897" duration="7011000" />
       <workItem from="1587035699078" duration="27309000" />
-      <workItem from="1587216608595" duration="30224000" />
+      <workItem from="1587216608595" duration="30747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64544000" />
+    <option name="totallyTimeSpent" value="65067000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="0" width="1400" height="1000" extended-state="0" />
+    <frame x="111" y="367" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50149256" side_tool="true" visible="true" weight="0.359447" />
@@ -556,8 +591,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49850747" visible="true" weight="0.359447" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26567164" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49850747" visible="true" weight="0.359447" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37313432" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -589,13 +624,6 @@
     <state x="745" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586979560636" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/medshop/shop.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/medshop/contact.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -942,6 +970,11 @@
         <state relative-caret-position="192">
           <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/tcg/voyager/migrations/2017_01_14_005015_create_translations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
       </provider>
     </entry>
   </component>
