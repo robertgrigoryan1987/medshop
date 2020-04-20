@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use TCG\Voyager\Traits\Translatable;
 
 class Category extends \TCG\Voyager\Models\Category
 {
+    use Translatable;
 
     public function parent()
     {

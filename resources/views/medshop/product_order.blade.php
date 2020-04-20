@@ -27,7 +27,7 @@
                                             <a href="#"><img src="/storage/{{$product->image}}" alt=""></a>
                                         </div>
                                         <div class="title">
-                                            <h3 class="prod-title">{{$product->product_name}}</h3>
+                                            <h3 class="prod-title">{{$product->getTranslatedAttribute('product_name',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
                                         </div>
                                     </div>
                                 </td>
@@ -40,7 +40,7 @@
                                     </div>
                                 </td>
                                 <td class="price">{{$product->product_price}}</td>
-                                <td class="sub-total">$69.98</td>
+                                <td class="sub-total">{{$product->product_price * $product->quantity}}</td>
                                 <td>
                                     <div class="remove">
                                         <div class="checkbox">

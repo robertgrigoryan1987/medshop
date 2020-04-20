@@ -35,6 +35,7 @@ class ShopController extends Controller
     }
 
     public function shop_cart(Request $request){
+        var_dump($request->product_image);exit;
         $ordering_product = new OrderingProduct();
         $product_id = $request->product_id;
         $ordering_product->product_id =  $product_id ;
