@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\OrderingProduct;
+use Session;
 
 class ContactController extends Controller
 {
@@ -13,6 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('medshop.contact');
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+
+        return view('medshop.contact')->with(['ordering_products_count'=>$ordering_products_count]);
     }
 }

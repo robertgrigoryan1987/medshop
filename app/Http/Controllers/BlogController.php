@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\OrderingProduct;
+use Session;
 
 class BlogController extends Controller
 {
@@ -13,6 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('medshop.blog');
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        return view('medshop.blog')->with(['ordering_products_count'=>$ordering_products_count]);
     }
 }
