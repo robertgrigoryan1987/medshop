@@ -58,5 +58,35 @@ class ShopController extends Controller
 
     }
 
+    public function shop_cart_quantity(Request $request){
+        if(OrderingProduct::where('id', $request->id)
+            ->update(['quantity' => $request->quantity])){
+            echo 'success';exit;
+        }else{
+            echo 'error';exit;
+        }
+    }
+
+    public function ordering_cart(){
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        $product_orders = OrderingProduct::all()->where('session',Session::getId());
+        $sum = 0;
+        foreach ($product_orders as $product){
+            $sum = $sum+($product->product_price*$product->quantity);
+        }
+        return view('medshop.ordering_cart')->with(['ordering_products_count'=>$ordering_products_count, 'sum'=>$sum]);
+
+    }
+
+    public function ordering(Request $request){
+        $this->validate($request,[
+            'email' => 'required|email',
+            'address' => 'required',
+            'phone' => 'required',
+            'post_index' => 'required',
+        ]);
+        var_dump($request->all());exit;
+    }
+
 
 }

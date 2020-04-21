@@ -32,7 +32,11 @@
                                     </div>
                                 </td>
                                 <td class="qty">
-                                    <input class="quantity-spinner" type="text" value="1" name="quantity">
+                                    <div id="input_div">
+                                        <input type="text" value="{{$product->quantity}}" name="quantity" class="count" data-id="{{$product->id}}">
+                                        <input type="button" value="-" class="quantity-moins" >
+                                        <input type="button" value="+" class="quantity-plus" >
+                                    </div>
                                 </td>
                                 <td class="unit-price">
                                     <div class="available-info">
@@ -61,62 +65,7 @@
             <div class="row cart-middle">
                 <div class="col-md-6 col-sm-8 col-xs-12">
                     <div class="apply-coupon">
-                        <input type="text" name="coupon-code" value="" placeholder="Код купона">
-                        <div class="apply-coupon-button">
-                            <button class="thm-btn bgclr-1" type="button">Применить купон</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-4 col-xs-12">
-                    <div class="update-cart pull-right">
-                        <button class="thm-btn bgclr-1" type="button">Обнавить корзину</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row cart-bottom">
-                <div class="col-md-6">
-                    <div class="calculate-shipping">
-                        <div class="sec-title">
-                            <h1>Рассчитать Стоимость Доставки</h1>
-                        </div>
-                        <select class="selectmenu">
-                            <option selected="selected">Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                        </select>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" placeholder="Государство Страна" required>
-                            </div>
-                            <div class="col-lg-6">
-                                <input class="zip-code" type="text" placeholder="Почтовый Индекс" required>
-                            </div>
-                        </div>
-                        <button class="thm-btn bgclr-1" type="submit">Обновит Итог</button>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="cart-total">
-                        <div class="sec-title">
-                            <h1>Итоги Корзины</h1>
-                        </div>
-                        <ul class="cart-total-table">
-                            <li class="clearfix">
-                                <span class="col col-title">Итого по корзине</span>
-                                <span class="col">$146.00</span>
-                            </li>
-                            <li class="clearfix">
-                                <span class="col col-title">Доставка и обработка</span>
-                                <span class="col">$40.00- <b>Общая</b></span>
-                            </li>
-                            <li class="clearfix">
-                                <span class="col col-title">Заказа</span>
-                                <span class="col">$146.00</span>
-                            </li>
-                        </ul>
-                        <button class="thm-btn bgclr-1 checkout-btn">Оформить заказ</button>
+                        <button class="thm-btn bgclr-1 checkout-btn"><a href="{{route('ordering_cart')}}">Оформить заказ</a></button>
                     </div>
                 </div>
             </div>
