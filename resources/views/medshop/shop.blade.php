@@ -45,7 +45,7 @@
                                             <div class="title-holder">
                                                 <div class="top clearfix">
                                                     <div class="product-title pull-left">
-                                                        <a href="shop-single.html">
+                                                        <a href="/product/{{$product->id}}">
                                                             <h5>{{$product->name}}</h5>
                                                         </a>
                                                     </div>
