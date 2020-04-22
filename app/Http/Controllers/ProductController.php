@@ -20,7 +20,6 @@ use Session;
 class ProductController extends Controller
 {
     public function product($id){
-        var_dump($id);
         $product = Product::where('id',$id)->first();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
