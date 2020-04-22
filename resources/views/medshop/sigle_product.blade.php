@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="single-review-box">
                                                 <div class="img-holder">
-                                                    <img src="images/shop/review-1.jpg" alt="Awesome Image">
+                                                    <img src="/medshop/images/shop/review-1.jpg" alt="Awesome Image">
                                                 </div>
                                                 <div class="text-holder">
                                                     <div class="top">
@@ -91,7 +91,7 @@
                                             </div>
                                             <div class="single-review-box">
                                                 <div class="img-holder">
-                                                    <img src="images/shop/review-2.jpg" alt="Awesome Image">
+                                                    <img src="/medshop/images/shop/review-2.jpg" alt="Awesome Image">
                                                 </div>
                                                 <div class="text-holder">
                                                     <div class="top">
@@ -171,7 +171,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="single-product-item">
                                     <div class="img-holder">
-                                        <img src="images/shop/1.jpg" alt="Awesome Product Image">
+                                        <img src="/medshop/images/shop/1.jpg" alt="Awesome Product Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -206,7 +206,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="single-product-item">
                                     <div class="img-holder">
-                                        <img src="images/shop/2.jpg" alt="Awesome Product Image">
+                                        <img src="/medshop/images/shop/2.jpg" alt="Awesome Product Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -241,7 +241,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="single-product-item">
                                     <div class="img-holder">
-                                        <img src="images/shop/3.jpg" alt="Awesome Product Image">
+                                        <img src="/medshop/images/shop/3.jpg" alt="Awesome Product Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -327,7 +327,7 @@
                             <ul class="popular-product">
                                 <li>
                                     <div class="img-holder">
-                                        <img src="images/shop/product-thumb-1.jpg" alt="Awesome Image">
+                                        <img src="/medshop/images/shop/product-thumb-1.jpg" alt="Awesome Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -354,7 +354,7 @@
                                 </li>
                                 <li>
                                     <div class="img-holder">
-                                        <img src="images/shop/product-thumb-2.jpg" alt="Awesome Image">
+                                        <img src="/medshop/images/shop/product-thumb-2.jpg" alt="Awesome Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -381,7 +381,7 @@
                                 </li>
                                 <li>
                                     <div class="img-holder">
-                                        <img src="images/shop/product-thumb-3.jpg" alt="Awesome Image">
+                                        <img src="/medshop/images/shop/product-thumb-3.jpg" alt="Awesome Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
