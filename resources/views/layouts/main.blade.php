@@ -1,5 +1,4 @@
 <?php use App\Language;
-use Illuminate\Support\Facades\Route;
 $langages = Language::all();
 
 ?>
