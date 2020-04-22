@@ -85,7 +85,26 @@ class ShopController extends Controller
             'phone' => 'required',
             'post_index' => 'required',
         ]);
-        var_dump($request->all());exit;
+        $ordering = new Ordering();
+        $isset_ordering = Ordering::where('session', Session::getId())->first();
+        if($isset_ordering){
+            $isset_ordering->email = $request->email;
+            $isset_ordering->customer_addres = $request->address;
+            $isset_ordering->customer_telephone = $request->phone;
+            $isset_ordering->city = $request->city;
+            $isset_ordering->amount = $request->sum;
+            $isset_ordering->user_id =isset(Auth::user()->user) ? Auth::user()->user : null;
+            $isset_ordering->save();
+        }else{
+            $ordering->email = $request->email;
+            $ordering->customer_addres = $request->address;
+            $ordering->customer_telephone = $request->phone;
+            $ordering->customer_city = $request->city;
+            $ordering->amount = $request->sum;
+            $ordering->user_id =isset(Auth::user()->user) ? Auth::user()->user : null;
+            $ordering->session =Session::getId();
+            $ordering->save();
+        }
     }
 
 
