@@ -1,3 +1,7 @@
+<?php use App\Language;
+$langages = Language::all();
+var_dump($langages);
+?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

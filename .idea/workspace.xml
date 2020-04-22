@@ -157,8 +157,8 @@
       <file leaf-file-name="sigle_product.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/medshop/sigle_product.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.226825">
-              <caret line="305" column="33" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
+            <state vertical-scroll-proportion="14.222717">
+              <caret line="383" column="65" selection-start-line="383" selection-start-column="65" selection-end-line="383" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -445,8 +445,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="231" />
-    <option name="y" value="17" />
+    <option name="x" value="254" />
+    <option name="y" value="141" />
     <option name="width" value="1400" />
     <option name="height" value="997" />
   </component>
@@ -763,7 +763,7 @@
     <option name="totallyTimeSpent" value="86592000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="231" y="17" width="1400" height="997" extended-state="1" />
+    <frame x="254" y="141" width="1400" height="997" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1207,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/medshop/sigle_product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.226825">
-          <caret line="305" column="33" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
+        <state vertical-scroll-proportion="14.222717">
+          <caret line="383" column="65" selection-start-line="383" selection-start-column="65" selection-end-line="383" selection-end-column="65" />
           <folding />
         </state>
       </provider>
