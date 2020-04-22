@@ -29,16 +29,16 @@
                                         <p>{{$product->getTranslatedAttribute('description',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>????????? ??????? ???????? ? ????? ?????:</p>
+                                        <p>:</p>
                                         <form action="#">
                                             <input type="text" placeholder="???">
-                                            <button type="submit">?????????</button><br />
-                                            <span>????????? ???????? ? ??????? 4-10 ????</span>
+                                            <button type="submit"></button><br />
+                                            <span></span>
                                         </form>
                                     </div>
                                     <div class="addto-cart-box clearfix">
                                         <input class="quantity-spinner" type="text" value="2" name="quantity">
-                                        <button class="thm-btn bgclr-1 addtocart" type="submit">???????? ? ???????</button>
+                                        <button class="thm-btn bgclr-1 addtocart" type="submit">Add</button>
                                     </div>
                                 </div>
                             </div>
@@ -55,8 +55,7 @@
                                     <div class="tab-pane" id="desc">
                                         <div class="product-details-content">
                                             <div class="desc-content-box">
-                                                <p>??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.</p>
-                                                <p>??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.</p>
+                                                <p></p>
                                             </div>
 
                                         </div>
@@ -64,7 +63,7 @@
                                     <div class="tab-pane active" id="review">
                                         <div class="review-box">
                                             <div class="title">
-                                                <h3>2 ??????</h3>
+                                                <h3></h3>
                                             </div>
                                             <div class="single-review-box">
                                                 <div class="img-holder">
@@ -73,7 +72,7 @@
                                                 <div class="text-holder">
                                                     <div class="top">
                                                         <div class="name pull-left">
-                                                            <h4>?????? ??? - 01 04 2020 </h4>
+                                                            <h4> - 01 04 2020 </h4>
                                                         </div>
                                                         <div class="review-box pull-right">
                                                             <ul>
@@ -86,7 +85,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="text">
-                                                        <p>??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.</p>
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +96,7 @@
                                                 <div class="text-holder">
                                                     <div class="top">
                                                         <div class="name pull-left">
-                                                            <h4>?????? ??? - 01 04 2020 </h4>
+                                                            <h4>Date - 01 04 2020 </h4>
                                                         </div>
                                                         <div class="review-box pull-right">
                                                             <ul>
@@ -110,7 +109,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="text">
-                                                        <p>??? ???????? ??? ??? ????????? ???? ????????? ???????????? ? ??????????? ????, ? ? ??? ??? ?????? ????? ? ??????? ? ?????? ?????????????? ??????.</p>
+                                                        <p></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +117,7 @@
                                         </div>
                                         <div class="review-form">
                                             <div class="title">
-                                                <h3>???????? ???? ???????????</h3>
+                                                <h3></h3>
                                             </div>
                                             <form id="review-form" action="#">
                                                 <div class="row">
@@ -130,7 +129,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="field-label">
-                                                            <p>??????</p>
+                                                            <p>Test</p>
                                                             <input type="text" name="lname" required="">
                                                         </div>
                                                     </div>
@@ -146,14 +145,14 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="field-label">
-                                                            <p>???????</p>
+                                                            <p>Test</p>
                                                             <textarea name="review" required=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <button class="thm-btn bgclr-1" type="submit">?????????</button>
+                                                        <button class="thm-btn bgclr-1" type="submit">Send</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -165,7 +164,7 @@
                     </div>
                     <div class="related-product">
                         <div class="sec-title pdb-50">
-                            <h1>????????????? ??????</h1>
+                            <h1></h1>
                             <span class="border"></span>
                         </div>
                         <div class="row">
@@ -287,18 +286,28 @@
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>?????????</h3>
+                                <h3>Category</h3>
                             </div>
                             <ul class="categories clearfix">
-                                <li><a href="#">??????-???????? <span>(6)</span></a></li>
-                                <li><a href="#">??????-???????? <span>(2)</span></a></li>
-                                <li><a href="#">??????-???????? <span>(5)</span></a></li>
-                                <li><a href="#">??????-???????? <span>(10)</span></a></li>
+                                @foreach($categories  as $item)
+                                    @if($item->children->count() > 0)
+                                        <li>
+                                            <a >{{ $item->name }} <span class="caret"></span></a>
+                                            <ul>
+                                                @foreach($item->children as $submenu)
+                                                    <li><a href="{{route('shop')}}/{{$submenu->id}}">{{ $submenu->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li><a href="{{route('shop')}}/{{$item->id}}">{{ $item->name }}</a></li>
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>??????????? ?? ????</h3>
+                                <h3>Test</h3>
                             </div>
                             <div class="price-ranger">
                                 <div id="slider-range"></div>
@@ -313,7 +322,7 @@
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>?????????? ??????</h3>
+                                <h3></h3>
                             </div>
                             <ul class="popular-product">
                                 <li>
@@ -329,7 +338,7 @@
                                     </div>
                                     <div class="title-holder">
                                         <a href="#">
-                                            <h4>????????</h4>
+                                            <h4></h4>
                                         </a>
                                         <h5>$34.99</h5>
                                         <div class="review-box">
@@ -356,7 +365,7 @@
                                     </div>
                                     <div class="title-holder">
                                         <a href="#">
-                                            <h4>????????</h4>
+                                            <h4></h4>
                                         </a>
                                         <h5>$29.00</h5>
                                         <div class="review-box">
@@ -383,7 +392,7 @@
                                     </div>
                                     <div class="title-holder">
                                         <a href="#">
-                                            <h4>????????</h4>
+                                            <h4></h4>
                                         </a>
                                         <h5>$24.99</h5>
                                         <div class="review-box">
