@@ -1,6 +1,6 @@
 <?php use App\Language;
 $langages = Language::all();
-var_dump($langages);
+
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -90,10 +90,13 @@ var_dump($langages);
 
                             <a href="profile.html" class="login" class="social-links"><i class="fa fa-sign-in"> Войти</i></a>
                             <select id="flag">
-                                <option value="Arm">Arm</option>
-                                <option value="Rus">Rus</option>
-                                <option value="Eng">Eng</option>
+                                @foreach($langages as $langage)
+                                    <option value="{{strtoupper($langage->iso)}}">
+                                        <a class="nav-link"
+                                           href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $langage->iso) }}"
+                                           @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
 
+                                @endforeach
                             </select>
                         </ul>
                     </div>
