@@ -31,18 +31,20 @@
                             </div>
                         @endif
 
-                        <select class="selectmenu">
-                            <option selected="selected">Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                        </select>
+
                         <form name="customer_acount" action="/ordering" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                            <select class="selectmenu" name="city">
+                                <option selected="selected">Ереван</option>
+                                <option>Ереван</option>
+                                <option>Ереван</option>
+                                <option>Ереван</option>
+                            </select>
+
                             <div class="row">
                             <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" placeholder="Address" name="address" required>
+                                <input class="mar-bottom" type="text" placeholder="Address" name="address" value="<?= isset(Auth::user()->user) ? Auth::user()->user->address : '' ?>" required>
                             </div>
                             <div class="col-lg-6">
                                 <input class="zip-code" type="text" placeholder="Почтовый Индекс" name="post_index" required>
@@ -50,10 +52,10 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" placeholder="Email" name="email" required>
+                                <input class="mar-bottom" type="text" placeholder="Email" name="email" value="<?= isset(Auth::user()->user) ? Auth::user()->user->email : '' ?>" required>
                             </div>
                             <div class="col-lg-6">
-                                <input class="zip-code" type="text" placeholder="Phone" name="phone" required>
+                                <input class="zip-code" type="text" placeholder="Phone" name="phone" value="<?= isset(Auth::user()->user) ? Auth::user()->user->phone : '' ?>" required>
                             </div>
                         </div>
                             <input type="hidden" name="sum" value="{{$sum}}">
