@@ -17,7 +17,7 @@ use App\OrderingProduct;
 use Session;
 
 
-class ProductControllers extends Controller
+class ProductController extends Controller
 {
     public function product($id){
         var_dump($id);
