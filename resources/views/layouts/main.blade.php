@@ -1,4 +1,5 @@
 <?php use App\Language;
+use Illuminate\Support\Facades\Route;
 $langages = Language::all();
 
 ?>
@@ -93,7 +94,7 @@ $langages = Language::all();
                                 @foreach($langages as $langage)
                                     <option value="{{strtoupper($langage->iso)}}">
                                         <a class="nav-link"
-                                           href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $langage->iso) }}"
+                                           href="{{ route(Route::currentRouteName(), $langage->iso) }}"
                                            @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
 
                                 @endforeach
