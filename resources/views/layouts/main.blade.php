@@ -89,7 +89,7 @@ $langages = Language::all();
                             @endguest
 
                             <a href="profile.html" class="login" class="social-links"><i class="fa fa-sign-in"> Войти</i></a>
-                            <select id="flag">
+                            <select id="flag test">
                                 @foreach($langages as $langage)
                                     <option value="{{strtoupper($langage->iso)}}">
                                         <a class="nav-link" @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
