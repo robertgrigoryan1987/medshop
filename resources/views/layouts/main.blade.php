@@ -94,7 +94,7 @@ $langages = Language::all();
                                 @foreach($langages as $langage)
                                     <option value="{{strtoupper($langage->iso)}}">
                                         <a class="nav-link"
-                                           href="{{ route(Route::currentRouteName(), $langage->iso) }}"
+                                           href="{{ route(Route::getCurrentRoute()->getPath(), $langage->iso) }}"
                                            @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
 
                                 @endforeach
