@@ -92,7 +92,7 @@ $langages = Language::all();
                             <select id="flag test">
                                 @foreach($langages as $langage)
                                     <option value="{{strtoupper($langage->iso)}}">
-                                        <a class="nav-link" @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
+                                        <a class="nav-link" @if (app()->getLocale() == $langage->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
 
                                 @endforeach
                             </select>
