@@ -47,6 +47,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/product/{id}', 'ProductController@product');
 
+    Route::get('/products/{id}', 'ProductController@product_category');
+
     Route::post('/ordering', 'ShopController@ordering');
 
     Route::get('/ordering_cart', 'ShopController@ordering_cart')->name('ordering_cart');

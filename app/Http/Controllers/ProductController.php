@@ -28,6 +28,15 @@ class ProductController extends Controller
 
     }
 
+    public function product_category($id){
+        $products = Product::where('category',$id)->paginate(9);
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+
+        $categories = Category::where('parent_id',null)->with('children')->get();
+        return view('wixon.product')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+
+    }
+
     public function product_add(Request $request){
         var_dump($request->all());exit;
     }
