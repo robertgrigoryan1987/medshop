@@ -38,6 +38,7 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="blog-post">
                         <div class="row">
+                            @foreach($posts as $post)
                             <div class="col-md-6">
                                 <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                                     <div class="img-holder">
@@ -51,163 +52,24 @@
                                         </div>
                                     </div>
                                     <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают</h3>
+                                        <a href="{{route('blog.show', $post->slug)}}">
+                                            <h3 class="blog-title">{{$post->title}}</h3>
                                         </a>
                                         <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения.</p>
+                                            <p>{{$post->excerpt}}</p>
                                         </div>
                                         <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
+                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{$post->getDate($post->created_at)}}</a></li>
                                             <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="blog-single.html"><span class="flaticon-plus-symbol"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают</h3>
-                                        </a>
-                                        <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения.</p>
-                                        </div>
-                                        <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="blog-single.html"><span class="flaticon-plus-symbol"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают </h3>
-                                        </a>
-                                        <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения.</p>
-                                        </div>
-                                        <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-4.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="blog-single.html"><span class="flaticon-plus-symbol"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают </h3>
-                                        </a>
-                                        <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения.</p>
-                                        </div>
-                                        <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="single-blog-item">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-5.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="blog-single.html"><span class="flaticon-plus-symbol"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают .</h3>
-                                        </a>
-                                        <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения.</p>
-                                        </div>
-                                        <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                                <div class="single-blog-item">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-6.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="blog-single.html"><span class="flaticon-plus-symbol"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <a href="blog-single.html">
-                                            <h3 class="blog-title">Отрицательные истории статинов увеличивают </h3>
-                                        </a>
-                                        <div class="text">
-                                            <p>Какой труд и боль могут доставить ему огромное удовольствие. Возьмем тривиальный пример того, какие из нас кропотливые физические упражнения..</p>
-                                        </div>
-                                        <ul class="meta-info">
-                                            <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>01 04 2020</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <ul class="post-pagination text-center">
-                                    <li><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i></a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-                                </ul>
+                                {{$posts->links()}}
                             </div>
                         </div>
                     </div>

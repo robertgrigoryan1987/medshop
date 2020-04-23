@@ -35,6 +35,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/blog', 'BlogController@index')->name('blog');
 
+    Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
+
     Route::get('/shop', 'ShopController@index')->name('shop');
 
     Route::post('/shop_cart', 'ShopController@shop_cart')->name('shop_cart');
