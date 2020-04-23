@@ -1,7 +1,3 @@
-<?php use App\Language;
-$langages = Language::all();
-
-?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -96,8 +92,8 @@ $set_lang = UrlController::set_language();
 
                             <a href="profile.html" class="login" class="social-links"><i class="fa fa-sign-in"> Войти</i></a>
                             <select id="flag test">
-                                @foreach($langages as $language)
-                                    <option value="{{strtoupper($langage->iso)}}">
+                                @foreach($languages as $language)
+                                    <option value="{{strtoupper($language->iso)}}">
                                         <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $language->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($language->iso) }}</a>
                                     </option>
                                 @endforeach
