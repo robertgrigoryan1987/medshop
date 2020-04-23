@@ -31,6 +31,12 @@ $langages = Language::all();
 
 </head>
 <body>
+<?php
+use App\Http\Controllers\UrlController;
+$iso = UrlController::geturl();
+$languages = UrlController::languages();
+$set_lang = UrlController::set_language();
+?>
 
 <div class="boxed_wrapper">
 
@@ -92,8 +98,8 @@ $langages = Language::all();
                             <select id="flag test">
                                 @foreach($langages as $langage)
                                     <option value="{{strtoupper($langage->iso)}}">
-                                        <a class="nav-link" @if (app()->getLocale() == $langage->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
-
+                                        <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $langage->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($langage->iso) }}</a>
+                                    </option>
                                 @endforeach
                             </select>
                         </ul>
@@ -108,7 +114,7 @@ $langages = Language::all();
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="/">
                             <img src="/medshop/images/resources/logo.png" alt="Awesome Logo">
                         </a>
                     </div>

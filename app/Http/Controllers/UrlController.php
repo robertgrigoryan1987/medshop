@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Request;
+use App\Language;
 
 
 class UrlController extends Controller
@@ -17,6 +18,11 @@ class UrlController extends Controller
         }else{
             return false;
         }
+    }
+
+    public static function languages(){
+        $languages = Language::all();
+        return $languages;
     }
 
     public static function get_page(){
