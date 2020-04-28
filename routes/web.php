@@ -47,7 +47,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/product/{id}', 'ProductController@product');
 
-    Route::get('/products/{id}', 'ProductController@product_category');
+    Route::get('/products/{id}', 'ProductController@product_category')->name('products_category');;
 
     Route::post('/ordering', 'ShopController@ordering');
 
@@ -56,6 +56,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/product-add/{id}', 'ProductController@product_add');
 
     Route::post('/shop_cart_quantity', 'ShopController@shop_cart_quantity');
+
+    Route::post('/idram_paymant_fail', 'PaymentController@idram_paymant_fail');
+    Route::post('/idram_payment_success', 'PaymentController@idram_payment_success');
+    Route::post('/idram_paymant_result', 'PaymentController@idram_paymant_result');
 
 
 

@@ -33,7 +33,7 @@ class ProductController extends Controller
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
-        return view('wixon.product')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+        return view('medshop.product_category')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
 
     }
 

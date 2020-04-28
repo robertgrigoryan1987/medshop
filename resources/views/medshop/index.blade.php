@@ -144,12 +144,12 @@
                                             <a >{{ $item->name }} <span class="caret"></span></a>
                                             <ul>
                                                 @foreach($item->children as $submenu)
-                                                    <li><a href="{{route('shop')}}/{{$submenu->id}}">{{ $submenu->name }}</a></li>
+                                                    <li><a href="/products/{{$submenu->id}}">{{ $submenu->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                     @else
-                                        <li><a href="{{route('shop')}}/{{$item->id}}">{{ $item->name }}</a></li>
+                                        <li><a href="/products/{{$item->id}}">{{ $item->name }}</a></li>
                                     @endif
                                 @endforeach
                             </ul>

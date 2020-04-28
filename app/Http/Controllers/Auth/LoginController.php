@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\OrderingProduct;
+use Session;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,5 +39,11 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        return view('auth.login')->with(['ordering_products_count'=>$ordering_products_count]);
     }
 }

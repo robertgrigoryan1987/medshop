@@ -63,14 +63,10 @@ $set_lang = UrlController::set_language();
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="login social-links" href="{{ route('login') }}"><i class="fa fa-sign-in"> Войти</i></a>
                                 </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="login" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
                             @else
+
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -90,14 +86,13 @@ $set_lang = UrlController::set_language();
                                 </li>
                             @endguest
 
-                            <a href="profile.html" class="login" class="social-links"><i class="fa fa-sign-in"> Войти</i></a>
-                            <select id="flag test">
+                            <ul id="flag test">
                                 @foreach($languages as $language)
-                                    <option value="{{strtoupper($language->iso)}}">
+                                    <li >
                                         <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $language->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($language->iso) }}</a>
-                                    </option>
+                                    </li>
                                 @endforeach
-                            </select>
+                            </ul>
                         </ul>
                     </div>
                 </div>
