@@ -14,7 +14,7 @@
 07. Categories area style
 08. Fact counter area style
 09. Latest Blog area style
-10. Latest blog area style 
+10. Latest blog area style
 11. Testimonial area style
 12. Brand area style
 13. Single service style
@@ -466,7 +466,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Top bar area style
 =============================================
@@ -540,7 +540,7 @@ select:focus {
     color: #0392ce;
 }
 .login:hover {
-    
+
     color: #0392ce;
 }
 
@@ -949,7 +949,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Rev Slider Wrapper style
 =============================================
@@ -1064,7 +1064,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Callto Action Area style
 =============================================
@@ -1165,7 +1165,7 @@ select:focus {
 }
 
 
-/*** 
+/***
 =============================================
     Medical Departments Area style
 =============================================
@@ -1299,7 +1299,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     service Area style
 =============================================
@@ -1445,7 +1445,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Team Area style
 =============================================
@@ -1600,7 +1600,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Fact counter Area style
 =============================================
@@ -1680,7 +1680,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Testimonial Area style
 =============================================
@@ -1804,7 +1804,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Latest blog area style
 =============================================
@@ -1935,7 +1935,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Facilities appointment area style
 =============================================
@@ -2122,7 +2122,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Brand Area style
 =============================================
@@ -2160,7 +2160,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Footer area style
 =============================================
@@ -2428,7 +2428,7 @@ select:focus {
 }
 
 
-/*** 
+/***
 =============================================
     Footer Bottom area style
 =============================================
@@ -2498,7 +2498,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Breadcrumb area style
 =============================================
@@ -2607,7 +2607,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     welcome Area style
 =============================================
@@ -2718,7 +2718,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Special Features Area style
 =============================================
@@ -2779,7 +2779,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Slogan Area style
 =============================================
@@ -2811,7 +2811,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     project faq Area style
 =============================================
@@ -2931,7 +2931,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Fact counter Area style
 =============================================
@@ -2984,7 +2984,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Team area.doctor style
 =============================================
@@ -3002,7 +3002,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Certificates Area style
 =============================================
@@ -3070,7 +3070,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Faq content area style
 =============================================
@@ -3100,7 +3100,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Faq question Form Area style
 =============================================
@@ -3153,7 +3153,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Healty process Area style
 =============================================
@@ -3195,7 +3195,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Testimonial Section style
 =============================================
@@ -3216,7 +3216,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Main Project Area style
 =============================================
@@ -3307,7 +3307,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Project Single Area style
 =============================================
@@ -3426,7 +3426,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Contact Form area style
 =============================================
@@ -3563,6 +3563,7 @@ select:focus {
 
 .contact-form-area .contact-form form input[type="text"],
 .contact-form-area .contact-form form input[type="email"],
+.contact-form-area .contact-form form input[type="password"],
 .contact-form-area .contact-form form textarea {
     background: #ffffff;
     border: 1px solid #0392ce;
@@ -3693,7 +3694,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Healty process Area style
 =============================================
@@ -3709,13 +3710,13 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Healty process Area style
 =============================================
 ***/
 #departments-single-area {
-    
+
     background: #ffffff;
     padding-top: 80px;
     padding-bottom: 50px;
@@ -4037,7 +4038,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Blog Default Area style
 =============================================
@@ -4346,7 +4347,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Blog Large Area style
 =============================================
@@ -4403,7 +4404,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Blog Single Area style
 =============================================
@@ -4785,7 +4786,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Contact map Area style
 =============================================
@@ -4801,7 +4802,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Shop Area style
 =============================================
@@ -5116,7 +5117,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Profile Area style
 =============================================
@@ -5402,7 +5403,7 @@ select:focus {
 .profile-area .over {
     border-radius: 50%;
 }
-/*** 
+/***
 =============================================
     Checkout Area style
 =============================================
@@ -5796,7 +5797,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Login Register Area style
 =============================================
@@ -5944,7 +5945,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
    Cart area  style
 =============================================
@@ -6263,7 +6264,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
    Single Shop Area style
 =============================================
@@ -6645,7 +6646,7 @@ select:focus {
 }
 
 
-/*** 
+/***
 =============================================
    DatePicker  style
 =============================================
@@ -6741,7 +6742,7 @@ input#datepicker {
 
 
 
-/*** 
+/***
 =============================================
    Time table Area style
 =============================================
@@ -6932,4 +6933,82 @@ input#datepicker {
 
 .time-table tbody tr .single-box .inner-content .level span {
     font-weight: 300;
+}
+/* Shared */
+.loginBtn {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    margin: 0.2em;
+    padding: 0 15px 0 46px;
+    border: none;
+    text-align: left;
+    line-height: 34px;
+    white-space: nowrap;
+    border-radius: 0.2em;
+    font-size: 16px;
+    color: #FFF;
+}
+.loginBtn:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 100%;
+}
+.loginBtn:focus {
+    outline: none;
+}
+.loginBtn:active {
+    box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.loginBtn--facebook {
+    background-color: #4C69BA;
+    background-image: linear-gradient(#4C69BA, #3B55A0);
+    /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+    text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+    border-right: #364e92 1px solid;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+    background-color: #5B7BD5;
+    background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+
+/* Google */
+.loginBtn--google {
+    /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+    background: #DD4B39;
+}
+.loginBtn--google:before {
+    border-right: #BB3F30 1px solid;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+    background: #E74B37;
+}
+@media (max-width: 479px) {
+    .loginBtn {
+        width: 100%;
+    }
+}
+.logincol {
+    color: #0392ce;
+}
+.regist {
+    display: inline-block;
+    width: 30%;
+}
+.invalid-feedback {
+    color: red;
 }
