@@ -45,8 +45,8 @@
                                             <div class="title-holder">
                                                 <div class="top clearfix">
                                                     <div class="product-title pull-left">
-                                                        <a href="/product/{{$product->id}}">
-                                                            <h5>{{$product->name}}</h5>
+                                                        <a href="/{{config('app.locale')}}/product/{{$product->id}}">
+                                                            <h5>{{$product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                                         </a>
                                                     </div>
                                                     <div class="review-box pull-right">
@@ -100,12 +100,13 @@
 
                                             <ul>
                                                 @foreach($item->children as $submenu)
-                                                    <li><a href="/products/{{$submenu->id}}">{{ $submenu->name }}</a></li>
+                                                    <li><a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                     @else
-                                        <li><a href="/products/{{$item->id}}">{{ $item->name }}</a></li>
+                                        <li><a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
+
                                     @endif
                                 @endforeach
                             </ul>

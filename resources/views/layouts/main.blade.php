@@ -184,34 +184,10 @@ $set_lang = UrlController::set_language();
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
                                 <li class="current"><a href="{{route('home')}}">Главная</a></li>
-                                <li class="dropdown"><a href="{{route('about')}}">О нас</a>
-                                    <ul>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="{{route('service')}}">Услуги</a>
-                                    <ul>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="{{route('blog')}}">Блог</a>
-                                    <ul>
-                                        <li><a href="blog-single.html">Блог Сингл</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="{{route('shop')}}">Магазин</a>
-                                    <ul>
-                                        <li><a href="shop-single.html">Продукт</a></li>
-                                        <li><a href="shopping-cart.html">Корзина</a></li>
-                                        <li><a href="checkout.html">Чекаут</a></li>
-                                        <li><a href="account.html">Аккаунт</a></li>
-                                    </ul>
-                                </li>
+                                <li class="dropdown"><a href="{{route('about')}}">О нас</a></li>
+                                <li class="dropdown"><a href="{{route('service')}}">Услуги</a></li>
+                                <li class="dropdown"><a href="{{route('blog')}}">Блог</a></li>
+                                <li class="dropdown"><a href="{{route('shop')}}">Магазин</a></li>
                                 <li><a href="{{route('contact')}}">Контакт</a></li>
                             </ul>
                         </div>
