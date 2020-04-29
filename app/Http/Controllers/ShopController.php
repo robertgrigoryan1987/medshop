@@ -259,7 +259,7 @@ class ShopController extends Controller
 //            "Currency" => "AMD",
 //            "CardHolderID" => "1",
 //            "Opaque" => "test",
-//            "MerchntId" => "141111",
+//            "MerchntId" => "141111",eere
 //        ];
 
 

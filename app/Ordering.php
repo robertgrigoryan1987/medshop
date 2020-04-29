@@ -7,6 +7,5 @@ use TCG\Voyager\Traits\Translatable;
 
 class Ordering extends Model
 {
-    use Translatable;
     
 }
