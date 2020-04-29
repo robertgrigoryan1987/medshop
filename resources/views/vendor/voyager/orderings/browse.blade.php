@@ -227,7 +227,7 @@
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
-                                            <a href="products_in_order" >
+                                            <a href="products_in_order/{{ $data->id }}" >
                                                 <i class="voyager-dolar"></i> <span class="hidden-xs hidden-sm">Products</span>
                                             </a>
 
