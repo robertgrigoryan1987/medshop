@@ -20,13 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a168ac6b-06e7-45b8-938f-0e1c7eb0b0e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medshop/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/medshop/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/medshop/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/medshop/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/medshop/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/medshop/js/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/blog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/ordering_cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/ordering_cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/product_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/product_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/product_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/product_order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/medshop/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/medshop/shop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +193,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wixon24" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -241,7 +248,11 @@
       <workItem from="1587662927068" duration="16559000" />
       <workItem from="1588077323075" duration="22000" />
       <workItem from="1588077351128" duration="330000" />
-      <workItem from="1588077700518" duration="212000" />
+      <workItem from="1588077700518" duration="774000" />
+      <workItem from="1588085909743" duration="1753000" />
+      <workItem from="1588088127415" duration="2417000" />
+      <workItem from="1588091479241" duration="297000" />
+      <workItem from="1588132732484" duration="20364000" />
     </task>
     <servers />
   </component>
@@ -258,6 +269,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -268,10 +280,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="249" key="FileChooserDialogImpl" timestamp="1588077348005">
+    <state x="424" y="249" key="FileChooserDialogImpl" timestamp="1588146346327">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="424" y="249" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1588077348005" />
+    <state x="424" y="249" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1588146346327" />
     <state x="892" y="533" key="NewPhpFileDialog" timestamp="1586968683979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -280,5 +292,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586979560636" />
+    <state x="354" y="232" width="572" height="568" key="find.popup" timestamp="1588146058036">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="354" y="232" width="572" height="568" key="find.popup/0.0.1280.980@0.0.1280.980" timestamp="1588146058036" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/medshop/contact.blade.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

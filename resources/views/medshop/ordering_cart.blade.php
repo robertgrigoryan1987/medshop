@@ -1,91 +1,147 @@
 @extends('layouts.main')
 
 @section('content')
-
-    <section class="cart-area">
+    <section class="checkout-area">
         <div class="container">
-            <div class="row cart-middle">
-                <div class="col-md-6 col-sm-8 col-xs-12">
-                    <div class="apply-coupon">
-                        <input type="text" name="coupon-code" value="" placeholder="Код купона">
-                        <div class="apply-coupon-button">
-                            <button class="thm-btn bgclr-1" type="button">Применить купон</button>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="exisitng-customer">
+                        <h5>@lang('main.do-you-have-an-account')<a href="{{route('login')}}">@lang('main.login-now')</a></h5>
                     </div>
                 </div>
             </div>
-            <div class="row cart-bottom">
-                <div class="col-md-6">
-                    <div class="calculate-shipping">
-                        <div class="sec-title">
-                            <h1>Tvyalner</h1>
-                        </div>
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-
-
-                        <form name="customer_acount" action="/ordering" method="post">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                            <select class="selectmenu" name="city">
-                                <option selected="selected">Ереван</option>
-                                <option>Ереван</option>
-                                <option>Ереван</option>
-                                <option>Ереван</option>
-                            </select>
-
-                            <div class="row">
-                            <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" placeholder="Address" name="address" value="<?= isset(Auth::user()->user) ? Auth::user()->user->address : '' ?>" required>
-                            </div>
-                            <div class="col-lg-6">
-                                <input class="zip-code" type="text" placeholder="Почтовый Индекс" name="post_index" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input class="mar-bottom" type="text" placeholder="Email" name="email" value="<?= isset(Auth::user()->user) ? Auth::user()->user->email : '' ?>" required>
-                            </div>
-                            <div class="col-lg-6">
-                                <input class="zip-code" type="text" placeholder="Phone" name="phone" value="<?= isset(Auth::user()->user) ? Auth::user()->user->phone : '' ?>" required>
-                            </div>
-                        </div>
-                            <input type="hidden" name="sum" value="{{$sum}}">
-
-                            <button class="thm-btn bgclr-1 checkout-btn" type="submit">Pay</button>
-                        </form>
-
+            <div class="row cart-area mb-30" id="cart-area-ordering">
+                <div class="col-md-12">
+                    <div class="table-outer">
+                        <table class="cart-table">
+                            <thead class="cart-header">
+                            <tr>
+                                <th class="prod-column">@lang('main.items')</th>
+                                <th></th>
+                                <th>@lang('main.quantity')</th>
+                                <th class="availability">@lang('main.availability')</th>
+                                <th class="price">@lang('main.price')</th>
+                                <th>@lang('main.total')</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($product_orders as $product)
+                                <tr>
+                                    <td colspan="2" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                                <a href="#"><img src="/storage/{{$product->image}}" alt=""></a>
+                                            </div>
+                                            <div class="title">
+                                                <h3 class="prod-title">{{$product->getTranslatedAttribute('product_name',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="qty">
+                                        <div id="input_div ">
+                                            <input type="text" value="{{$product->quantity}}" disabled class="count fbord ml-40" data-id="{{$product->id}}">
+                                        </div>
+                                    </td>
+                                    <td class="unit-price">
+                                        <div class="available-info">
+                                            <span class="icon fa fa-check"></span>Предмет(ы)<br> @lang('main.available')
+                                        </div>
+                                    </td>
+                                    <td class="price"><span>{{$product->product_price}}</span></td>
+                                    <td class="sub-total"><span>{{$product->product_price * $product->quantity}}</span></td>
+                                </tr>
+                            @endforeach()
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form billing-info">
+                            <div class="sec-title pdb-50">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                <h1>@lang('main.shipping-information')</h1>
+                                <span class="border"></span>
+                            </div>
+                        <form action="/ordering" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="field-label">@lang('main.name')</div>
+                                        <div class="field-input">
+                                            <input type="text" required  name="name" placeholder="@lang('main.your-name')" value="<?= isset(Auth::user()->user) ? Auth::user()->user->name : '' ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="field-label">@lang('main.phone')</div>
+                                        <div class="field-input">
+                                            <input type="text" required name="phone" placeholder="@lang('main.your-phone')" value="<?= isset(Auth::user()->user) ? Auth::user()->user->phone : '' ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="field-label">@lang('main.email')</div>
+                                        <div class="field-input">
+                                            <input type="text" required  name="email" placeholder="@lang('main.email')" value="<?= isset(Auth::user()->user) ? Auth::user()->user->email : '' ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="field-label">@lang('main.address')</div>
+                                        <div class="field-input">
+                                            <input type="text" required name="address" placeholder="@lang('main.your-address')" value="<?= isset(Auth::user()->user) ? Auth::user()->user->address : '' ?>">
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="cart-total">
-                        <div class="sec-title">
-                            <h1>Итоги Корзины</h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="field-label">@lang('main.index')</div>
+                                        <div class="field-input">
+                                            <input  type="text" required name="post_index"  placeholder="@lang('main.your-index')" value="">
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <ul class="cart-total-table">
+                                            <li class="clearfix">
+                                                <span class="col col-title"><h3>@lang('main.total')</h3></span>
+                                                <span class="col"><h4>{{$sum}}</h4></span>
+                                            </li>
+                                        </ul>
+                                        <br>
+                                        <div class="payment-options ml-10">
+                                            <div class="option-block">
+                                            </div>
+                                            <div class="option-block">
+                                                <div class="radio-block cc-selector">
+                                                    <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>
+                                                    <label class="drinkcard-cc visa" for="visa"></label>
+
+                                                    <input  type="radio" name="payment_type" value="idram" id="idram"/>
+                                                    <label class="drinkcard-cc idram" for="idram"></label>
+
+                                                    <input  type="radio" name="payment_type" value="telcell" id="telcell"/>
+                                                    <label class="drinkcard-cc telcell" for="telcell"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="sum" value="{{$sum}}">
+                                    </div>
+                                    <div class="placeorder-button text-left ">
+                                        <button class="thm-btn bgclr-1 checkbutton" type="submit">@lang('main.pay')</button>
+                                    </div>
+                                </div>
+                        </form>
                         </div>
-                        <ul class="cart-total-table">
-                            <li class="clearfix">
-                                <span class="col col-title">Итого по корзине</span>
-                                <span class="col">{{$sum}}</span>
-                            </li>
-                            <li class="clearfix">
-                                <span class="col col-title">Доставка и обработка</span>
-                                <span class="col">$40.00- <b>Общая</b></span>
-                            </li>
-                            <li class="clearfix">
-                                <span class="col col-title">Заказа</span>
-                                <span class="col">{{$sum+40}}</span>
-                            </li>
-                        </ul>
                     </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
                 </div>
             </div>
         </div>

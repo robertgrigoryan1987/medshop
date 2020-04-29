@@ -99,7 +99,6 @@
                         Login with Google
                     </button>
                     <h5 class="ml-30 mt-30">Do you have an account? <a href="{{route('login')}}" class="thm-btn bgclr-1 regist ml-5" type="submit">Login now</a></h5>
-
                 </div>
             </div>
             <div class="col-md-3"></div>

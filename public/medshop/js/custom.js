@@ -11,7 +11,7 @@
 05. prettyPhoto
 06. BrandCarousel
 07. Testimonial carousel
-08. ScrollToTop 
+08. ScrollToTop
 09. Cart Touch Spin
 10. PriceFilter
 11. Cart touch spin
@@ -35,22 +35,22 @@ function revolutionSliderActiver () {
 			delay:5000,
             startwidth:1170,
 		    startheight:450,
-            
+
             navigationType:"bullet",
 		    navigationArrows:"0",
 		    navigationStyle:"preview4",
-            
+
             dottedOverlay:'yes',
-            
+
             hideTimerBar:"off",
             onHoverStop:"off",
 			navigation: {
-				arrows:{enable:true} 
-			}, 
+				arrows:{enable:true}
+			},
             gridwidth: [1170],
             gridheight: [450]
 		});
-	}; 
+	};
 }
 
 
@@ -60,7 +60,7 @@ function mainmenu() {
 	//Submenu Dropdown Toggle
 	if($('.main-menu li.dropdown ul').length){
 		$('.main-menu li.dropdown').append('<div class="dropdown-btn"></div>');
-		
+
 		//Dropdown Button
 		$('.main-menu li.dropdown .dropdown-btn').click(function() {
 			$(this).prev('ul').slideToggle(500);
@@ -214,7 +214,7 @@ function testimonialCarousel () {
                     items:2
                 }
             }
-        });    		
+        });
     }
 }
 
@@ -427,7 +427,7 @@ function brandCarousel () {
                     items:5
                 }
             }
-        });    		
+        });
     }
 }
 
@@ -468,7 +468,7 @@ function eventCarousel () {
                     items:1
                 }
             }
-        });    		
+        });
     }
 }
 
@@ -513,7 +513,7 @@ function accordion() {
         else{
             $(this).addClass('active');
             $('.accordion-box .accord-content').slideUp(500);
-            $(this).next('.accord-content').slideDown(500); 
+            $(this).next('.accord-content').slideDown(500);
         }
       });
     }
@@ -532,7 +532,7 @@ function cartTouchSpin() {
 
 
 
-// Select menu 
+// Select menu
 function selectDropdown() {
     if ($(".selectmenu").length) {
         $(".selectmenu").selectmenu();
@@ -780,7 +780,7 @@ jQuery(document).ready(function () {
         tooltip ();
         certificatesCarousel ();
         eventCarousel ()
-  
+
 
 	})(jQuery);
 });
@@ -791,7 +791,7 @@ jQuery(document).ready(function () {
 jQuery(window).scroll(function(){
 	(function ($) {
 	stickyHeader ()
-    
+
 	})(jQuery);
 });
 
@@ -801,6 +801,45 @@ jQuery(window).scroll(function(){
 jQuery(window).load(function() {
     (function($) {
         prealoader ();
-        
+
     })(jQuery);
+});
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    }
+    var $subMenu = $(this).next(".dropdown-menu");
+    $subMenu.toggleClass('show');
+
+
+    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $('.dropdown-submenu .show').removeClass("show");
+    });
+
+
+    return false;
+});
+
+
+$(".openbtn").on("click", function() {
+    $(".ui.sidebar").toggleClass("very thin icon");
+    $(".asd").toggleClass("marginlefting");
+    $(".sidebar z").toggleClass("displaynone");
+    $(".ui.accordion").toggleClass("displaynone");
+    $(".ui.dropdown.item").toggleClass("displayblock");
+
+    $(".logo").find('img').toggle();
+
+})
+$(".ui.dropdown").dropdown({
+    allowCategorySelection: true,
+    transition: "fade up",
+    context: 'sidebar',
+    on: "hover"
+});
+
+$('.ui.accordion').accordion({
+    selector: {
+
+    }
 });

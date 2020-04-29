@@ -17,11 +17,12 @@
 
     <!-- Styles -->
     <!-- master stylesheet -->
-    <link rel="stylesheet" href="{{ asset('/medshop/css/style.css') }}">
+
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{{ asset('/medshop/css/custom-bootstrap-margin-padding.css') }}">
     <link rel="stylesheet" href="{{ asset('/medshop/css/responsive.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('/medshop/css/style.css') }}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/medshop/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/medshop/images/favicon/favicon-32x32.png" sizes="32x32">
@@ -38,22 +39,22 @@ $set_lang = UrlController::set_language();
 
 <div class="boxed_wrapper">
 
-    <div class="preloader"></div>
+{{--    <div class="preloader"></div>--}}
 
     <section class="top-bar-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
                     <div class="top-left">
-                        <p><span class="flaticon-phone"></span>Круглосуточная служба +321 789 01 2345</p>
+                        <p><span class="flaticon-phone"></span>@lang('main.24-hour') +321 789 01 2345</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <div class="col-lg-0 col-md-2 col-sm-12 col-xs-12">
                     <div class="top-right clearfix">
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
                     <div class="top-right  social-links" >
                         <ul class="social-links"> <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -62,39 +63,11 @@ $set_lang = UrlController::set_language();
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                         <ul class="social-links">
-                            <!-- Authentication Links -->
-                            @guest
-                                <li class="nav-item">
-                                    <a class="login social-links" href="{{ route('login') }}"><i class="fa fa-sign-in"> Войти</i></a>
+                            @foreach($languages as $language)
+                                <li id="langu">
+                                    <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $language->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($language->iso) }}</a>
                                 </li>
-                            @else
-
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                            @endguest
-
-                            <ul id="flag test">
-                                @foreach($languages as $language)
-                                    <li >
-                                        <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $language->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($language->iso) }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -120,7 +93,7 @@ $set_lang = UrlController::set_language();
                                     <span class="flaticon-technology"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h4>Позвоните нам сейчас</h4>
+                                    <h4>@lang('main.call-us-now')</h4>
                                     <span>+1-888-987-6543</span>
                                 </div>
                             </li>
@@ -138,8 +111,8 @@ $set_lang = UrlController::set_language();
                                     <span class="flaticon-agenda"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h4>Пн - суббота</h4>
-                                    <span>09.00am to 18.00pm</span>
+                                    <h4>@lang('main.week')</h4>
+                                    <span>09.00am - 18.00pm</span>
                                 </div>
                             </li>
                         </ul>
@@ -185,36 +158,29 @@ $set_lang = UrlController::set_language();
                         </div>
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="{{route('home')}}">Главная</a></li>
-                                <li class="dropdown"><a href="{{route('about')}}">О нас</a>
+                                <li class="current"><a href="{{route('home')}}">@lang('main.general')</a></li>
+                                <li><a href="{{route('about')}}">@lang('main.about-us')</a></li>
+                                <li><a href="{{route('blog')}}">@lang('main.blog')</a></li>
+                                <li><a href="{{route('shop')}}">@lang('main.store')</a></li>
+                                <li><a href="{{route('contact')}}">@lang('main.contact-us')</a></li>
+                                <li class="dropdown"><a href="">@lang('main.account')</a>
                                     <ul>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
-                                        <li><a href="faq.html">Вопросы</a></li>
+                                        @guest
+                                            <li><a class="login social-links" href="{{ route('login') }}"><i class="fa fa-sign-in"> @lang('main.login')</i></a></li>
+                                        @else
+                                            <li><a href="">{{ Auth::user()->name }}</a></li>
+                                            <li><a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+                                            </li>
+                                            <form id="logout-form"  action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        @endguest
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="{{route('service')}}">Услуги</a>
-                                    <ul>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                        <li><a href="laborotory.html">Услуги</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="{{route('blog')}}">Блог</a>
-                                    <ul>
-                                        <li><a href="blog-single.html">Блог Сингл</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="{{route('shop')}}">Магазин</a>
-                                    <ul>
-                                        <li><a href="shop-single.html">Продукт</a></li>
-                                        <li><a href="shopping-cart.html">Корзина</a></li>
-                                        <li><a href="checkout.html">Чекаут</a></li>
-                                        <li><a href="account.html">Аккаунт</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="{{route('contact')}}">Контакт</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -240,13 +206,13 @@ $set_lang = UrlController::set_language();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-footer-widget pd-bottom50">
                             <div class="title">
-                                <h3>О НАС</h3>
+                                <h3>@lang('main.about-us')</h3>
                                 <span class="border"></span>
                             </div>
                             <div class="our-info">
                                 <p>Неуклонное обслуживание больниц за последние 25 лет позволило вывести здравоохранение на самый современный уровень в регионе, обслуживая городские и сельские районы..</p>
                                 <p class="mar-top">Неуклонное обслуживание больниц за последние 25 лет позволило вывести здравоохранение на самый современный уровень в регионе, обслуживая городские и сельские районы.</p>
-                                <a href="#">Узнать больше<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                <a href="#">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +220,7 @@ $set_lang = UrlController::set_language();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-footer-widget pd-bottom50">
                             <div class="title">
-                                <h3>Полезные Ссылки</h3>
+                                <h3>@lang('main.links')</h3>
                                 <span class="border"></span>
                             </div>
                             <ul class="usefull-links fl-lft">
@@ -280,7 +246,7 @@ $set_lang = UrlController::set_language();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-footer-widget mar-bottom">
                             <div class="title">
-                                <h3>Контактная Информация</h3>
+                                <h3>@lang('main.contact-information')</h3>
                                 <span class="border"></span>
                             </div>
                             <ul class="footer-contact-info">
@@ -289,7 +255,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-pin"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Армения <br> 01 25</h5>
+                                        <h5>Армения  01 25</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -313,7 +279,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-clock"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Пн-суббота: 9am to 18pm</h5>
+                                        <h5>@lang('main.week'): 9am - 18pm</h5>
                                     </div>
                                 </li>
                             </ul>
@@ -323,26 +289,26 @@ $set_lang = UrlController::set_language();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="single-footer-widget clearfix">
                             <div class="title">
-                                <h3>Подписатся</h3>
+                                <h3>@lang('main.message')</h3>
                                 <span class="border"></span>
                             </div>
                             <form class="appointment-form" action="#">
                                 <div class="input-box">
-                                    <input type="text" name="form_name" value="" placeholder="Имя" required="">
+                                    <input type="text" name="form_name" value="" placeholder="@lang('main.your-name')" required="">
                                     <div class="icon-box">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="input-box">
-                                    <input type="email" name="form_email" value="" placeholder="Email" required="">
+                                    <input type="email" name="form_email" value="" placeholder="@lang('main.email')" required="">
                                     <div class="icon-box">
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="input-box">
-                                    <textarea name="form_message" placeholder="Текст" required="" aria-required="true"></textarea>
+                                    <textarea name="form_message" placeholder="@lang('main.text')" required="" aria-required="true"></textarea>
                                 </div>
-                                <button type="submit">Отправить</button>
+                                <button type="submit">@lang('main.send')</button>
                             </form>
                         </div>
                     </div>
@@ -395,10 +361,7 @@ $set_lang = UrlController::set_language();
         <script src="{{asset('/medshop/js/jquery.mixitup.min.js')}}"></script>
         <!-- easing -->
         <script src="{{asset('/medshop/js/jquery.easing.min.js')}}"></script>
-        <!-- gmap helper -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
-        <!--gmap script-->
-        <script src="{{asset('/medshop/js/gmaps.js')}}"></script>
+
         <script src="{{asset('/medshop/js/map-helper.js')}}"></script>
         <!-- fancy box -->
         <script src="{{asset('/medshop/js/jquery.fancybox.pack.js')}}"></script>

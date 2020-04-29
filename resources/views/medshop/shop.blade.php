@@ -7,19 +7,7 @@
                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 pull-right">
                     <div class="shop-content">
                         <div class="row showing-result-shorting">
-                            <div class="col-md-12">
-                                <div class="shorting pull-right">
-                                    <select class="selectmenu">
-                                        <option selected="selected">Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                    </select>
-                                </div>
-                                <div class="showing pull-left">
-                                    <p>Показано 1-9 из 12 результатов</p>
-                                </div>
-                            </div>
+                            <div class="col-md-12"></div>
                         </div>
 
                         <?php $count = 1; $products_count = count($products); ?>
@@ -37,7 +25,7 @@
                                                 <div class="overlay-style-one">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}" href="#">Добавить в корзину</a>
+                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}" href="#">@lang('main.add-to-card')</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -83,13 +71,13 @@
                     <div class="sidebar-wrapper">
                         <div class="single-sidebar">
                             <form class="search-form" action="#">
-                                <input placeholder="Поиск" type="text">
+                                <input placeholder="@lang('main.search')" type="text">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>Категории</h3>
+                                <h3>@lang('main.category')</h3>
                             </div>
 
                             <ul class="categories clearfix">
@@ -113,13 +101,13 @@
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>Фильтровать По Цене</h3>
+                                <h3>@lang('main.filter-price')</h3>
                             </div>
                             <div class="price-ranger">
                                 <div id="slider-range"></div>
                                 <div class="ranger-min-max-block">
-                                    <input type="submit" value="Филтр">
-                                    <span>Цена:</span>
+                                    <input type="submit" value="@lang('main.search')">
+                                    <span>@lang('main.price'):</span>
                                     <input type="text" readonly class="min">
                                     <span>-</span>
                                     <input type="text" readonly class="max">
@@ -128,7 +116,7 @@
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>Популярные Товары</h3>
+                                <h3>@lang('main.popular-item')</h3>
                             </div>
                             <ul class="popular-product">
                                 <li>

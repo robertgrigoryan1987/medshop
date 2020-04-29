@@ -9,13 +9,13 @@
                         <table class="cart-table">
                             <thead class="cart-header">
                             <tr>
-                                <th class="prod-column">Товары</th>
+                                <th class="prod-column">@lang('main.items')</th>
                                 <th>&nbsp;</th>
-                                <th>Количество</th>
-                                <th class="availability">Доступность</th>
-                                <th class="price">Цена</th>
-                                <th>Всего</th>
-                                <th>Удалить</th>
+                                <th>@lang('main.quantity')</th>
+                                <th class="availability">@lang('main.availability')</th>
+                                <th class="price">@lang('main.price')</th>
+                                <th>@lang('main.total')</th>
+                                <th>@lang('main.delete')</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,7 +23,7 @@
                             <tr>
                                 <td colspan="2" class="prod-column">
                                     <div class="column-box">
-                                        <div class="prod-thumb">
+                                        <div class="prod-thumb mauto">
                                             <a href="#"><img src="/storage/{{$product->image}}" alt=""></a>
                                         </div>
                                         <div class="title">
@@ -32,10 +32,10 @@
                                     </div>
                                 </td>
                                 <td class="qty">
-                                    <div id="input_div">
-                                        <input type="text" value="{{$product->quantity}}" name="quantity" class="count" data-id="{{$product->id}}">
-                                        <input type="button" value="-" class="quantity-moins" >
-                                        <input type="button" value="+" class="quantity-plus" >
+                                    <div id="input_div ">
+                                        <input type="button" value="-" class="quantity-moins minu" >
+                                        <input type="text" value="{{$product->quantity}}" name="quantity" disabled class="count fbord" data-id="{{$product->id}}">
+                                        <input type="button" value="+" class="quantity-plus minu" >
                                     </div>
                                 </td>
                                 <td class="unit-price">
@@ -49,8 +49,7 @@
                                     <div class="remove">
                                         <div class="checkbox">
                                             <label>
-                                                <input name="remove" type="checkbox">
-                                                <span>Удалить</span>
+                                                <span>X</span>
                                             </label>
                                         </div>
                                     </div>
@@ -63,9 +62,9 @@
                 </div>
             </div>
             <div class="row cart-middle">
-                <div class="col-md-6 col-sm-8 col-xs-12">
-                    <div class="apply-coupon">
-                        <button class="thm-btn bgclr-1 checkout-btn"><a href="{{route('ordering_cart')}}">Оформить заказ</a></button>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="apply-coupon rightt">
+                        <button class="thm-btn bgclr-1 checkout-btn"><a href="{{route('ordering_cart')}}">@lang('main.checkout')</a></button>
                     </div>
                 </div>
             </div>

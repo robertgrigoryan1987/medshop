@@ -516,7 +516,6 @@ select:focus {
     margin-right: 30px;
     line-height: 26px;
     position: relative;
-    top: 2px;
 }
 
 .top-bar-area .top-right .social-links li:last-child {
@@ -1635,7 +1634,7 @@ select:focus {
     display: inline-block;
     float: left;
     border-right: 1px solid #29a1d4;
-    width: 292px;
+    width: 280px;
     margin-bottom: 30px;
 }
 
@@ -3434,7 +3433,7 @@ select:focus {
 .contact-form-area {
     background-image: url(..medshop/images/awards/AdobeStock_177452394.jpeg);
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
 }
 
 .contact-form-area .sec-title {
@@ -5411,7 +5410,7 @@ select:focus {
 .checkout-area {
     border-top: 1px solid #0392ce;
     padding-bottom: 80px;
-    padding-top: 80px;
+    padding-top: 15px;
 }
 
 .checkout-area .sec-title {
@@ -5425,7 +5424,7 @@ select:focus {
 }
 
 .checkout-area .exisitng-customer {
-    border: 1px solid #0392ce;
+
     background: #f7f7f7;
     display: block;
     padding: 20px 28px 21px;
@@ -5790,7 +5789,7 @@ select:focus {
 }
 
 .placeorder-button button {
-    margin-left: 60px;
+    margin-left: none;
     padding: 11px 40px 9px;
     margin-top: 20px;
 }
@@ -6055,7 +6054,7 @@ select:focus {
 
 .cart-area .cart-table tbody tr .qty {
     padding-right: 25px;
-    width: 120px;
+    width: 180px;
 }
 
 .cart-area .cart-table tbody tr .qty .input-group.bootstrap-touchspin {}
@@ -6095,7 +6094,7 @@ select:focus {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    padding-left: 50px;
+    padding-left: 90px;
     position: relative;
 }
 
@@ -7011,4 +7010,155 @@ input#datepicker {
 }
 .invalid-feedback {
     color: red;
+}
+#langu {
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+#langu a {
+    color: #0392ce;
+
+}
+#langu li:last-child {
+    margin-right: 0;
+}
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu a::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: .1rem;
+    margin-right: .1rem;
+}
+#navbarTogglerDemo01 {
+    display: inline-block;
+}
+.dropdown  {
+    cursor: pointer;
+}
+.dropdown-menu>li>a {
+    padding: 0px 15px;
+}
+.rightt {
+    float: right;
+}
+.fbord {
+    width: 45px;
+    text-align: center;
+    border: 1px solid #0392ce;
+    font-size: 20px;
+}
+.minu {
+    border: 1px solid #0392ce;
+    background: #0392ce;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0px 4px;
+}
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.visa{background-image:url(/medshop/images/visa.jpg);}
+.mastercard{background-image:url(/medshop/images/master.jpg);}
+.telcell{background-image:url(/medshop/images/telcell.jpg);}
+.idram{background-image:url(/medshop/images/idram.jpg);}
+.arca{background-image:url(/medshop/images/arca.jpg);}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+    -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+    filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+.checkbutton {
+    margin: 0 auto;
+    width: 90%;
+}
+#cart-area-ordering {
+    border: 1px solid #0392ce;
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+.mauto {
+    margin: 0 auto;
+}
+#cart-area-ordering .cart-table tbody tr td  {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    min-width: 100px;
+    padding: 0px;
+}
+#cart-area-ordering .cart-table tbody tr td span {
+    margin-left: 30px;
+}
+
+.marginlefting {
+    margin-left: 60px !important;
+}
+
+.displaynone {
+    display: none !important;
+}
+
+.displayblock {
+    display: block !important;
+}
+
+.sidebar .item i {
+    font-size: 24px;
+    margin-top: -5px !important;
+}
+
+.logo {
+    height: 48px !important;
+    padding: 10px !important;
+}
+
+.logo img {
+    width: 100% !important;
+    height: 38px !important;
+}
+
+.title.item {
+    padding: .92857143em 1.14285714em !important;
+}
+
+.dropdown .menu .header {
+    padding-top: 3.9px!important;
+    padding-bottom: 3.9px!important;
 }

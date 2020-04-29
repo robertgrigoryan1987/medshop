@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumbs">
-                        <h1>Блог</h1>
+                        <h1>@lang('main.blog')</h1>
                     </div>
                 </div>
             </div>
@@ -17,15 +17,10 @@
                     <div class="col-md-12">
                         <div class="left pull-left">
                             <ul>
-                                <li><a href="index-2.html">Глваная</a></li>
+                                <li><a href="index-2.html">@lang('main.general')</a></li>
                                 <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                                <li class="active">Блог</li>
+                                <li class="active">@lang('main.blog')</li>
                             </ul>
-                        </div>
-                        <div class="right pull-right">
-                            <a href="#">
-                                <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -76,27 +71,10 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-7 col-xs-12">
                     <div class="sidebar-wrapper">
-                        <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                            <form class="search-form" action="#">
-                                <input placeholder="Поиск" type="text">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
+
                         <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                             <div class="sec-title">
-                                <h3>Категории</h3>
-                            </div>
-                            <ul class="categories clearfix">
-                                <li><a href="#">Процедуры<span>(6)</span></a></li>
-                                <li><a href="#">Процедуры<span>(2)</span></a></li>
-                                <li><a href="#">Процедуры<span>(5)</span></a></li>
-                                <li><a href="#">Процедуры<span>(10)</span></a></li>
-                                <li><a href="#">Процедуры<span>(4)</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                            <div class="sec-title">
-                                <h3>Популярные Посты</h3>
+                                <h3>@lang('main.popular-posts')</h3>
                             </div>
                             <ul class="popular-post">
                                 <li>
@@ -160,7 +138,6 @@
                         <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                             <div class="sec-title">
                                 <h3 class="pull-left">Instagram</h3>
-                                <a class="pull-right follow-us" href="#">Подписывайтесь</a>
                             </div>
                             <ul class="instagram">
                                 <li>
@@ -244,20 +221,6 @@
                             <div class="fb-feed">
                                 <img src="/medshop/images/sidebar/facebook-feed.jpg" alt="">
                             </div>
-                        </div>
-                        <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
-                            <div class="sec-title">
-                                <h3>Тегов</h3>
-                            </div>
-                            <ul class="popular-tag">
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

@@ -58,6 +58,7 @@ class ShopController extends Controller
 
     }
 
+
     public function shop_cart_quantity(Request $request){
         if(OrderingProduct::where('id', $request->id)
             ->update(['quantity' => $request->quantity])){
@@ -74,7 +75,7 @@ class ShopController extends Controller
         foreach ($product_orders as $product){
             $sum = $sum+($product->product_price*$product->quantity);
         }
-        return view('medshop.ordering_cart')->with(['ordering_products_count'=>$ordering_products_count, 'sum'=>$sum]);
+        return view('medshop.ordering_cart')->with(['ordering_products_count'=>$ordering_products_count, 'sum'=>$sum, 'product_orders'=>$product_orders]);
 
     }
 

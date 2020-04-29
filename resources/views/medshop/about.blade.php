@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumbs">
-                        <h1>О нас</h1>
+                        <h1>@lang('main.about-us')</h1>
                     </div>
                 </div>
             </div>
@@ -17,15 +17,10 @@
                     <div class="col-md-12">
                         <div class="left pull-left">
                             <ul>
-                                <li><a href="index-2.html">Главная</a></li>
+                                <li><a href="index-2.html">@lang('main.general')</a></li>
                                 <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                                <li class="active">О нас</li>
+                                <li class="active">@lang('main.about-us')</li>
                             </ul>
-                        </div>
-                        <div class="right pull-right">
-                            <a href="#">
-                                <span><i class="fa fa-share-alt" aria-hidden="true"></i>Share</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +42,7 @@
                 <div class="col-md-6">
                     <div class="text-holder">
                         <div class="title">
-                            <h1>Добро пожаловатьs</h1>
+                            <h1>@lang('main.welcome')</h1>
                             <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
                         </div>
                         <ul>
@@ -57,7 +52,7 @@
                                         <span class="flaticon-shapes"></span>
                                     </div>
                                     <div class="text-box">
-                                        <h3>Добро пожаловатьs</h3>
+                                        <h3>Добро пожаловать</h3>
                                         <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
                                     </div>
                                 </div>
@@ -68,7 +63,7 @@
                                         <span class="flaticon-technology-2"></span>
                                     </div>
                                     <div class="text-box">
-                                        <h3>Добро пожаловатьs</h3>
+                                        <h3>Добро пожаловать</h3>
                                         <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
                                         <div class="text">
                                             <p><i class="fa fa-hand-o-right"></i>Идея осуждения удовольствия и восхваления.</p>
@@ -78,9 +73,6 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="button">
-                            <a class="thm-btn bgclr-1" href="#">ТТТТ</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -171,9 +163,6 @@
                     <div class="title pull-left">
                         <h2>Если вы пациент, ищущий качественную медицинскую помощь по доступным ценам!</h2>
                     </div>
-                    <div class="button pull-right">
-                        <a class="thm-btn bgclr-1" href="#">Подписатся</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +170,7 @@
     <section class="project-faq-area sec-padding">
         <div class="container">
             <div class="sec-title mar0auto text-center">
-                <h1>Фотогалерея </h1>
+                <h1>@lang('main.frequently-questions')</h1>
                 <span class="border"></span>
             </div>
             <div class="row">
@@ -190,73 +179,32 @@
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-1.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-2.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-3.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-4.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-5.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="single-project-item">
                             <div class="img-holder">
                                 <img src="/medshop/images/projects/latest-project-6.jpg" alt="Awesome Image">
-                                <div class="overlay-style-one">
-                                    <div class="box">
-                                        <div class="content">
-                                            <a href="projects-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -358,7 +306,7 @@
     <section class="certificates-area">
         <div class="container">
             <div class="sec-title">
-                <h1>Награды И Признание</h1>
+                <h1>@lang('main.awards')</h1>
                 <span class="border"></span>
             </div>
             <div class="row">
