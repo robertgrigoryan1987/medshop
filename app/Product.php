@@ -13,7 +13,7 @@ class Product extends Model
     use Translatable;
     protected $translatable = ['name','title', 'description'];
     protected $fillable = [
-        'name', 'category', 'price', 'count', 'title', 'description'
+        'name', 'category', 'price', 'count', 'title', 'description', 'active_substance', 'aftor'
     ];
 
 
