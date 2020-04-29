@@ -6283,7 +6283,7 @@ select:focus {
 }
 
 .single-shop-content .content-box {
-    margin-left: -50px;
+    /*margin-left: -50px;*/
 }
 
 .single-shop-content .content-box h3 {
@@ -6332,7 +6332,7 @@ select:focus {
 
 .single-shop-content .content-box .location-box form input {
     border: 2px solid #f7f7f7;
-    height: 40px;
+    height: 20px;
     padding-left: 10px;
     padding-right: 10px;
     width: 170px;
@@ -6345,21 +6345,22 @@ select:focus {
 }
 
 .single-shop-content .content-box .location-box form button {
-    background: #f7f7f7 none repeat scroll 0 0;
+    /* background: #f7f7f7 none repeat scroll 0 0; */
     border: medium none;
     color: #252525;
     font-size: 14px;
     font-weight: 700;
-    height: 40px;
+    /* height: 40px; */
     margin-left: 6px;
-    padding: 0;
+    padding: 15px;
     text-align: center;
     text-transform: uppercase;
     transition: all 500ms ease 0s;
-    width: 95px;
+    /* width: 95px; */
     position: relative;
-    top: 0px;
-    padding-top: 2px;
+    /* top: 0px; */
+    /* padding-top: 2px; */
+    float: right;
 }
 
 .single-shop-content .content-box .location-box form button:hover {
@@ -7155,10 +7156,23 @@ input#datepicker {
 }
 
 .title.item {
-    padding: .92857143em 1.14285714em !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0392ce;
 }
 
 .dropdown .menu .header {
     padding-top: 3.9px!important;
     padding-bottom: 3.9px!important;
+}
+.content .item {
+    display: block;
+    padding: 2px;
+}
+.ui-widget-content a:hover {
+    color: #0392ce;
+}
+.radio label {
+    color: #0392ce;
+    font-size: 20px;
 }

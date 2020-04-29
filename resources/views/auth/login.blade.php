@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h4 class="ml-30">Login Your Account</h4>
+                <h4 class="ml-30">@lang('main.login')</h4>
                 <div class="contact-form">
                     <form method="POST" action="{{ route('login') }}" class="default-form">
                         @csrf
@@ -64,7 +64,7 @@
                     <button class="loginBtn loginBtn--google ">
                         Login with Google
                     </button>
-                    <h5 class="ml-30 mt-30">Don't have an account yet? <a href="{{route('register')}}" class="thm-btn bgclr-1 regist ml-5" type="submit">Register</a> your account now</h5>
+                    <h3 class="ml-30 mt-30">@lang('main.dont-have-an-account-yet') <a href="{{route('register')}}" class="thm-btn bgclr-1 regist ml-5" type="submit">@lang('main.register') </a></h3>
 
                 </div>
             </div>

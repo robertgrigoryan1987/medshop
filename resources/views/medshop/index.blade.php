@@ -67,7 +67,7 @@
                                                 <div class="overlay-style-one">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">Добавить в корзину</a>
+                                                            <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,159 +118,35 @@
                             </form>
                         </div>
                         <div class="single-sidebar">
-
                             <div class="sec-title">
                                 <h3>@lang('main.category')</h3>
                             </div>
-
                             <div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.1s; overflow: visible !important;">
                                 <div class="ui accordion">
-                                    <a class="title item">Dashboard
-                                        <i class="dropdown icon"></i>
-                                    </a>
-                                    <div class="content">
-                                        <a class="item" href="dashboard.html">Dashboard
-                                        </a>
-                                    </div>
-
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Apps
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="inbox.html">Inbox
-                                        </a>
-                                        <a class="item" href="mail.html">Mailbox
-                                        </a>
-                                        <a class="item" href="chat.html">Chat
-                                        </a>
-                                    </div>
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Layouts
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="sidebar.html">Sidebar
-                                        </a>
-                                        <a class="item" href="menu.html">Nav
-                                        </a>
-                                    </div>
-
-                                    <a class="item">
-                                        <b>Components</b>
-                                    </a>
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> UI-Kit
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="accordion.html">Accordion </a>
-                                        <a class="item" href="breadcrumb.html">Breadcrumb</a>
-                                    </div>
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Pages
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="profile.html">Profile</a>
-                                    </div>
-
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Form
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="formelements.html">Form Element
-                                        </a>
-                                        <a class="item" href="input.html">Input
-                                        </a>
-                                        <a class="item" href="formvalidation.html">Form Validation
-                                        </a>
-                                        <a class="item" href="editor.html">Html Editor
-                                        </a>
-                                    </div>
-
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Tables
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="table.html">Static Table
-                                        </a>
-                                        <a class="item" href="datatable.html">Datatable
-                                        </a>
-                                        <a class="item" href="editable.html">Editable
-                                        </a>
-                                    </div>
-                                    <div class="title item">
-                                        <i class="dropdown icon"></i> Chart
-                                    </div>
-                                    <div class="content">
-                                        <a class="item" href="chart.html">Charts 1
-                                        </a>
-                                        <a class="item" href="chart-2.html">Charts 2
-                                        </a>
-                                        <a class="item" href="chart-3.html">Charts 3
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ui dropdown item displaynone">
-                                    <z>Dashboard</z>
-                                    <i class="icon demo-icon heart icon-heart"></i>
-
-                                    <div class="menu">
-                                        <div class="header">
-                                            Dashboard
-                                        </div>
-                                        <div class="ui divider"></div>
-                                        <a class="item" href="dashboard.html">Dashboard
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ui dropdown item displaynone">
-                                    <z>Layout</z>
-                                    <i class="icon demo-icon world icon-globe"></i>
-
-                                    <div class="menu">
-                                        <div class="header">
-                                            Layout
-                                        </div>
-                                        <div class="ui divider"></div>
-                                        <a class="item" href="inbox.html">Inbox
-                                        </a>
-                                        <a class="item" href="mail.html">Mailbox
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ui dropdown item displaynone">
-                                    <z>Pages</z>
-                                    <i class="icon demo-icon  icon-params alarm"></i>
-
-                                    <div class="menu">
-                                        <div class="header">
-                                            Layouts
-                                        </div>
-                                        <div class="ui divider"></div>
-                                        <a class="item" href="sidebar.html">Sidebar
-                                        </a>
-                                        <a class="item" href="menu.html">Nav
-                                        </a>
-                                    </div>
+                                    @foreach($categories  as $item)
+                                        @if($item->children->count() > 0)
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                            </div>
+                                            <div class="content">
+                                                @foreach($item->children as $submenu)
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                                @endforeach
+                                            </div>
+                                        @else
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                            </div>
+                                            <div class="content">
+                                                <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
-
-                            <ul class="categories clearfix">
-                                @foreach($categories  as $item)
-                                    @if($item->children->count() > 0)
-                                        <li>
-                                            <a >{{ $item->name }} <span class="caret"></span></a>
-
-                                            <ul>
-                                                @foreach($item->children as $submenu)
-                                                    <li><a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
-
-                                    @endif
-                                @endforeach
-                            </ul>
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">

@@ -79,25 +79,32 @@
                             <div class="sec-title">
                                 <h3>@lang('main.category')</h3>
                             </div>
-
-                            <ul class="categories clearfix">
-                                @foreach($categories  as $item)
-                                    @if($item->children->count() > 0)
-                                        <li>
-                                            <a >{{ $item->name }} <span class="caret"></span></a>
-
-                                            <ul>
+                            <div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.1s; overflow: visible !important;">
+                                <div class="ui accordion">
+                                    @foreach($categories  as $item)
+                                        @if($item->children->count() > 0)
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                            </div>
+                                            <div class="content">
                                                 @foreach($item->children as $submenu)
-                                                    <li><a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a class="item" href="mail.html">Mailbox</a>
+                                                    <a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                 @endforeach
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
-
-                                    @endif
-                                @endforeach
-                            </ul>
+                                            </div>
+                                        @else
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                            </div>
+                                            <div class="content">
+                                                <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">

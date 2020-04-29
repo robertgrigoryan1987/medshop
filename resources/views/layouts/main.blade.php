@@ -189,7 +189,7 @@ $set_lang = UrlController::set_language();
                             <button><a href="{{route('product_order')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>(<span  class="count-product">{{$ordering_products_count ?? 0}}</span>)</span></a></button>
                         </div>
                         <div class="consultation-button">
-                            <a href="#">ТЕКСТ</a>
+                            <a href="#">+374 00 00 00 00</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,6 @@ $set_lang = UrlController::set_language();
                             </div>
                             <div class="our-info">
                                 <p>Неуклонное обслуживание больниц за последние 25 лет позволило вывести здравоохранение на самый современный уровень в регионе, обслуживая городские и сельские районы..</p>
-                                <p class="mar-top">Неуклонное обслуживание больниц за последние 25 лет позволило вывести здравоохранение на самый современный уровень в регионе, обслуживая городские и сельские районы.</p>
                                 <a href="#">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -230,13 +229,12 @@ $set_lang = UrlController::set_language();
                                 <li><a href="#">Вопросы</a></li>
                                 <li><a href="#">Вопросы</a></li>
                                 <li><a href="#">Вопросы</a></li>
-                                <li><a href="#">Вопросы</a></li>
                             </ul>
                             <ul class="usefull-links">
                                 <li><a href="#">Сервисы</a></li>
                                 <li><a href="#">Сервисы</a></li>
                                 <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы News</a></li>
+                                <li><a href="#">Сервисы</a></li>
                                 <li><a href="#">Сервисы</a></li>
                                 <li><a href="#">Сервисы</a></li>
                             </ul>

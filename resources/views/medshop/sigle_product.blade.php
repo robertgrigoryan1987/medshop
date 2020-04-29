@@ -29,140 +29,24 @@
                                         <p>{{$product->getTranslatedAttribute('description',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
                                     <div class="location-box">
-                                        <p>:</p>
                                         <form action="#">
-                                            <input type="text" placeholder="???">
-                                            <button type="submit"></button><br />
-                                            <span></span>
+                                            <div class="radio">
+                                                <input id="packet" name="sort" type="radio" class="ml-40" checked>
+                                                <label for="packet" class="radio-label">@lang('main.packet')</label>
+                                            </div>
+                                            <div class="radio">
+                                                <input id="piece" name="sort" type="radio" class="ml-40">
+                                                <label  for="piece" class="radio-label">@lang('main.piece')</label>
+                                            </div>
+                                            <button class="thm-btn bgclr-1 addtocart" type="submit">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
                                         </form>
                                     </div>
-                                    <div class="addto-cart-box clearfix">
-                                        <input class="quantity-spinner" type="text" value="2" name="quantity">
-                                        <button class="thm-btn bgclr-1 addtocart" type="submit">Add</button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="product-tab-box">
-                                <ul class="nav nav-tabs tab-menu">
-                                    <li><a href="#desc" data-toggle="tab">????????</a></li>
-                                    <li class="active"><a href="#review" data-toggle="tab">?????? (2)</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="desc">
-                                        <div class="product-details-content">
-                                            <div class="desc-content-box">
-                                                <p></p>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane active" id="review">
-                                        <div class="review-box">
-                                            <div class="title">
-                                                <h3></h3>
-                                            </div>
-                                            <div class="single-review-box">
-                                                <div class="img-holder">
-                                                    <img src="/medshop/images/shop/review-1.jpg" alt="Awesome Image">
-                                                </div>
-                                                <div class="text-holder">
-                                                    <div class="top">
-                                                        <div class="name pull-left">
-                                                            <h4> - 01 04 2020 </h4>
-                                                        </div>
-                                                        <div class="review-box pull-right">
-                                                            <ul>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-review-box">
-                                                <div class="img-holder">
-                                                    <img src="/medshop/images/shop/review-2.jpg" alt="Awesome Image">
-                                                </div>
-                                                <div class="text-holder">
-                                                    <div class="top">
-                                                        <div class="name pull-left">
-                                                            <h4>Date - 01 04 2020 </h4>
-                                                        </div>
-                                                        <div class="review-box pull-right">
-                                                            <ul>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--End single review box-->
-                                        </div>
-                                        <div class="review-form">
-                                            <div class="title">
-                                                <h3></h3>
-                                            </div>
-                                            <form id="review-form" action="#">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="field-label">
-                                                            <p>???</p>
-                                                            <input type="text" name="fname" required="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="field-label">
-                                                            <p>Test</p>
-                                                            <input type="text" name="lname" required="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="field-label">
-                                                            <p>Email*</p>
-                                                            <input type="email" name="email" required="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="field-label">
-                                                            <p>Test</p>
-                                                            <textarea name="review" required=""></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <button class="thm-btn bgclr-1" type="submit">Send</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="related-product">
+                    <div class="">
                         <div class="sec-title pdb-50">
                             <h1></h1>
                             <span class="border"></span>
@@ -175,7 +59,7 @@
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">???????? ? ???????</a>
+                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -210,7 +94,7 @@
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">???????? ? ???????</a>
+                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -245,7 +129,7 @@
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">???????? ? ???????</a>
+                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -276,53 +160,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 pull-left">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 pull-left">
                     <div class="sidebar-wrapper">
                         <div class="single-sidebar">
-                            <form class="search-form" action="#">
-                                <input placeholder="?????" type="text">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                        <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>Category</h3>
-                            </div>
-                            <ul class="categories clearfix">
-                                @foreach($categories  as $item)
-                                    @if($item->children->count() > 0)
-                                        <li>
-                                            <a >{{ $item->name }} <span class="caret"></span></a>
-                                            <ul>
-                                                @foreach($item->children as $submenu)
-                                                    <li><a href="{{route('shop')}}/{{$submenu->id}}">{{ $submenu->name }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="{{route('shop')}}/{{$item->id}}">{{ $item->name }}</a></li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="single-sidebar">
-                            <div class="sec-title">
-                                <h3>Test</h3>
-                            </div>
-                            <div class="price-ranger">
-                                <div id="slider-range"></div>
-                                <div class="ranger-min-max-block">
-                                    <input type="submit" value="?????">
-                                    <span>????:</span>
-                                    <input type="text" readonly class="min">
-                                    <span>-</span>
-                                    <input type="text" readonly class="max">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-sidebar">
-                            <div class="sec-title">
-                                <h3></h3>
+                                <h3>@lang('main.popular-item')</h3>
                             </div>
                             <ul class="popular-product">
                                 <li>
@@ -413,6 +255,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection
