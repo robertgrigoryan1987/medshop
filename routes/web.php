@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Auth::routes();
-
 //Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -28,6 +25,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', 'IndexController@index')->name('home');
+
+    Auth::routes();
 
     Route::get('/about', 'AboutController@index')->name('about');
 
@@ -58,9 +57,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/shop_cart_quantity', 'ShopController@shop_cart_quantity');
 
     Route::post('/idram_paymant_fail', 'PaymentController@idram_paymant_fail');
-    Route::post('/idram_payment_success', 'PaymentController@idram_payment_success');
-    Route::post('/idram_paymant_result', 'PaymentController@idram_paymant_result');
 
+    Route::post('/idram_payment_success', 'PaymentController@idram_payment_success');
+
+    Route::post('/idram_paymant_result', 'PaymentController@idram_paymant_result');
 
 
 });
