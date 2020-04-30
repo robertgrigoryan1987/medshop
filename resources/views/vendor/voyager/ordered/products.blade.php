@@ -51,7 +51,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
+                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} </h4>
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="delete_form" method="POST">
@@ -67,19 +67,18 @@
 @stop
 
 @section('css')
-    @if(!$dataType->server_side && config('dashboard.data_tables.responsive'))
+
         <link rel="stylesheet" href="{{ voyager_asset('lib/css/responsive.dataTables.min.css') }}">
-    @endif
+
 @stop
 
 @section('javascript')
     <!-- DataTables -->
-    @if(!$dataType->server_side && config('dashboard.data_tables.responsive'))
+
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
-    @endif
+
     <script>
         $(document).ready(function () {
-
 
             @if ($isModelTranslatable)
             $('.side-body').multilingual();
@@ -92,36 +91,6 @@
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked')).trigger('change');
             });
         });
-
-
-        var deleteFormAction;
-        $('td').on('click', '.delete', function (e) {
-            $('#delete_form')[0].action = '{{ route('voyager.'.$dataType->slug.'.destroy', '__id') }}'.replace('__id', $(this).data('id'));
-            $('#delete_modal').modal('show');
-        });
-
-        @if($usesSoftDeletes)
-        @php
-            $params = [
-                's' => $search->value,
-                'filter' => $search->filter,
-                'key' => $search->key,
-                'order_by' => $orderBy,
-                'sort_order' => $sortOrder,
-            ];
-        @endphp
-        $(function() {
-            $('#show_soft_deletes').change(function() {
-                if ($(this).prop('checked')) {
-                    $('#dataTable').before('<a id="redir" href="{{ (route('voyager.'.$dataType->slug.'.index', array_merge($params, ['showSoftDeleted' => 1]), true)) }}"></a>');
-                }else{
-                    $('#dataTable').before('<a id="redir" href="{{ (route('voyager.'.$dataType->slug.'.index', array_merge($params, ['showSoftDeleted' => 0]), true)) }}"></a>');
-                }
-
-                $('#redir')[0].click();
-            })
-        })
-        @endif
         $('input[name="row_id"]').on('change', function () {
             var ids = [];
             $('input[name="row_id"]').each(function() {
