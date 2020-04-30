@@ -227,14 +227,12 @@
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
-                                            <a href="products_in_order/{{ $data->id }}" class="btn btn-sm btn-warning pull-right edit">
-                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Products</span>
+                                            <a href="contact-us/{{ $data->id }}/edit" title="Edit" class="btn btn-sm btn-primary pull-right edit">
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
                                             </a>
-
-                                            <a href="ordering-products/{{ $data->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
+                                            <a href="ontact-us/{{ $data->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
                                                 <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span>
                                             </a>
-
                                         </td>
                                     </tr>
                                     @endforeach
