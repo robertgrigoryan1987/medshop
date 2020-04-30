@@ -11,7 +11,7 @@ use TCG\Voyager\Traits\Translatable;
 class Product extends Model
 {
     use Translatable;
-    protected $translatable = ['name','title', 'description'];
+    protected $translatable = ['name','title', 'description', 'active_substance', 'aftor'];
     protected $fillable = [
         'name', 'category', 'price', 'count', 'title', 'description', 'active_substance', 'aftor'
     ];
