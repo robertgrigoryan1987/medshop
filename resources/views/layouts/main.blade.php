@@ -44,7 +44,7 @@ $set_lang = UrlController::set_language();
     <section class="top-bar-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 mb-xs-10 mb-sm-10">
                     <div class="top-left">
                         <p><span class="flaticon-phone"></span>@lang('main.24-hour') +321 789 01 2345</p>
                     </div>
@@ -56,16 +56,14 @@ $set_lang = UrlController::set_language();
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
                     <div class="top-right  social-links" >
-                        <ul class="social-links"> <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <ul class="social-links">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                         <ul class="social-links">
                             @foreach($languages as $language)
                                 <li id="langu">
-                                    <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link" @if (app()->getLocale() == $language->iso) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($language->iso) }}</a>
+                                    <a href="/{{$language->iso}}/{{$set_lang}}" class="nav-link {{ strtoupper($language->iso) }}" @if (app()->getLocale() == $language->iso)  @endif><span class="hid">{{ strtoupper($language->iso) }}</span></a>
                                 </li>
                             @endforeach
                         </ul>
@@ -85,7 +83,7 @@ $set_lang = UrlController::set_language();
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9">
+                <div class="col-lg-9 col-md-9 hidden-xs">
                     <div class="header-right">
                         <ul>
                             <li>
@@ -188,9 +186,9 @@ $set_lang = UrlController::set_language();
                         <div class="cart_select">
                             <button><a href="{{route('product_order')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>(<span  class="count-product">{{$ordering_products_count ?? 0}}</span>)</span></a></button>
                         </div>
-                        <div class="consultation-button">
-                            <a href="#">+374 00 00 00 00</a>
-                        </div>
+{{--                        <div class="consultation-button">--}}
+{{--                            <a href="#">+374 00 00 00 00</a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

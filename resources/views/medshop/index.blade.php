@@ -51,15 +51,13 @@
                         <div class="row showing-result-shorting">
                             <div class="col-md-12"></div>
                         </div>
-
                         <?php $count = 1; $products_count = count($products); ?>
-
                         @foreach($products as $product)
 
                             @if(($count-1)%3 === 0)
                                 <div class="row product-row">
                                     @endif
-                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="col-md-4 col-sm-6 col-xs-6">
 
                                         <div class="single-product-item">
                                             <div class="img-holder">
@@ -130,9 +128,6 @@
                                             </div>
                                             <div class="content">
                                                 @foreach($item->children as $submenu)
-                                                    <a class="item" href="mail.html">Mailbox</a>
-                                                    <a class="item" href="mail.html">Mailbox</a>
-                                                    <a class="item" href="mail.html">Mailbox</a>
                                                     <a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                 @endforeach
                                             </div>
