@@ -227,11 +227,12 @@
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
+                                            <a href="contact-us/{{ $data->id }}/edit" title="Edit" class="btn btn-sm btn-primary pull-right edit">
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="ontact-us/{{ $data->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
+                                                <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
