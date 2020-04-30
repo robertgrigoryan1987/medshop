@@ -228,7 +228,7 @@
                                         @endforeach
                                         <td class="no-sort no-click bread-actions">
                                             <a href="products_in_order/{{ $data->id }}" >
-                                                <i class="voyager-dolar"></i> <span class="hidden-xs hidden-sm">Products</span>
+                                                <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Products</span>
                                             </a>
 
                                             <a href="ordering-products/{{ $data->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
