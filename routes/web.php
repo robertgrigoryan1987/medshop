@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-    Route::get('/products_in_order/{id}', 'VoyagerOrderProductsController@orderingProducts');
+    Route::get('/products_in_order/{id}', 'Voyager\VoyagerOrderProductsController@orderingProducts');
 
 });
 
