@@ -130,9 +130,10 @@ $set_lang = UrlController::set_language();
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="search-form pull-right">
-                        <form action="#">
+                        <form action="/search" method="get">
+                            @csrf
                             <div class="search">
-                                <input type="search" name="search" value="" placeholder="Поиск">
+                                <input type="search" name="search" value="" placeholder="@lang('main.search')" autocomplete="off">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </form>

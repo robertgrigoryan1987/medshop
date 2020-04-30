@@ -70,8 +70,9 @@
                 <div class="col-lg-3 col-md-7 col-sm-7 col-xs-12 pull-left">
                     <div class="sidebar-wrapper">
                         <div class="single-sidebar">
-                            <form class="search-form" action="#">
-                                <input placeholder="@lang('main.search')" type="text">
+                            <form class="search-form" action="/search" method="get">
+                                @csrf
+                                <input placeholder="@lang('main.search')" name="search" type="text">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
@@ -88,10 +89,7 @@
                                             </div>
                                             <div class="content">
                                                 @foreach($item->children as $submenu)
-                                                    <a class="item" href="mail.html">Mailbox</a>
-                                                    <a class="item" href="mail.html">Mailbox</a>
-                                                    <a class="item" href="mail.html">Mailbox</a>
-                                                    <a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                                    <a class="item" href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                 @endforeach
                                             </div>
                                         @else
