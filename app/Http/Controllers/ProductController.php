@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use App\OrderingProduct;
 use Session;
+use Illuminate\Support\Facades\DB;
 
 
 class ProductController extends Controller
@@ -41,4 +42,19 @@ class ProductController extends Controller
         var_dump($request->all());exit;
     }
 
+    public function search(Request $request) {
+
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        $categories = Category::where('parent_id',null)->with('children')->get();
+
+        $search = $request->get('search');
+        $products = DB::table('products')->where('name', 'like', '%'.$search.'%')->get();
+
+
+        if($products->isEmpty()) {
+            return back()->with('status', 'По вашему запросу ничего не найдено');
+        } else {
+            return view('medshop.search')->with(['products' => $products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+        }
+    }
 }

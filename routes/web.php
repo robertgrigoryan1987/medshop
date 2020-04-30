@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'admin'], function () {
+
     Voyager::routes();
+
     Route::get('/products_in_order/{id}', 'Voyager\VoyagerOrderProductsController@orderingProducts');
 
 });
+
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
@@ -64,5 +67,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::post('/idram_paymant_result', 'PaymentController@idram_paymant_result');
 
+    Route::get('/search', 'ProductController@search');
 
 });
