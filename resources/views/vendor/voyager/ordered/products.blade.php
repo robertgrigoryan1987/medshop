@@ -79,18 +79,11 @@
 
     <script>
         $(document).ready(function () {
-
-            @if ($isModelTranslatable)
-            $('.side-body').multilingual();
-            //Reinitialise the multilingual features when they change tab
-            $('#dataTable').on('draw.dt', function(){
-                $('.side-body').data('multilingual').init();
-            })
-            @endif
             $('.select_all').on('click', function(e) {
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked')).trigger('change');
             });
         });
+
         $('input[name="row_id"]').on('change', function () {
             var ids = [];
             $('input[name="row_id"]').each(function() {
