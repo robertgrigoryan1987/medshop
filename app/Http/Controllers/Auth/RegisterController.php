@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\OrderingProduct;
 use Session;
+use Socialite;
+use App\SocialProvider;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -77,5 +80,47 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $socialUser = Socialite::driver($provider)->user();
+        }
+        catch(\Exception $e) {
+            return redirect('/');
+        }
+        $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+
+        if(!$socialProvider) {
+            $motdepasse = Str::random(6);
+            $user = User::firstOrCreate([
+                'email' => $socialUser->getEmail(),
+                'name' => $socialUser->getName(),
+                'password'=>bcrypt($motdepasse),
+            ]);
+            $user->socialProviders()->create(
+                ['provider_id' => $socialUser->getId(), 'provider' => $provider]
+            );
+        } else {
+            $user = $socialProvider->user;
+        }
+        auth()->login($user);
+        return redirect('/');
     }
 }

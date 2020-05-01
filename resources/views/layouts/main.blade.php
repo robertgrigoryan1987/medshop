@@ -162,12 +162,12 @@ $set_lang = UrlController::set_language();
                                 <li><a href="{{route('blog')}}">@lang('main.blog')</a></li>
                                 <li><a href="{{route('shop')}}">@lang('main.store')</a></li>
                                 <li><a href="{{route('contact')}}">@lang('main.contact-us')</a></li>
-                                <li class="dropdown"><a href="">@lang('main.account')</a>
+                                <li class="dropdown"><a>@lang('main.account')</a>
                                     <ul>
                                         @guest
                                             <li><a class="login social-links" href="{{ route('login') }}"><i class="fa fa-sign-in"> @lang('main.login')</i></a></li>
                                         @else
-                                            <li><a href="">{{ Auth::user()->name }}</a></li>
+                                            <li><a href="/profile">{{ Auth::user()->name }}</a></li>
                                             <li><a href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
@@ -195,6 +195,12 @@ $set_lang = UrlController::set_language();
             </div>
         </div>
     </section>
+
+            @if (session('status'))
+                <div class="alert alert-danger pl-150">
+                    {{ session('status') }}
+                </div>
+            @endif
 
             @yield('content')
 

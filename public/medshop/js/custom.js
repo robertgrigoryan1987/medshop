@@ -843,3 +843,15 @@ $('.ui.accordion').accordion({
 
     }
 });
+
+$('input[name=pay]').click(function() {
+    $(this).each(function() {
+        if($(this).is(':checked')) {
+            if($(this).val() == 'non_cash') {
+                $('.payment-options ').fadeOut();
+            } else {
+                $('.payment-options ').fadeIn();
+            }
+        };
+    });
+});

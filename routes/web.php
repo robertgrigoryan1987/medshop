@@ -69,4 +69,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/search', 'ProductController@search');
 
+    Route::get('/profile', 'MyProfileController@index');
+
+    Route::post('/profile', 'MyProfileController@store');
+
+    Route::get('/auth/{provider}', 'Auth\RegisterController@redirectToProvider');
+    Route::get('/auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
+
 });

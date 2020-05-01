@@ -2,7 +2,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     <section class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
