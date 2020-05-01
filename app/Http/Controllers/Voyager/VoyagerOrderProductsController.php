@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Hash;
 class VoyagerOrderProductsController extends BaseVoyagerController
 {
     public function orderingProducts($id){
-        $orderig_products = OrderingProduct::all()->where('order_id', $id);
+        $orderig_products = OrderingProduct::where('order_id', $id)->orWhere('session', '=', $id)->get();
         return view('vendor.voyager.ordered.products')->with(compact('orderig_products'));
 
     }
