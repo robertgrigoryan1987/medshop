@@ -73,6 +73,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::post('/profile', 'MyProfileController@store');
 
+    Route::post('/delete_ordered_product', 'ProductController@delete_ordered_product');
+
     Route::get('/auth/{provider}', 'Auth\RegisterController@redirectToProvider');
     Route::get('/auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
