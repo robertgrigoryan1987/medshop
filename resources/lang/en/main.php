@@ -2,6 +2,9 @@
 
 return [
     'login' => 'Login',
+    'login-page' => 'Login or Create an Account',
+    'registered-customers' => 'Registered customers',
+    'if-have-acc' => 'If you have a personal page on our site, please authorize',
     'general' => 'General',
     'our-brands' => 'Our Brands',
     'laboratory' => 'Laboratory',
@@ -50,6 +53,7 @@ return [
     'total' => 'Total',
     'total-in-basket' => 'Total in basket',
     'order' => 'Order',
+    'your-orders' => 'Your orders',
     'order-total' => 'Order Total',
     'checkout' => 'Checkout',
     'pay' => 'Pay',
@@ -101,6 +105,7 @@ return [
     'quick-contact' => 'Quick contact',
     'questions' => 'If you have any questions, just use the contact information below',
     'items' => 'Items',
+    'item-name' => 'Product name',
     'delete' => 'Delete',
     '24-hour' => '24 hour service',
     'frequently-questions' => 'Frequently asked questions',
@@ -109,5 +114,9 @@ return [
     'basket' => 'Basket',
     'packet' => 'Packet',
     'piece' => 'Piece',
-
+    'empty' => 'Is empty',
+    'my-orders' => 'My orders',
+    'payment-type' => 'Payment type',
+    'online' => 'Online',
+    'cash' => 'Cash',
 ];

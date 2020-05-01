@@ -1,13 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
-<section class="contact-form-area">
+<section class="login-form-area">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h4 class="ml-30">@lang('main.login')</h4>
-                <div class="contact-form">
+                <h4 class="pt-20 pl-20 backfff">@lang('main.registered-customers')</h4>
+                <h5  class="pt-20 pl-20 backfff">@lang('main.if-have-acc')</h5>
+                <div class="login-form backfff">
                     <form method="POST" action="{{ route('login') }}" class="default-form">
                         @csrf
                         <div class="row">
@@ -54,18 +55,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 mt-20">
-                                <button class="thm-btn bgclr-1" type="submit">{{ __('Login') }}</button>
+                                <button class="thm-btn bgclr-1 logw" type="submit">{{ __('Login') }}</button>
                             </div>
                         </div>
                     </form>
-                    <button class="loginBtn loginBtn--facebook ml-10 ml-xs-0">
-                        Login with Facebook
-                    </button>
-                    <button class="loginBtn loginBtn--google ">
-                        Login with Google
-                    </button>
-                    <h3 class="ml-30 mt-30">@lang('main.dont-have-an-account-yet') <a href="{{route('register')}}" class="thm-btn bgclr-1 regist ml-5" type="submit">@lang('main.register') </a></h3>
+                    <a href="{{ url('auth/facebook') }}" class="loginBtn loginBtn--facebook ml-10 ml-xs-0"> Login with Facebook</a>
+                    <a href="" class="loginBtn loginBtn--google  ml-10 ml-xs-0"> Login with Google</a>
 
+                    <h4 class="ml-30 mt-30">@lang('main.dont-have-an-account-yet') <a href="{{route('register')}}" class="thm-btn bgclr-1 regist ml-5" type="submit">@lang('main.register') </a></h4>
                 </div>
             </div>
             <div class="col-md-3"></div>

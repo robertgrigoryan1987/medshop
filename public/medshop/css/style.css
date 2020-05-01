@@ -4810,7 +4810,7 @@ select:focus {
 ***/
 .shop-area {
     border-top: 1px solid #0392ce;
-    padding-top: 80px;
+    padding-top: 20px;
     padding-bottom: 80px;
 }
 
@@ -5125,8 +5125,8 @@ select:focus {
 ***/
 .profile-area {
     border-top: 1px solid #0392ce;
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 40px;
+    padding-top: 20px;
 }
 
 .profile-area .sec-title {
@@ -6272,7 +6272,7 @@ select:focus {
 ***/
 .single-shop-area {
     border: 1px solid #0392ce;
-    padding-top: 80px;
+    padding-top: 20px;
     padding-bottom: 40px;
 }
 
@@ -6974,6 +6974,7 @@ input#datepicker {
     background-image: linear-gradient(#4C69BA, #3B55A0);
     /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
     text-shadow: 0 -1px 0 #354C8C;
+    padding: 4px 55px;
 }
 .loginBtn--facebook:before {
     border-right: #364e92 1px solid;
@@ -6990,6 +6991,7 @@ input#datepicker {
 .loginBtn--google {
     /*font-family: "Roboto", Roboto, arial, sans-serif;*/
     background: #DD4B39;
+    padding: 4px 55px;
 }
 .loginBtn--google:before {
     border-right: #BB3F30 1px solid;
@@ -7002,6 +7004,7 @@ input#datepicker {
 @media (max-width: 479px) {
     .loginBtn {
         width: 100%;
+        display: block;
     }
 }
 .logincol {
@@ -7009,7 +7012,7 @@ input#datepicker {
 }
 .regist {
     display: inline-block;
-    width: 30%;
+    width: 50%;
 }
 .invalid-feedback {
     color: red;
@@ -7296,3 +7299,185 @@ input#datepicker {
     line-height: 1.4;
     color: #0392ce;
 }
+
+/*Login Form area*/
+.login-form-area {
+    background-image: url(/medshop/images/awards/AdobeStock_177452394.jpeg);
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.login-form-area .sec-title {
+    position: relative;
+}
+
+.login-form-area .sec-title .select-box {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    width: 190px;
+}
+
+.login-form-area .bootstrap-select {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+}
+
+.login-form-area .bootstrap-select.btn-group .dropdown-menu li {
+    position: relative;
+    width: 100%;
+}
+
+.login-form-area .dropdown-menu > li > a:focus,
+.login-form-area .dropdown-menu > li > a:hover {
+    background-color: #fdc900;
+    color: #fff;
+}
+
+.login-form-area .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.login-form-area .btn-group.open .dropdown-toggle:focus {
+    border: none;
+    outline: none;
+}
+
+.login-form-area .bootstrap-select .dropdown-toggle:focus {
+    outline: none;
+}
+
+.login-form-area .form-control:focus {
+    border-color: #48c7ec;
+    box-shadow: none;
+}
+
+.login-form-area .select-box .btn:after {
+    position: absolute;
+    content: "\f107";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #777777;
+    width: 20px;
+    right: 15px;
+    top: 50%;
+    margin-top: -11px;
+}
+
+.login-form-area .g-select {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+}
+
+.login-form-area .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    background: transparent;
+    color: #777;
+    padding: 11px 10px;
+    font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #f4f4f4;
+}
+
+.login-form-area .bs-caret {
+    display: none;
+}
+
+.login-form-area .dropdown-menu {
+    border-radius: 0px;
+    padding: 0px;
+    top: 45px;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: .4s ease;
+}
+
+.login-form-area .bootstrap-select.open .dropdown-menu {
+    transform: scaleY(1);
+    transition: .4s ease;
+}
+
+.login-form-area .dropdown-menu > li > a {
+    padding: 8px 15px;
+    display: block;
+}
+
+.login-form-area .dropdown-menu > li > a:focus {
+    background-color: #fff;
+    color: #222;
+}
+
+.login-form-area .dropdown-menu > li > a:hover {
+    background-color: #0392ce;
+    color: #fff;
+}
+
+
+.login-form-area .login-form form {
+    background: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    display: block;
+    padding: 36px 30px 60px;
+}
+
+.login-form-area .login-form form h2 {
+    color: #222222;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0 0 35px;
+}
+
+.login-form-area .login-form form input[type="text"],
+.login-form-area .login-form form input[type="email"],
+.login-form-area .login-form form input[type="password"],
+.login-form-area .login-form form textarea {
+    background: #ffffff;
+    border: 1px solid #0392ce;
+    color: #999999;
+    display: block;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.login-form-area .login-form form textarea {
+    height: 120px;
+    margin-bottom: 32px;
+    padding: 10px 20px;
+}
+
+.login-form-area .login-form form input[type="text"]:focus {
+    border-color: #0392ce;
+}
+
+.login-form-area .login-form form input[type="email"]:focus {
+    border-color: #0392ce;
+}
+
+.login-form-area .login-form form textarea:focus {
+    border-color: #0392ce;
+}
+
+.login-form-area .login-form form button {
+    width: 100%;
+    padding: 14px 0 13px;
+}
+.backfff {
+    background-color: #fff;
+}
+.logw {
+    width: 100%;
+}
+.cash {
+    font-size: 18px;
+    padding: 20px 5px 20px;
+    color: #0392ce;
+}
+

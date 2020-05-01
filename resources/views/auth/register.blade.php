@@ -2,13 +2,13 @@
 
 @section('content')
 
-<section class="contact-form-area">
+<section class="login-form-area">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h4 class="ml-30">{{ __('Register') }}</h4>
-                <div class="contact-form">
+                <h4 class="pt-20 pl-20 backfff">{{ __('Register') }}</h4>
+                <div class="login-form backfff">
                     <form method="POST" action="{{ route('register') }}" class="default-form">
                         @csrf
                         <div class="row">

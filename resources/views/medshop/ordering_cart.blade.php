@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row cart-area mb-30" id="cart-area-ordering">
+            <div class="row cart-area mb-30 " id="cart-area-ordering">
                 <div class="col-md-12">
                     <div class="table-outer">
                         <table class="cart-table">
@@ -57,7 +57,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="form billing-info">
@@ -116,24 +115,31 @@
                                             </li>
                                         </ul>
                                         <br>
-                                        <div class="payment-options ml-10">
-                                            <div class="option-block">
-                                            </div>
-                                            <div class="option-block">
-                                                <div class="radio-block cc-selector">
-                                                    <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>
-                                                    <label class="drinkcard-cc visa" for="visa"></label>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3>@lang('main.payment-type')</h3>
+                                        <input  type="radio" checked name="pay" value="cash" id="cash"/>
+                                        <label class="cash" for="cash">@lang('main.online')</label>
 
-                                                    <input  type="radio" name="payment_type" value="idram" id="idram"/>
-                                                    <label class="drinkcard-cc idram" for="idram"></label>
+                                        <input  type="radio" name="pay" value="non_cash" id="no_cash"/>
+                                        <label class="cash" for="no_cash">@lang('main.cash')</label>
+                                    </div>
+                                    <div class="payment-options ml-10">
+                                        <div class="option-block"></div>
+                                        <div class="option-block">
+                                            <div class="radio-block cc-selector">
+                                                <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>
+                                                <label class="drinkcard-cc visa" for="visa"></label>
 
-                                                    <input  type="radio" name="payment_type" value="telcell" id="telcell"/>
-                                                    <label class="drinkcard-cc telcell" for="telcell"></label>
-                                                </div>
+                                                <input  type="radio" name="payment_type" value="idram" id="idram"/>
+                                                <label class="drinkcard-cc idram" for="idram"></label>
+
+                                                <input  type="radio" name="payment_type" value="telcell" id="telcell"/>
+                                                <label class="drinkcard-cc telcell" for="telcell"></label>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="sum" value="{{$sum}}">
                                     </div>
+                                    <input type="hidden" name="sum" value="{{$sum}}">
                                     <div class="placeorder-button text-left ">
                                         <button class="thm-btn bgclr-1 checkbutton" type="submit">@lang('main.pay')</button>
                                     </div>
@@ -142,7 +148,6 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-                </div>
             </div>
         </div>
     </section>
