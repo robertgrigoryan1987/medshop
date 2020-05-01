@@ -83,6 +83,12 @@ $( document ).ready(function() {
         });
     });
 
+    $('.delete-order-product').click(function(e){
+        e.preventDefault();
+        var ordered_product = $(this).data( "id" );
+        console.log(ordered_product);
+    });
+
 });
 
 
