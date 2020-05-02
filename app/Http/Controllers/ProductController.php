@@ -57,4 +57,12 @@ class ProductController extends Controller
             return view('medshop.search')->with(['products' => $products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
         }
     }
+
+    public function delete_ordered_product(Request $request){
+
+        $roduct_delete = OrderingProduct::where('id',$request->ordered_product)->delete();
+        if($roduct_delete){
+            echo $request->ordered_product;exit;
+        }
+    }
 }

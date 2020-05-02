@@ -20,7 +20,7 @@
                             </thead>
                             <tbody>
                             @foreach($product_orders as $product)
-                            <tr>
+                            <tr id="ordered-product-{{$product->id}}">
                                 <td colspan="2" class="prod-column">
                                     <div class="column-box">
                                         <div class="prod-thumb mauto">
@@ -49,7 +49,7 @@
                                     <div class="remove">
                                         <div class="checkbox">
                                             <label>
-                                                <span>X</span>
+                                                <span  data-id="{{$product->id}}" class="delete-order-product">X</span>
                                             </label>
                                         </div>
                                     </div>

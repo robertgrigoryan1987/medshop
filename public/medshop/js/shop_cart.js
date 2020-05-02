@@ -83,6 +83,30 @@ $( document ).ready(function() {
         });
     });
 
+    $('.delete-order-product').click(function(e){
+        e.preventDefault();
+        var ordered_product = $(this).data( "id" );
+        if ( confirm("Do you want delete this product?")) {
+
+            $.ajax({
+                type: 'POST',
+                url: '/delete_ordered_product',
+                data: {ordered_product: ordered_product},
+                error: function (data) {
+                    var errors = data.responseJSON;
+                    console.log(errors);
+                },
+                success: function (resp) {
+                    $('#ordered-product-' + resp).remove();
+                    var count_product = $('.count-product').text();
+                    count_product--;
+
+                    $('.count-product').text(count_product);
+                }
+            });
+        }
+    });
+
 });
 
 

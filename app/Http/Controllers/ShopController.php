@@ -81,14 +81,27 @@ class ShopController extends Controller
 
     public function ordering(Request $request){
 
-        $this->validate($request,[
-            'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required|email',
-            'address' => 'required',
-            'post_index' => 'required',
-            'payment_type' => 'required',
-        ]);
+        if($request->pay == "non_cash"){
+            $this->validate($request,[
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required|email',
+                'address' => 'required',
+                'post_index' => 'required',
+            ]);
+        }else{
+            $this->validate($request,[
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required|email',
+                'address' => 'required',
+                'post_index' => 'required',
+                'payment_type' => 'required',
+                'pay' => 'required',
+            ]);
+        }
+
+
 
         $order_id = uniqid(true);
         $ordering = new Ordering();
@@ -112,7 +125,7 @@ class ShopController extends Controller
 
                 if($request->payment_type == 'idram'){
 
-                    return view('wixon.payment.idbank')->with(['array'=>$array]);
+                    return view('medshop.payment.idbank')->with(['array'=>$array]);
 
                 }elseif ($request->payment_type == 'telcell'){
 
