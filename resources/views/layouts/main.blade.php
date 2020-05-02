@@ -73,6 +73,12 @@ $set_lang = UrlController::set_language();
         </div>
     </section>
 
+    @if (session('order'))
+        <div class="alert alert-success">
+            {{ session('order') }}
+        </div>
+    @endif
+
     <section class="header-area">
         <div class="container">
             <div class="row">
