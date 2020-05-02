@@ -106,12 +106,32 @@ class ShopController extends Controller
         $order_id = uniqid(true);
         $ordering = new Ordering();
         $isset_ordering = Ordering::where('session', Session::getId())->first();
+
         if($isset_ordering){
             $isset_ordering->email = $request->email;
             $isset_ordering->customer_addres = $request->address;
             $isset_ordering->customer_telephone = $request->phone;
             $isset_ordering->amount = $request->sum;
             $isset_ordering->user_id =isset(Auth::user()->user) ? Auth::user()->user : null;
+            if($request->pay == "non_cash"){
+                $isset_ordering->cash = 1;
+                if($isset_ordering->save()){
+                    $sesion = $isset_ordering->session;
+                    $product_orders = OrderingProduct::all()->where('session',$sesion);
+
+                    if(isset($product_orders)){
+                        foreach ($product_orders as $product_order){
+                            OrderingProduct::where('id', $product_order->id)->update([
+                                'session' => 1,
+                                'order_id' => $isset_ordering->order_id,
+                            ]);
+                        }
+                    }
+
+                    return redirect('/')->with('order', 'Your order is created!');exit;
+                }
+            }
+
             if($isset_ordering->save()){
                 $array = array(
                     "Amount" => $request->sum,
@@ -146,6 +166,25 @@ class ShopController extends Controller
             if(isset(Auth::user()->user)){
                 $ordering->user_id = Auth::id();
             }
+
+            if($request->pay == "non_cash"){
+                $ordering->cash = 1;
+                if($ordering->save()){
+                    $sesion = $ordering->session;
+                    $product_orders = OrderingProduct::all()->where('session',$sesion);
+
+                    if(isset($product_orders)){
+                        foreach ($product_orders as $product_order){
+                            OrderingProduct::where('id', $product_order->id)->update([
+                                'session' => 1,
+                                'order_id' => $ordering->order_id,
+                            ]);
+                        }
+                    }
+                    return redirect('/')->with('order', 'Your order is created!');exit;
+                }
+            }
+
             if($ordering->save()){
                 $array = array(
                     "Amount" => $request->sum,
@@ -158,7 +197,7 @@ class ShopController extends Controller
                 );
 
                 if($request->payment_type == 'idram'){
-                    return view('wixon.payment.idbank')->with(['array'=>$array]);
+                    return view('medshop.payment.idbank')->with(['array'=>$array]);
 
                 }elseif ($request->payment_type == 'telcell'){
 
@@ -188,7 +227,7 @@ class ShopController extends Controller
         $array["Username"] = $username;
         $array["Password"] = $password;
         $array["CardHolderID"] = "24242";
-        $array["BackURL"] = "http:://wixon/ameria_payment_success";
+        $array["BackURL"] = "http:://medshop/ameria_payment_success";
         $array["Amount"] = "10";
         $array["OrderID"] = "2325008";
         $array["PaymentType"] = 0;
