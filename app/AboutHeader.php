@@ -15,6 +15,6 @@ class AboutHeader extends Model
 {
     public $timestamps = false;
     use Translatable;
-    protected $translatable = ['header','first_title','first_text','second_title','	second_text','	image_text'];
+    protected $translatable = ['header','first_title','first_text','second_title','second_text','image_text'];
 
 }
