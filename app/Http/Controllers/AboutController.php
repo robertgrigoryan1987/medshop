@@ -21,8 +21,11 @@ class AboutController extends Controller
      */
     public function index()
     {
+
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
-        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
+//        $about_headers = AboutHeader::where('id','>', 0)->firstOrFail() ? AboutHeader::where('id','>', 0)->firstOrFail() : 'test';
+        $about_headers = "test";
+
         $about_services = AboutService::all();
         $about_faquestions = Faquestion::all();
         $about_questions_images = QuestionsImage::all();
