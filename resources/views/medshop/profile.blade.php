@@ -4,7 +4,6 @@
     <section class="profile-area">
         <div class="container">
             <div class="row">
-{{--                col-xs-12 mt-200 mt-lg-200 mt-xs-10 mb-xs-30--}}
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
                     <h1 class="title mb-20 mb-xs-0">@lang('main.your-orders')</h1>
                     <table class="containerr">
@@ -43,11 +42,6 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h1 class="title mb-20 mb-xs-0">@lang('main.my-profile')</h1>
                     <div class="form shipping-info">
-                        @if(session('status'))
-                            <div class="alert alert-success">
-                                {{session('status')}}
-                            </div>
-                        @endif
                         @include('medshop.errors')
                         <form method="post" action="/profile" enctype="multipart/form-data">
                             {{csrf_field()}}

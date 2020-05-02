@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <div class="single-blog-item wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                                     <div class="img-holder">
-                                        <img src="/medshop/images/blog/blog-default-1.jpg" alt="Awesome Image">
+                                        <img src="/storage/{{$post->image}}" alt="Awesome Image">
                                         <div class="overlay-style-one">
                                             <div class="box">
                                                 <div class="content">
@@ -51,11 +51,10 @@
                                             <h3 class="blog-title">{{$post->title}}</h3>
                                         </a>
                                         <div class="text">
-                                            <p>{{$post->excerpt}}</p>
+                                            <p>{{mb_substr($post['excerpt'],0, 150).'...'}}</p>
                                         </div>
                                         <ul class="meta-info">
                                             <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{$post->getDate($post->created_at)}}</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>21 Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -77,141 +76,40 @@
                                 <h3>@lang('main.popular-posts')</h3>
                             </div>
                             <ul class="popular-post">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/popular-post-1.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                <li>@foreach($popular_posts as $popular_post)
+                                    <li>
+                                        <div class="img-holder">
+                                            <img src="/storage/{{$popular_post->image}}" alt="Awesome Image">
+                                            <div class="overlay-style-one">
+                                                <div class="box">
+                                                    <div class="content">
+                                                        <a href="{{route('blog.show', $popular_post->slug)}}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h5 class="post-title">Как справиться с загадочными <br> недугами ваших детей</h5>
-                                        </a>
-                                        <h6 class="post-date">01 04, 2020</h6>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/popular-post-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
+                                        <div class="title-holder">
+                                            <a href="#">
+                                                <h5 class="post-title">{{$popular_post->title}}</h5>
+                                            </a>
+                                            <h6 class="post-date">{{$popular_post->getDate($post->created_at)}}</h6>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h5 class="post-title">Как справиться с загадочными <br> недугами ваших детей</h5>
-                                        </a>
-                                        <h6 class="post-date">01 04, 2020</h6>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/popular-post-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h5 class="post-title">Как справиться с загадочными <br> недугами ваших детей</h5>
-                                        </a>
-                                        <h6 class="post-date">01 04, 2020</h6>
-                                    </div>
-                                </li>
-
-
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">
                             <div class="sec-title">
-                                <h3 class="pull-left">Instagram</h3>
+                                <h3 class="pull-left">@lang('main.photo')</h3>
                             </div>
                             <ul class="instagram">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-1.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
+                                @foreach($blog_images as $blog_image)
+                                    <li>
+                                        <div class="img-holder">
+                                            <img src="/storage/{{$blog_image->image}}" alt="Awesome Image">
                                         </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-4.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-5.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/sidebar/instagram-6.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="single-sidebar wow fadeInUp" data-wow-delay="0s" data-wow-duration="1s" data-wow-offset="0">

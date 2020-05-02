@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AboutHeader;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
@@ -27,11 +28,17 @@ class ShopController extends Controller
 //            echo "Cookie  is set!<br>";
 //            echo "Value is: " . $_COOKIE["customer"];
 //        }
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(9);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
-        return view('medshop.shop')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+        return view('medshop.shop')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+        ]);
     }
 
     public function shop_cart(Request $request){
@@ -52,9 +59,15 @@ class ShopController extends Controller
     }
 
     public function product_order(){
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $product_orders = OrderingProduct::all()->where('session',Session::getId());
-        return view('medshop.product_order')->with(['product_orders'=>$product_orders, 'ordering_products_count'=>$ordering_products_count]);
+
+        return view('medshop.product_order')->with([
+            'product_orders'=>$product_orders,
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+        ]);
 
     }
 
@@ -69,13 +82,19 @@ class ShopController extends Controller
     }
 
     public function ordering_cart(){
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $product_orders = OrderingProduct::all()->where('session',Session::getId());
         $sum = 0;
         foreach ($product_orders as $product){
             $sum = $sum+($product->product_price*$product->quantity);
         }
-        return view('medshop.ordering_cart')->with(['ordering_products_count'=>$ordering_products_count, 'sum'=>$sum, 'product_orders'=>$product_orders]);
+        return view('medshop.ordering_cart')->with([
+            'ordering_products_count'=>$ordering_products_count,
+            'sum'=>$sum,
+            'product_orders'=>$product_orders,
+            'about_headers'=> $about_headers,
+        ]);
 
     }
 

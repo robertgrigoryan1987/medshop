@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="breadcrumb-area" style="background-image: url(images/resources/breadcrumb-bg.jpg);">
+    <section class="breadcrumb-area" style="background-image: url(/medshop/images/resources/breadcrumb-bg.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -33,42 +33,38 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="img-holder">
-                        <img src="/medshop/images/resources/welcome.jpg" alt="Awesome Image">
+                        <img src="/storage/{{$about_headers->image}}" alt="Awesome Image">
                     </div>
                     <div class="inner-content">
-                        <p>В качестве третичного направления ICU, чтобы обеспечить современное обслуживание с помощью очень хороших</p>
+                        <p>{{$about_headers->image_text}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="text-holder">
-                        <div class="title">
-                            <h1>@lang('main.welcome')</h1>
-                            <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
+                    <div class="text-holder p-15">
+                        <div >
+                            <h1 class="title">@lang('main.welcome')</h1>
+                            <p>{{$about_headers->header}}</p>
                         </div>
                         <ul>
                             <li>
                                 <div class="single-item">
                                     <div class="iocn-box">
-                                        <span class="flaticon-shapes"></span>
+                                        <span class="{{$about_headers->first_icon}}"></span>
                                     </div>
                                     <div class="text-box">
-                                        <h3>Добро пожаловать</h3>
-                                        <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
+                                        <h3>{{$about_headers->first_title}}</h3>
+                                        <p>{{$about_headers->first_text}}</p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="single-item">
                                     <div class="iocn-box">
-                                        <span class="flaticon-technology-2"></span>
+                                        <span class="{{$about_headers->second_icon}}"></span>
                                     </div>
-                                    <div class="text-box">
-                                        <h3>Добро пожаловать</h3>
-                                        <p>Это давно установленный факт, что читатель будет отвлечен читаемым контентом, более или менее нормальным распределением букв против.</p>
-                                        <div class="text">
-                                            <p><i class="fa fa-hand-o-right"></i>Идея осуждения удовольствия и восхваления.</p>
-                                            <p><i class="fa fa-hand-o-right"></i>Идея осуждения удовольствия и восхваления.</p>
-                                        </div>
+                                    <div class="text-box pb-30">
+                                        <h3>{{$about_headers->second_title}}</h3>
+                                        <p>{{$about_headers->second_text}}</p>
                                     </div>
                                 </div>
                             </li>
@@ -82,77 +78,33 @@
     <section class="special-features-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-transport"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-drink"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
+            @foreach($about_services as $about_service)
+                @if($about_service->id%2)
+                    <div class="col-md-4">
+                        <div class="single-item">
+                            <div class="icon-box">
+                                <span class="{{$about_service->icon_name}}"></span>
+                            </div>
+                            <div class="text-box">
+                                <h3>{{$about_service->title}}</h3>
+                                <p>{{$about_service->text}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-avatar"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-church"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
+                    @else
+                    <div class="col-md-4">
+                        <div class="single-item">
+                            <div class="icon-box">
+                                <span class="{{$about_service->icon_name}}"></span>
+                            </div>
+                            <div class="text-box">
+                                <h3>{{$about_service->title}}</h3>
+                                <p>{{$about_service->text}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-phone"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-item">
-                        <div class="icon-box">
-                            <span class="flaticon-medical-2"></span>
-                        </div>
-                        <div class="text-box">
-                            <h3>Служба поддержки</h3>
-                            <p>Есть кто-нибудь, кто любит или преследует или получает боль от себя, потому что это только потому, что иногда.</p>
-                        </div>
-                    </div>
-                </div>
+                @endif
+            @endforeach
             </div>
         </div>
     </section>
@@ -173,77 +125,42 @@
                 <h1>@lang('main.frequently-questions')</h1>
                 <span class="border"></span>
             </div>
-            <div class="row">
+            <div class="row white pt-30">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="latest-project">
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-1.jpg" alt="Awesome Image">
-
+                        @foreach($about_questions_images as $about_questions_image)
+                            <div class="single-project-item">
+                                <div class="img-holder ">
+                                    <img src="/storage/{{$about_questions_image->image}}" alt="Awesome Image">
+                                </div>
                             </div>
-                        </div>
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-2.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-3.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-4.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-5.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
-                        <div class="single-project-item">
-                            <div class="img-holder">
-                                <img src="/medshop/images/projects/latest-project-6.jpg" alt="Awesome Image">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="faq-content">
                         <div class="accordion-box">
-                            <div class="accordion accordion-block">
-                                <div class="accord-btn">
-                                    <h4>Какие часы работы?</h4>
-                                </div>
-                                <div class="accord-content">
-                                    <p>Если вы пациент, ищущий качественную медицинскую помощь по доступным ценам</p>
-                                </div>
-                            </div>
-                            <div class="accordion accordion-block">
-                                <div class="accord-btn active">
-                                    <h4>Какие часы работы?</h4>
-                                </div>
-                                <div class="accord-content collapsed">
-                                    <p>Если вы пациент, ищущий качественную медицинскую помощь по доступным ценам</p>
-                                </div>
-                            </div>
-                            <div class="accordion accordion-block last">
-                                <div class="accord-btn last">
-                                    <h4>Какие часы работы?</h4>
-                                </div>
-                                <div class="accord-content">
-                                    <p>Если вы пациент, ищущий качественную медицинскую помощь по доступным ценам</p>
-                                </div>
-                            </div>
-                            <div class="accordion accordion-block">
-                                <div class="accord-btn">
-                                    <h4>Какие часы работы?</h4>
-                                </div>
-                                <div class="accord-content">
-                                    <p>Если вы пациент, ищущий качественную медицинскую помощь по доступным ценам</p>
-                                </div>
-                            </div>
+                            @foreach($about_faquestions as $about_faquestion)
+                                @if($about_faquestion->id%5 == 1)
+                                    <div class="accordion accordion-block">
+                                        <div class="accord-btn active">
+                                            <h4>{{$about_faquestion->question}}</h4>
+                                        </div>
+                                        <div class="accord-content collapsed">
+                                            <p>{{strip_tags($about_faquestion->answere)}}</p>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="accordion accordion-block">
+                                        <div class="accord-btn">
+                                            <h4>{{$about_faquestion->question}}</h4>
+                                        </div>
+                                        <div class="accord-content">
+                                            <p>{{strip_tags($about_faquestion->answere)}}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -312,66 +229,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="certificates">
-                        <a href="#">
+                        @foreach($about_avards as $about_avard)
                             <div class="single-item">
-                                <img src="/medshop/images/certificates/1.jpg" alt="Awesome Image">
+                                <img src="/storage/{{$about_avard->image}}" alt="Awesome Image">
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/2.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/3.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/4.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/1.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/2.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/3.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/4.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/1.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/2.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/3.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="single-item">
-                                <img src="/medshop/images/certificates/4.jpg" alt="Awesome Image">
-                            </div>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>

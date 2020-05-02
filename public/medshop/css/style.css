@@ -187,8 +187,8 @@ button {
 
 
 .sec-title {
-    margin-top: -3px;
-    padding-bottom: 50px;
+    margin-top: 0px;
+    /*padding-bottom: 50px;*/
     position: relative;
 }
 
@@ -2829,7 +2829,7 @@ select:focus {
 
 .project-faq-area .latest-project .single-project-item {
     display: inline-block;
-    margin: 0 10px 20px;
+    margin: 0 2px 15px;
     float: left;
 }
 
@@ -4079,6 +4079,8 @@ select:focus {
 }
 
 .sidebar-wrapper .single-sidebar {
+    padding: 20px;
+    background: #fff;
     overflow: hidden;
     margin-bottom: 50px;
     position: relative;
@@ -7012,7 +7014,7 @@ input#datepicker {
 }
 .regist {
     display: inline-block;
-    width: 50%;
+    width: 35%;
 }
 .invalid-feedback {
     color: red;
@@ -7480,4 +7482,21 @@ input#datepicker {
     padding: 20px 5px 20px;
     color: #0392ce;
 }
-
+.white {
+    background-color: #fff;
+}
+.log-btn {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    padding: 5px 0px 5px;
+    transition: all 500ms ease;
+}
+.log-btn:hover {
+    background: transparent;
+    color: #222222;
+}

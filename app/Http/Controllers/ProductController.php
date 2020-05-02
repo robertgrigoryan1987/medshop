@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers;
+use App\AboutHeader;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
@@ -21,20 +22,32 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function product($id){
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $product = Product::where('id',$id)->first();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
-        return view('medshop.sigle_product')->with(['product'=>$product, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+        return view('medshop.sigle_product')->with([
+            'product'=>$product,
+            'categories'=>$categories,
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+        ]);
 
     }
 
     public function product_category($id){
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('category',$id)->paginate(9);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
-        return view('medshop.product_category')->with(['products'=>$products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+        return view('medshop.product_category')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+        ]);
 
     }
 
@@ -43,7 +56,7 @@ class ProductController extends Controller
     }
 
     public function search(Request $request) {
-
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $categories = Category::where('parent_id',null)->with('children')->get();
 
@@ -54,7 +67,12 @@ class ProductController extends Controller
         if($products->isEmpty()) {
             return back()->with('status', 'По вашему запросу ничего не найдено');
         } else {
-            return view('medshop.search')->with(['products' => $products, 'categories'=>$categories, 'ordering_products_count'=>$ordering_products_count]);
+            return view('medshop.search')->with([
+                'products' => $products,
+                'categories'=>$categories,
+                'ordering_products_count'=>$ordering_products_count,
+                'about_headers'=> $about_headers,
+            ]);
         }
     }
 

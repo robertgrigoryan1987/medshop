@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\AboutHeader;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -48,8 +49,12 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
-        return view('auth.register')->with(['ordering_products_count'=>$ordering_products_count]);
+        return view('auth.register')->with([
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+        ]);
     }
 
     /**

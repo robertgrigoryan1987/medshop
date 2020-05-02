@@ -197,7 +197,7 @@ $set_lang = UrlController::set_language();
     </section>
 
             @if (session('status'))
-                <div class="alert alert-danger pl-150">
+                <div class="alert alert-success pl-150">
                     {{ session('status') }}
                 </div>
             @endif
@@ -215,8 +215,8 @@ $set_lang = UrlController::set_language();
                                 <span class="border"></span>
                             </div>
                             <div class="our-info">
-                                <p>Неуклонное обслуживание больниц за последние 25 лет позволило вывести здравоохранение на самый современный уровень в регионе, обслуживая городские и сельские районы..</p>
-                                <a href="#">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                <p>{{$about_headers->header}}</p>
+                                <a href="/about">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -329,11 +329,9 @@ $set_lang = UrlController::set_language();
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <ul class="footer-social-links">
+                        <ul class="footer-social-links mr-xs-120 mr-60">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>

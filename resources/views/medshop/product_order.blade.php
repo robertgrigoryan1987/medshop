@@ -12,7 +12,6 @@
                                 <th class="prod-column">@lang('main.items')</th>
                                 <th>&nbsp;</th>
                                 <th>@lang('main.quantity')</th>
-                                <th class="availability">@lang('main.availability')</th>
                                 <th class="price">@lang('main.price')</th>
                                 <th>@lang('main.total')</th>
                                 <th>@lang('main.delete')</th>
@@ -36,11 +35,6 @@
                                         <input type="button" value="-" class="quantity-moins minu" >
                                         <input type="text" value="{{$product->quantity}}" name="quantity" disabled class="count fbord" data-id="{{$product->id}}">
                                         <input type="button" value="+" class="quantity-plus minu" >
-                                    </div>
-                                </td>
-                                <td class="unit-price">
-                                    <div class="available-info">
-                                        <span class="icon fa fa-check"></span>Предмет(ы)<br>доступны сейчас
                                     </div>
                                 </td>
                                 <td class="price">{{$product->product_price}}</td>

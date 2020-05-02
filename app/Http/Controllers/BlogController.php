@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\AboutHeader;
 use App\Post;
+use App\QuestionsImage;
 use Illuminate\Http\Request;
 use App\OrderingProduct;
 use Session;
@@ -16,14 +18,32 @@ class BlogController extends Controller
      */
     public function index()
     {
+        $popular_posts = Post::inRandomOrder()->take(3)->get();
+        $blog_images = QuestionsImage::all();
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $posts = Post::paginate(6);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
-        return view('medshop.blog')->with(['ordering_products_count'=>$ordering_products_count, 'posts' => $posts]);
+        return view('medshop.blog')->with([
+            'ordering_products_count'=>$ordering_products_count,
+            'posts' => $posts,
+            'about_headers'=> $about_headers,
+            'popular_posts' => $popular_posts,
+            'blog_images' => $blog_images,
+        ]);
     }
 
     public function show($slug) {
+        $popular_posts = Post::inRandomOrder()->take(3)->get();
+        $blog_images = QuestionsImage::all();
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $post = Post::where('slug', $slug)->firstOrFail();
-        return view('medshop.blog_sigle')->with(['ordering_products_count'=>$ordering_products_count, 'post' => $post]);
+        return view('medshop.single_blog')->with([
+            'ordering_products_count'=>$ordering_products_count,
+            'post' => $post,
+            'about_headers'=> $about_headers,
+            'popular_posts' => $popular_posts,
+            'blog_images' => $blog_images,
+        ]);
     }
 }

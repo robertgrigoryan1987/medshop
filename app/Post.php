@@ -13,6 +13,12 @@ class Post extends Model
     public function getDate($created_at) {
         return Carbon::parse($created_at)->format('F d, Y');
     }
+    public function getDayNews($created_at) {
+        return Carbon::parse($created_at)->format('d');
+    }
+    public function getMonthNews($created_at) {
+        return Carbon::parse($created_at)->format('F');
+    }
 
     public function author()
     {
