@@ -7,6 +7,10 @@ use App\ContactUs;
 use Illuminate\Http\Request;
 use App\OrderingProduct;
 use Session;
+use App\Message;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Contact;
+
 
 class ContactController extends Controller
 {
@@ -26,5 +30,30 @@ class ContactController extends Controller
             'about_headers' => $about_headers,
             'contact_us' => $contact_us,
         ]);
+    }
+
+    public function message(Request $request){
+        $this->validate($request, [
+            'name'	=>	'required|max:50',
+            'email' =>  'required|email',
+            'message'	=>	'required',
+        ]);
+
+
+        $data = $request->all();
+        $message = new Message();
+        $message->name = $request->name;
+        $message->email = $request->email;
+
+        $message->phone = $request->phone;
+
+        $message->subject = $request->subject;
+        $message->message = $request->message;
+        if($message->save()){
+            Mail::to('youngman87@mail.ru')->send(new Contact($data));
+            $requestMessage = 'Request have been sent';
+            return redirect()->back();
+        }
+
     }
 }

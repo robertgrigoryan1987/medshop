@@ -33,27 +33,28 @@
             <div class="row">
                 <div class="col-lg-8 col-md-7">
                     <div class="contact-form">
-                        <form id="contact-form" name="contact_form" class="default-form" action="http://st.ourhtmldemo.com/new/Hospitals/inc/sendmail.php" method="post">
+                        <form id="contact-form" name="contact_form" class="default-form" action="{{route('contact_post')}}" method="post">
+                            @csrf
                             <h2>@lang('main.send-us-message')</h2>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" name="form_name" value="" placeholder="@lang('main.name')" required="">
+                                    <input type="text" name="name" value="" placeholder="@lang('main.name')" required="">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="form_email" value="" placeholder="@lang('main.email')" required="">
+                                    <input type="email" name="email" value="" placeholder="@lang('main.email')" required="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" name="form_phone" value="" placeholder="@lang('main.phone')">
+                                    <input type="text" name="phone" value="" placeholder="@lang('main.phone')">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" name="form_subject" value="" placeholder="@lang('main.subject')">
+                                    <input type="text" name="subject" value="" placeholder="@lang('main.subject')">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <textarea name="form_message" placeholder="@lang('main.message')" required=""></textarea>
+                                    <textarea name="message" placeholder="@lang('main.message')" required=""></textarea>
                                 </div>
                             </div>
                             <div class="row">

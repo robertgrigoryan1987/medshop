@@ -18,5 +18,4 @@ class HomeSlider extends Model
     use Translatable;
     protected $translatable = ['title','text'];
 
-
 }
