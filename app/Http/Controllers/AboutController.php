@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AboutAvard;
 use App\AboutHeader;
 use App\AboutService;
+use App\ContactUs;
 use App\Faquestion;
 use App\QuestionsImage;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class AboutController extends Controller
         $about_faquestions = Faquestion::all();
         $about_questions_images = QuestionsImage::all();
         $about_avards = AboutAvard::all();
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
 
         return view('medshop.about')->with([
             'ordering_products_count'=>$ordering_products_count,
@@ -36,6 +38,7 @@ class AboutController extends Controller
             'about_faquestions' => $about_faquestions,
             'about_questions_images' => $about_questions_images,
             'about_avards' => $about_avards,
+            'contact_us' => $contact_us,
         ]);
     }
 }

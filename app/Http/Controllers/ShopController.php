@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AboutHeader;
+use App\ContactUs;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
@@ -28,6 +29,7 @@ class ShopController extends Controller
 //            echo "Cookie  is set!<br>";
 //            echo "Value is: " . $_COOKIE["customer"];
 //        }
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(9);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
@@ -38,6 +40,7 @@ class ShopController extends Controller
             'categories'=>$categories,
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
         ]);
     }
 
@@ -59,6 +62,7 @@ class ShopController extends Controller
     }
 
     public function product_order(){
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $product_orders = OrderingProduct::all()->where('session',Session::getId());
@@ -67,6 +71,7 @@ class ShopController extends Controller
             'product_orders'=>$product_orders,
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
         ]);
 
     }
@@ -82,6 +87,7 @@ class ShopController extends Controller
     }
 
     public function ordering_cart(){
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
         $product_orders = OrderingProduct::all()->where('session',Session::getId());
@@ -94,6 +100,7 @@ class ShopController extends Controller
             'sum'=>$sum,
             'product_orders'=>$product_orders,
             'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
         ]);
 
     }

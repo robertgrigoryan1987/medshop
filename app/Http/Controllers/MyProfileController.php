@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\AboutHeader;
+use App\ContactUs;
 use App\OrderingProduct;
 use App\Ordering;
 use Illuminate\Http\Request;
@@ -18,12 +19,14 @@ class MyProfileController extends Controller
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $user = Auth::user();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
 
         $user_order_products = OrderingProduct::all()->where('user_id', $user->id);
         return view('medshop.profile')->with([
             'ordering_products_count'=>$ordering_products_count,
             'user_order_products' => $user_order_products,
             'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
         ]);
     }
 

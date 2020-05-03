@@ -7180,7 +7180,7 @@ input#datepicker {
 }
 .content .item {
     display: block;
-    padding: 2px;
+    padding: 10px 5px;
 }
 .ui-widget-content a:hover {
     color: #0392ce;
