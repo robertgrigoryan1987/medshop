@@ -30,6 +30,7 @@ return [
     'phone' => 'Телефон',
     'index' => 'Почтовой индекс',
     'password' => 'Пароль',
+    'confirm-password' => 'Подтвердите Пароль',
     'choose-password' => 'Пароль',
     're-enter-password' => 'Подтвердить',
     'remember-me' => 'Запомнить меня',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AboutAvard;
+use App\AboutExperience;
 use App\AboutHeader;
 use App\AboutService;
 use App\ContactUs;
@@ -29,6 +30,7 @@ class AboutController extends Controller
         $about_faquestions = Faquestion::all();
         $about_questions_images = QuestionsImage::all();
         $about_avards = AboutAvard::all();
+        $about_experiences = AboutExperience::all();
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
 
         return view('medshop.about')->with([
@@ -39,6 +41,7 @@ class AboutController extends Controller
             'about_questions_images' => $about_questions_images,
             'about_avards' => $about_avards,
             'contact_us' => $contact_us,
+            'about_experiences' => $about_experiences,
         ]);
     }
 }

@@ -9,8 +9,8 @@
                     <img src="/medshop/images/slides/1.jpg" alt="" width="1920" height="450" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
                     <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="0" data-y="top" data-voffset="220" data-transform_idle="o:1;" data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-start="1500">
                         <div class="slide-content-box mar-lft">
-                            <h1>Пищевая <br> Добавка <span>Добавка</span></h1>
-                            <p>Пищевая Добавка <br>Пищевая Добавка.</p>
+                            <h1><span>{{$home_slider1->title}}</span></h1>
+                            <p>{{$home_slider1->text}}</p>
                         </div>
                     </div>
                 </li>
@@ -19,9 +19,8 @@
 
                     <div class="tp-caption  tp-resizeme" data-x="right" data-hoffset="0" data-y="top" data-voffset="220" data-transform_idle="o:1;" data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-start="1500">
                         <div class="slide-content-box">
-                            <h1>Глянцевая <br> Железная <span>Таблетка.</span></h1>
-                            <p>Глянцевая Железная Таблетка <br>Глянцевая Железная Таблетка.</p>
-
+                            <h1><span>{{$home_slider2->title}}</span></h1>
+                            <p>{{$home_slider2->text}}</p>
                         </div>
                     </div>
 
@@ -31,9 +30,8 @@
 
                     <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="0" data-y="top" data-voffset="220" data-transform_idle="o:1;" data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-start="1500">
                         <div class="slide-content-box mar-lft">
-                            <h1>Флакон <br> Для <span>Инъекций.</span></h1>
-                            <p>Флакон Для Инъекций <br>Флакон Для Инъекций.</p>
-
+                            <h1><span>{{$home_slider3->title}}</span></h1>
+                            <p>{{$home_slider3->text}}</p>
                         </div>
                     </div>
 
@@ -75,15 +73,6 @@
                                                         <a href="/{{config('app.locale')}}/product/{{$product->id}}">
                                                             <h5>{{$product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                                         </a>
-                                                    </div>
-                                                    <div class="review-box pull-right">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                                 <div class="product-value">
@@ -163,87 +152,35 @@
                                 <h3>@lang('main.popular-item')</h3>
                             </div>
                             <ul class="popular-product">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-1.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                @foreach($popular_products as $popular_product)
+                                    <li>
+                                        <div class="img-holder">
+                                            <img src="/storage/{{$popular_product->image_path}}" alt="Awesome Image">
+                                            <div class="overlay-style-one">
+                                                <div class="box">
+                                                    <div class="content">
+                                                        <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Injection Vial</h4>
-                                        </a>
-                                        <h5>$34.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
+                                        <div class="title-holder">
+                                            <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}">
+                                                <h4>{{$popular_product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h4>
+                                            </a>
+                                            <h5>{{$popular_product->price}}</h5>
+                                            <div class="review-box">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Supplement Tab</h4>
-                                        </a>
-                                        <h5>$29.00</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Smiley Ball-24</h4>
-                                        </a>
-                                        <h5>$24.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

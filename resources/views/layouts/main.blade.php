@@ -46,7 +46,7 @@ $set_lang = UrlController::set_language();
             <div class="row">
                 <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 mb-xs-10 mb-sm-10">
                     <div class="top-left">
-                        <p><span class="flaticon-phone"></span>@lang('main.24-hour') {{$contact_us->phone}}</p>
+                        <p><span class="flaticon-phone"></span>@lang('main.24-hour') <a href="tel:{{$contact_us->main_phone}}">{{$contact_us->main_phone}}</a></p>
                     </div>
                 </div>
                 <div class="col-lg-0 col-md-2 col-sm-12 col-xs-12">
@@ -98,7 +98,7 @@ $set_lang = UrlController::set_language();
                                 </div>
                                 <div class="text-holder">
                                     <h4>@lang('main.call-us-now')</h4>
-                                    <span>{{$contact_us->phone}}</span>
+                                    <a href="tel:{{$contact_us->main_phone}}"><span>{{$contact_us->main_phone}}</span></a>
                                 </div>
                             </li>
                             <li>
@@ -106,8 +106,8 @@ $set_lang = UrlController::set_language();
                                     <span class="flaticon-pin"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h4>Парк Драйв</h4>
-                                    <span>Армения 1006</span>
+                                    <h4>@lang('main.address')</h4>
+                                    <span>{{$contact_us->getTranslatedAttribute('address',config('app.locale'),config('voyager.multilingual.default'))}}</span>
                                 </div>
                             </li>
                             <li>
@@ -116,7 +116,7 @@ $set_lang = UrlController::set_language();
                                 </div>
                                 <div class="text-holder">
                                     <h4>@lang('main.week')</h4>
-                                    <span>09.00am - 18.00pm</span>
+                                    <span>{{$contact_us->working_hours}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -234,20 +234,16 @@ $set_lang = UrlController::set_language();
                                 <span class="border"></span>
                             </div>
                             <ul class="usefull-links fl-lft">
-                                <li><a href="#">Вопросы</a></li>
-                                <li><a href="#">Награды</a></li>
-                                <li><a href="#">Вопросы</a></li>
-                                <li><a href="#">Вопросы</a></li>
-                                <li><a href="#">Вопросы</a></li>
-                                <li><a href="#">Вопросы</a></li>
+                                <li><a href="/about">@lang('main.about-us')</a></li>
+                                <li><a href="/blog">@lang('main.blog')</a></li>
+                                <li><a href="/shop">@lang('main.our-stores')</a></li>
+                                <li><a href="/contact">@lang('main.contact-us')</a></li>
                             </ul>
                             <ul class="usefull-links">
-                                <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы</a></li>
-                                <li><a href="#">Сервисы</a></li>
+                                <li><a href="/shop-cart">@lang('main.basket')</a></li>
+                                <li><a href="/login">@lang('main.login')</a></li>
+                                <li><a href="/register">@lang('main.register')</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -264,7 +260,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-pin"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Армения  01 25</h5>
+                                        <h5>{{$contact_us->getTranslatedAttribute('address',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -272,7 +268,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-interface"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>Армения@Армения.com</h5>
+                                        <h5>{{$contact_us->email}}</h5>
                                     </div>
                                 </li>
                                 <li>
@@ -280,7 +276,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-technology-1"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>(123) 0200 12345 & 7890</h5>
+                                        <a href="tel:{{$contact_us->main_phone}}"><h5>{{$contact_us->main_phone}}</h5></a>
                                     </div>
                                 </li>
                                 <li>
@@ -288,7 +284,7 @@ $set_lang = UrlController::set_language();
                                         <span class="flaticon-clock"></span>
                                     </div>
                                     <div class="text-holder">
-                                        <h5>@lang('main.week'): 9am - 18pm</h5>
+                                        <h5>@lang('main.week'): <br>{{$contact_us->working_hours}}</h5>
                                     </div>
                                 </li>
                             </ul>

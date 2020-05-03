@@ -7,13 +7,13 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h4 class="pt-20 pl-20 backfff">{{ __('Register') }}</h4>
+                <h4 class="pt-20 pl-20 backfff">@lang('main.register')</h4>
                 <div class="login-form backfff">
                     <form method="POST" action="{{ route('register') }}" class="default-form">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="name" class="col-form-label text-md-right logincol">{{ __('Name') }}</label>
+                                <label for="name" class="col-form-label text-md-right logincol">@lang('main.name')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="phone" class="col-form-label text-md-right logincol">{{ __('Phone') }}</label>
+                                <label for="phone" class="col-form-label text-md-right logincol">@lang('main.phone')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="address" class="col-form-label text-md-right logincol">{{ __('Address') }}</label>
+                                <label for="address" class="col-form-label text-md-right logincol">@lang('main.address')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="email" class="col-form-label text-md-right logincol">{{ __('E-Mail Address') }}</label>
+                                <label for="email" class="col-form-label text-md-right logincol">@lang('main.email')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="password" class="col-form-label text-md-right logincol">{{ __('Password') }}</label>
+                                <label for="password" class="col-form-label text-md-right logincol">@lang('main.password')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -79,7 +79,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="password-confirm" class="col-form-label text-md-right logincol">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm" class="col-form-label text-md-right logincol">@lang('main.confirm-password')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 mt-20">
-                                <button class="thm-btn bgclr-1" type="submit">{{ __('Register') }}</button>
+                                <button class="thm-btn bgclr-1" type="submit">@lang('main.register')</button>
                             </div>
                         </div>
                     </form>
