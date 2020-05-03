@@ -11,10 +11,16 @@
     <style>
         .no-paid{
             background-color: red;
+            width: 50px;
+            text-align: center;
+            color: #ffffff;
         }
 
         .paid{
             background-color: #0E9A00;
+            width: 50px;
+            text-align: center;
+            color: #ffffff;
         }
     </style>
     <div class="page-content browse container-fluid">
@@ -99,7 +105,7 @@
                                             <div>{{$product->customer_telephone}}</div>
                                         </td>
                                         <td>
-                                            <span class="{{$product->order_status==0 ? "no-paid" : "paid"}}">{{$product->order_status}}</span>
+                                            <div class="{{$product->order_status==0 ? "no-paid" : "paid"}}">{{$product->order_status}}</div>
                                         </td>
                                         <td>
                                             <div>{{$product->curency}}</div>
