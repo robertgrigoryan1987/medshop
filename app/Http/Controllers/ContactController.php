@@ -33,11 +33,11 @@ class ContactController extends Controller
     }
 
     public function message(Request $request){
-//        $this->validate($request, [
-//            'name'	=>	'required|max:50',
-//            'email' =>  'required|email',
-//            'message'	=>	'required',
-//        ]);
+        $this->validate($request, [
+            'name'	=>	'required|max:50',
+            'email' =>  'required|email',
+            'message'	=>	'required',
+        ]);
         $data = $request->all();
         try{
             Mail::to('youngman87@mail.ru')->send(new Contact($data));
