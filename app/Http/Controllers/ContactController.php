@@ -38,7 +38,6 @@ class ContactController extends Controller
 //            'email' =>  'required|email',
 //            'message'	=>	'required',
 //        ]);
-        var_dump($request->all());exit;
         $data = $request->all();
         try{
             Mail::to('youngman87@mail.ru')->send(new Contact($data));
