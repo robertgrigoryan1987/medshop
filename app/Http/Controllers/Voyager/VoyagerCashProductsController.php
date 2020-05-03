@@ -21,7 +21,6 @@ class VoyagerCashProductsController extends BaseVoyagerController
 {
     public function cashProducts(){
         $cash_products = Ordering::all()->where('cash', 1);
-        var_dump($cash_products);exit;
         return view('vendor.voyager.ordered.cash_products')->with(compact('orderig_products'));
 
     }
