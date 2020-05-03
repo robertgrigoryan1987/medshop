@@ -297,21 +297,22 @@ $set_lang = UrlController::set_language();
                                 <h3>@lang('main.message')</h3>
                                 <span class="border"></span>
                             </div>
-                            <form class="appointment-form" action="#">
+                            <form  class="appointment-form" action="{{route('contact_post')}}" method="post">
+                                    @csrf
                                 <div class="input-box">
-                                    <input type="text" name="form_name" value="" placeholder="@lang('main.your-name')" required="">
+                                    <input type="text" name="name" value="" placeholder="@lang('main.your-name')" required="">
                                     <div class="icon-box">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="input-box">
-                                    <input type="email" name="form_email" value="" placeholder="@lang('main.email')" required="">
+                                    <input type="email" name="email" value="" placeholder="@lang('main.email')" required="">
                                     <div class="icon-box">
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="input-box">
-                                    <textarea name="form_message" placeholder="@lang('main.text')" required="" aria-required="true"></textarea>
+                                    <textarea name="message" placeholder="@lang('main.text')" required="" aria-required="true"></textarea>
                                 </div>
                                 <button type="submit">@lang('main.send')</button>
                             </form>

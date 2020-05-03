@@ -15,6 +15,16 @@
                             <div class="col-md-6">
                                 <div class="content-box">
                                     <h3>{{$product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                    <div class="review-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star-half"></i></li>
+                                        </ul>
+                                    </div>
+                                    <span class="price">{{$product->price}} AMD</span>
 
                                     @if($product->active_substance != null)
                                         <h3><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
@@ -27,18 +37,6 @@
                                     @if($product->count != null)
                                         <h3><strong>@lang('main.count')։ </strong>{{$product->count}}</h3>
                                     @endif
-
-
-                                    <div class="review-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half"></i></li>
-                                        </ul>
-                                    </div>
-                                    <span class="price">{{$product->price}} AMD</span>
                                     <div class="text">
                                         <p>{{$product->getTranslatedAttribute('description',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
@@ -50,7 +48,7 @@
                                                     <label for="packet" class="radio-label">@lang('main.packet')</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input id="piece" name="sort" type="radio" class="ml-40">
+                                                    <input id="piece" name="sort" type="radio" class="ml-40" data-singlprice="{{$product->hatavachar}}">
                                                     <label  for="piece" class="radio-label">@lang('main.piece')</label>
                                                 </div>
                                             @endif
@@ -104,3 +102,23 @@
         </div>
     </section>
 @endsection
+
+<script>
+    $( document ).ready(function() {
+
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $("#price").click(function (e) {
+            e.preventDefault();
+            console.log("radio click");
+            var singl_price = $(this).data("singlprice");
+            console.log(singl_price);
+
+
+        })
+    })
+</script>
