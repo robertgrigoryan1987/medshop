@@ -42,7 +42,14 @@ class ContactController extends Controller
 
         $data = $request->all();
         $message = new Message();
-        if($message->create($data)){
+        $message->name = $request->name;
+        $message->email = $request->email;
+
+        $message->phone = $request->phone;
+
+        $message->subject = $request->subject;
+        $message->message = $request->message;
+        if($message->save()){
             Mail::to('youngman87@mail.ru')->send(new Contact($data));
             $requestMessage = 'Request have been sent';
             return redirect()->back();
