@@ -15,6 +15,20 @@
                             <div class="col-md-6">
                                 <div class="content-box">
                                     <h3>{{$product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+
+                                    @if($product->active_substance != null)
+                                        <h3><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                    @endif
+
+                                    @if($product->aftor != null)
+                                        <h3><strong>@lang('main.aftor')։ </strong>{{$product->getTranslatedAttribute('aftor',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                    @endif
+
+                                    @if($product->count != null)
+                                        <h3><strong>@lang('main.count')։ </strong>{{$product->count}}</h3>
+                                    @endif
+
+
                                     <div class="review-box">
                                         <ul>
                                             <li><i class="fa fa-star"></i></li>
@@ -24,23 +38,26 @@
                                             <li><i class="fa fa-star-half"></i></li>
                                         </ul>
                                     </div>
-                                    <span class="price">$29.00</span>
+                                    <span class="price">{{$product->price}} AMD</span>
                                     <div class="text">
                                         <p>{{$product->getTranslatedAttribute('description',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
-                                    <div class="location-box">
-                                        <form action="#">
-                                            <div class="radio">
-                                                <input id="packet" name="sort" type="radio" class="ml-40" checked>
-                                                <label for="packet" class="radio-label">@lang('main.packet')</label>
-                                            </div>
-                                            <div class="radio">
-                                                <input id="piece" name="sort" type="radio" class="ml-40">
-                                                <label  for="piece" class="radio-label">@lang('main.piece')</label>
-                                            </div>
-                                            <button class="thm-btn bgclr-1 addtocart" type="submit">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                                        </form>
-                                    </div>
+
+                                        <div class="location-box">
+                                            @if($product->hatavachar != null)
+                                                <div class="radio">
+                                                    <input id="packet" name="sort" type="radio" class="ml-40" checked>
+                                                    <label for="packet" class="radio-label">@lang('main.packet')</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <input id="piece" name="sort" type="radio" class="ml-40">
+                                                    <label  for="piece" class="radio-label">@lang('main.piece')</label>
+                                                </div>
+                                            @endif
+                                            <button class="thm-btn bgclr-1 addtocart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                        </div>
+
+
                                 </div>
                             </div>
                         </div>

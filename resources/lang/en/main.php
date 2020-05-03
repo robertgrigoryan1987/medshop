@@ -120,4 +120,7 @@ return [
     'payment-type' => 'Payment type',
     'online' => 'Online',
     'cash' => 'Cash',
+    'aftor' => 'Aftor',
+    'active_sub' => 'Active Substanse',
+    'count' => 'Count'
 ];
