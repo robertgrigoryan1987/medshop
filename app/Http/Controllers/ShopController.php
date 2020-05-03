@@ -206,7 +206,11 @@ class ShopController extends Controller
                                 'order_id' => $ordering->order_id,
                             ]);
                         }
+
+                        $ordering->session = 1;
+                        $ordering->save();
                     }
+
                     return redirect('/')->with('order', 'Your order is created!');exit;
                 }
             }
