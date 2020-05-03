@@ -79,7 +79,7 @@
                                     @foreach($categories  as $item)
                                         @if($item->children->count() > 0)
                                             <div class="title item">
-                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                                <i class="dropdown icon"></i>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
                                             </div>
                                             <div class="content">
                                                 @foreach($item->children as $submenu)
@@ -88,7 +88,7 @@
                                             </div>
                                         @else
                                             <div class="title item">
-                                                <i class="dropdown icon"></i>{{ $item->name }}
+                                                <i class="dropdown icon"></i>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
                                             </div>
                                             <div class="content">
                                                 <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
