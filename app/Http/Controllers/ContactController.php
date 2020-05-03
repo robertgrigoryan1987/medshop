@@ -45,9 +45,9 @@ class ContactController extends Controller
         $message->name = $request->name;
         $message->email = $request->email;
 
-        $message->phone = $request->phone;
+        $message->phone = $request->phone ? $request->phone : "";
 
-        $message->subject = $request->subject;
+        $message->subject = $request->subject ? $request->subject : '';
         $message->message = $request->message;
         if($message->save()){
             Mail::to('youngman87@mail.ru')->send(new Contact($data));
