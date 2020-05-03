@@ -36,14 +36,14 @@
                         <img src="/storage/{{$about_headers->image}}" alt="Awesome Image">
                     </div>
                     <div class="inner-content">
-                        <p>{{$about_headers->image_text}}</p>
+                        <p>{{$about_headers->getTranslatedAttribute('image_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="text-holder p-15">
                         <div >
                             <h1 class="title">@lang('main.welcome')</h1>
-                            <p>{{$about_headers->header}}</p>
+                            <p>{{$about_headers->getTranslatedAttribute('header',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                         </div>
                         <ul>
                             <li>
@@ -52,8 +52,8 @@
                                         <span class="{{$about_headers->first_icon}}"></span>
                                     </div>
                                     <div class="text-box">
-                                        <h3>{{$about_headers->first_title}}</h3>
-                                        <p>{{$about_headers->first_text}}</p>
+                                        <h3>{{$about_headers->getTranslatedAttribute('first_title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                        <p>{{$about_headers->getTranslatedAttribute('first_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
                                 </div>
                             </li>
@@ -63,8 +63,8 @@
                                         <span class="{{$about_headers->second_icon}}"></span>
                                     </div>
                                     <div class="text-box pb-30">
-                                        <h3>{{$about_headers->second_title}}</h3>
-                                        <p>{{$about_headers->second_text}}</p>
+                                        <h3>{{$about_headers->getTranslatedAttribute('second_title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                        <p>{{$about_headers->getTranslatedAttribute('second_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
                                 </div>
                             </li>
@@ -86,8 +86,8 @@
                                 <span class="{{$about_service->icon_name}}"></span>
                             </div>
                             <div class="text-box">
-                                <h3>{{$about_service->title}}</h3>
-                                <p>{{$about_service->text}}</p>
+                                <h3>{{$about_service->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                <p>{{$about_service->getTranslatedAttribute('text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                             </div>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                                 <span class="{{$about_service->icon_name}}"></span>
                             </div>
                             <div class="text-box">
-                                <h3>{{$about_service->title}}</h3>
-                                <p>{{$about_service->text}}</p>
+                                <h3>{{$about_service->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                <p>{{$about_service->getTranslatedAttribute('text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                             </div>
                         </div>
                     </div>
@@ -144,19 +144,19 @@
                                 @if($about_faquestion->id%5 == 1)
                                     <div class="accordion accordion-block">
                                         <div class="accord-btn active">
-                                            <h4>{{$about_faquestion->question}}</h4>
+                                            <h4>{{$about_faquestion->getTranslatedAttribute('question',config('app.locale'),config('voyager.multilingual.default'))}}</h4>
                                         </div>
                                         <div class="accord-content collapsed">
-                                            <p>{{strip_tags($about_faquestion->answere)}}</p>
+                                            <p>{{strip_tags($about_faquestion->getTranslatedAttribute('answere',config('app.locale'),config('voyager.multilingual.default')))}}</p>
                                         </div>
                                     </div>
                                 @else
                                     <div class="accordion accordion-block">
                                         <div class="accord-btn">
-                                            <h4>{{$about_faquestion->question}}</h4>
+                                            <h4>{{$about_faquestion->getTranslatedAttribute('question',config('app.locale'),config('voyager.multilingual.default'))}}</h4>
                                         </div>
                                         <div class="accord-content">
-                                            <p>{{strip_tags($about_faquestion->answere)}}</p>
+                                            <p>{{strip_tags($about_faquestion->getTranslatedAttribute('answere',config('app.locale'),config('voyager.multilingual.default')))}}</p>
                                         </div>
                                     </div>
                                 @endif
