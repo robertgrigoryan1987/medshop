@@ -38,14 +38,15 @@ class ContactController extends Controller
             'email' =>  'required|email',
             'message'	=>	'required',
         ]);
+
+
         $data = $request->all();
-        try{
+        $message = new Message();
+        if($message->create($data)){
             Mail::to('youngman87@mail.ru')->send(new Contact($data));
             $requestMessage = 'Request have been sent';
             return redirect()->back();
-
-        }catch (\Exception $exception){
-            $requestMessage = 'Request have been sent';
         }
+
     }
 }
