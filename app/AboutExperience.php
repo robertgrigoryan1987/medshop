@@ -14,5 +14,8 @@ use TCG\Voyager\Traits\Translatable;
 
 class AboutExperience extends Model
 {
+    public $timestamps = false;
+    use Translatable;
+    protected $translatable = ['title'];
 
 }
