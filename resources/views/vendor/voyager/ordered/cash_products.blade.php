@@ -8,6 +8,15 @@
 @stop
 
 @section('content')
+    <style>
+        .no-paid{
+            background-color: red;
+        }
+
+        .paid{
+            background-color: #0E9A00;
+        }
+    </style>
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
         <div class="row">
@@ -90,7 +99,7 @@
                                             <div>{{$product->customer_telephone}}</div>
                                         </td>
                                         <td>
-                                            {{$product->order_status}}
+                                            <span class="{{$product->order_status==0 ? "no-paid" : "paid"}}">{{$product->order_status}}</span>
                                         </td>
                                         <td>
                                             <div>{{$product->curency}}</div>
