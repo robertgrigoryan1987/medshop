@@ -4,7 +4,7 @@
     <section class="single-shop-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="single-shop-content">
                         <div class="row">
                             <div class="col-md-6">
@@ -52,203 +52,34 @@
                             <span class="border"></span>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-product-item">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/1.jpg" alt="Awesome Product Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            @foreach($popular_products as $popular_product)
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="single-product-item">
+                                        <div class="img-holder">
+                                            <img src="/storage/{{$popular_product->image_path}}" alt="Awesome Product Image">
+                                            <div class="overlay-style-one">
+                                                <div class="box">
+                                                    <div class="content">
+                                                        <a class="thm-btn bgclr-1 shoping-cart" data-id="{{$popular_product->id}}" data-name="{{$popular_product->name}}" data-price="{{$popular_product->price}}" data-image="{{$popular_product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <div class="top clearfix">
-                                            <div class="product-title pull-left">
-                                                <a href="shop-single.html">
-                                                    <h5>Glossy Iron Tablet</h5>
-                                                </a>
+                                        <div class="title-holder">
+                                            <div class="top clearfix">
+                                                <div class="product-title pull-left">
+                                                    <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}">
+                                                        <h5>{{$popular_product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="review-box pull-right">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
+                                            <div class="product-value">
+                                                <h4>{{$popular_product->price}}</h4>
                                             </div>
-                                        </div>
-                                        <div class="product-value">
-                                            <h4>$34.99</h4>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-product-item">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/2.jpg" alt="Awesome Product Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <div class="top clearfix">
-                                            <div class="product-title pull-left">
-                                                <a href="shop-single.html">
-                                                    <h5>Glossy Iron Tablet</h5>
-                                                </a>
-                                            </div>
-                                            <div class="review-box pull-right">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-value">
-                                            <h4>$44.99</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-product-item">
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/3.jpg" alt="Awesome Product Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a class="thm-btn bgclr-1" href="shopping-cart.html">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <div class="top clearfix">
-                                            <div class="product-title pull-left">
-                                                <a href="shop-single.html">
-                                                    <h5>Glossy Iron Tablet</h5>
-                                                </a>
-                                            </div>
-                                            <div class="review-box pull-right">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-value">
-                                            <h4>$19.00</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 pull-left">
-                    <div class="sidebar-wrapper">
-                        <div class="single-sidebar">
-                            <div class="sec-title">
-                                <h3>@lang('main.popular-item')</h3>
-                            </div>
-                            <ul class="popular-product">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-1.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4></h4>
-                                        </a>
-                                        <h5>$34.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4></h4>
-                                        </a>
-                                        <h5>$29.00</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4></h4>
-                                        </a>
-                                        <h5>$24.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            @endforeach
                         </div>
                     </div>
                 </div>

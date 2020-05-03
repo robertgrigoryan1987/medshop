@@ -37,15 +37,6 @@
                                                             <h5>{{$product->name}}</h5>
                                                         </a>
                                                     </div>
-                                                    <div class="review-box pull-right">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
                                                 </div>
                                                 <div class="product-value">
                                                     <h4>{{$product->price}}</h4>
@@ -118,87 +109,35 @@
                                 <h3>@lang('main.popular-item')</h3>
                             </div>
                             <ul class="popular-product">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-1.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                @foreach($popular_products as $popular_product)
+                                    <li>
+                                        <div class="img-holder">
+                                            <img src="/storage/{{$popular_product->image_path}}" alt="Awesome Image">
+                                            <div class="overlay-style-one">
+                                                <div class="box">
+                                                    <div class="content">
+                                                        <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Injection Vial</h4>
-                                        </a>
-                                        <h5>$34.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-2.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
+                                        <div class="title-holder">
+                                            <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}">
+                                                <h4>{{$popular_product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h4>
+                                            </a>
+                                            <h5>{{$popular_product->price}}</h5>
+                                            <div class="review-box">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Supplement Tab</h4>
-                                        </a>
-                                        <h5>$29.00</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="/medshop/images/shop/product-thumb-3.jpg" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <a href="#">
-                                            <h4>Smiley Ball-24</h4>
-                                        </a>
-                                        <h5>$24.99</h5>
-                                        <div class="review-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

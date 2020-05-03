@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function product($id){
+        $popular_products = Product::inRandomOrder()->take(3)->get();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $product = Product::where('id',$id)->first();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
@@ -35,6 +36,7 @@ class ProductController extends Controller
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
             'contact_us' => $contact_us,
+            'popular_products' => $popular_products,
         ]);
 
     }
@@ -61,6 +63,7 @@ class ProductController extends Controller
     }
 
     public function search(Request $request) {
+        $popular_products = Product::inRandomOrder()->take(3)->get();
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
@@ -79,6 +82,7 @@ class ProductController extends Controller
                 'ordering_products_count'=>$ordering_products_count,
                 'about_headers'=> $about_headers,
                 'contact_us' => $contact_us,
+                'popular_products' => $popular_products,
             ]);
         }
     }

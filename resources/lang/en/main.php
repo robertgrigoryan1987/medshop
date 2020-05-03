@@ -32,6 +32,7 @@ return [
     'phone' => 'Phone',
     'index' => 'Post Index',
     'password' => 'Password',
+    'confirm-password' => 'Confirm Password',
     'choose-password' => 'Choose password',
     're-enter-password' => 'Re-enter Password',
     'remember-me' => 'Remember me',

@@ -33,6 +33,7 @@ return [
     'phone' => 'Հեռախոս',
     'index' => 'Փոստային ինդեկս',
     'password' => 'Գաղտնաբառ',
+    'confirm-password' => 'Հաստատեք գաղտնաբաոը',
     'choose-password' => 'Լրացրեք գաղտնաբառը',
     're-enter-password' => 'Կրկնեք գաղտնաբառը',
     'remember-me' => 'Հիշել ինձ',

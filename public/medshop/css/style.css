@@ -550,7 +550,7 @@ select:focus {
 ===============================================*/
 .header-area {
     background: #ffffff;
-    padding: 30px 0;
+    padding: 30px 0px 0px;
     background-image: url(/medshop/images/awards/AdobeStock_177452394.jpeg);
 }
 
@@ -2168,8 +2168,8 @@ select:focus {
 ***/
 .footer-area {
     background: #222222;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 15px;
     position: relative;
 }
 

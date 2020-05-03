@@ -178,42 +178,17 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul>
-                        <li>
-                            <div class="single-item text-center">
-                                <div class="icon-holder">
-                                    <span class="flaticon-medical"></span>
+                        @foreach($about_experiences as $about_experience)
+                            <li>
+                                <div class="single-item text-center">
+                                    <div class="icon-holder">
+                                        <span class="{{$about_experience->icon_name}}"></span>
+                                    </div>
+                                    <h1><span class="timer" data-from="1" data-to="{{$about_experience->count}}" data-speed="5000" data-refresh-interval="50">{{$about_experience->count}}</span></h1>
+                                    <h3>{{$about_experience->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
                                 </div>
-                                <h1><span class="timer" data-from="1" data-to="25" data-speed="5000" data-refresh-interval="50">25</span></h1>
-                                <h3>Годы Опыта</h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-item text-center">
-                                <div class="icon-holder">
-                                    <span class="flaticon-smile"></span>
-                                </div>
-                                <h1><span class="timer" data-from="1" data-to="284" data-speed="5000" data-refresh-interval="50">284</span></h1>
-                                <h3>Годы Опыта</h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-item text-center">
-                                <div class="icon-holder">
-                                    <span class="flaticon-medical-1"></span>
-                                </div>
-                                <h1><span class="timer" data-from="1" data-to="176" data-speed="5000" data-refresh-interval="50">176</span></h1>
-                                <h3>Годы Опыта</h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-item text-center">
-                                <div class="icon-holder">
-                                    <span class="flaticon-ribbon"></span>
-                                </div>
-                                <h1><span class="timer" data-from="1" data-to="142" data-speed="5000" data-refresh-interval="50">142</span></h1>
-                                <h3>Годы Опыта</h3>
-                            </div>
-                        </li>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
