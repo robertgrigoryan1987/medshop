@@ -208,7 +208,7 @@
 
                     $.ajax({
                         type: 'POST',
-                        url: '/order_add_paid',
+                        url: '/admin/order_add_paid',
                         data: {ordered_product_id: ordered_product_id},
                         error: function (data) {
                             var errors = data.responseJSON;
