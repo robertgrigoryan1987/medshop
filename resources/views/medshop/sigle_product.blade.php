@@ -105,6 +105,7 @@
 
 <script>
     $( document ).ready(function() {
+        console.log( "ready!" );
 
         $.ajaxSetup({
             headers: {
@@ -119,6 +120,6 @@
             console.log(singl_price);
 
 
-        })
-    })
+        });
+    });
 </script>
