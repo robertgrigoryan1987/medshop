@@ -54,7 +54,7 @@
                                                     <label  for="piece" class="radio-label">@lang('main.piece')</label>
                                                 </div>
                                             @endif
-                                            <button class="thm-btn bgclr-1 addtocart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                            <button class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
                                         </div>
 
 
