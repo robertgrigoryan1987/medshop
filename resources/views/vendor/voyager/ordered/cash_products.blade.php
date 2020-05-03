@@ -141,11 +141,11 @@
                                             </a>
 
                                             @if($product->order_status==0)
-                                                <a href="" title="Paid" class="btn btn-sm btn-warning pull-right red add-paid" data-id="{{$product->id}}">
+                                                <a href="" title="Paid" class="btn btn-sm pull-right red add-paid" data-id="{{$product->id}}">
                                                     <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Paid</span>
                                                 </a>
                                             @else
-                                                <a href="" title="Paid" class="btn btn-sm btn-warning pull-right green">
+                                                <a href="" title="Paid" class="btn btn-sm pull-right green">
                                                     <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Paid</span>
                                                 </a>
 
@@ -195,6 +195,11 @@
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     <script>
         $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             $('.add-paid').click(function(e){
                 e.preventDefault();
