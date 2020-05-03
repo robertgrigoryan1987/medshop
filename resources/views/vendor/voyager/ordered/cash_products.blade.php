@@ -113,11 +113,11 @@
 
 
                                         <td class="no-sort no-click bread-actions">
-                                            <a href="products_in_order/{{strlen($data->session)>4 ? $data->session : $data->id }}" class="btn btn-sm btn-warning pull-right edit">
+                                            <a href="products_in_order/{{strlen($product->session)>4 ? $product->session : $product->id }}" class="btn btn-sm btn-warning pull-right edit">
                                                 <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Products</span>
                                             </a>
 
-                                            <a href="ordering-products/{{ $data->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
+                                            <a href="ordering-products/{{ $product->id }}" title="View" class="btn btn-sm btn-warning pull-right view">
                                                 <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">View</span>
                                             </a>
 
