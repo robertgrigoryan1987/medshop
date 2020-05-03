@@ -70,9 +70,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @php
-                                var_dump($cash_products);exit;
-                                @endphp
+
                                 @foreach($cash_products as $product)
                                     <tr>
 
