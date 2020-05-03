@@ -102,26 +102,4 @@
         </div>
     </section>
 
-    <script>
-        $( document ).ready(function() {
-            console.log( "ready!" );
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $("#piece").click(function (e) {
-                e.preventDefault();
-                console.log("radio click");
-                var singl_price = $(this).data("singlprice");
-                console.log(singl_price);
-
-
-            });
-        });
-    </script>
-
-
 @endsection

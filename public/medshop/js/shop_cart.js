@@ -107,6 +107,14 @@ $( document ).ready(function() {
         }
     });
 
+    $("#piece").click(function (e) {
+        e.preventDefault();
+        console.log("radio click");
+        var singl_price = $(this).data("singlprice");
+        console.log(singl_price);
+
+
+    });
 
 
 });
