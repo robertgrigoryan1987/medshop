@@ -34,6 +34,7 @@
                 <div class="col-lg-8 col-md-7">
                     <div class="contact-form">
                         <form id="contact-form" name="contact_form" class="default-form" action="{{route('contact_post')}}" method="post">
+                            @csrf
                             <h2>@lang('main.send-us-message')</h2>
                             <div class="row">
                                 <div class="col-md-6">
