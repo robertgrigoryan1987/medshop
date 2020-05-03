@@ -13,7 +13,7 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="email" class="col-form-label text-md-right logincol">{{ __('E-Mail Address') }}</label>
+                                <label for="email" class="col-form-label text-md-right logincol">@lang('main.email')</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

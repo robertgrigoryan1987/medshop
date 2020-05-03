@@ -3246,7 +3246,7 @@ select:focus {
 .single-project-item .img-holder img {
     transform: scale(1.1, 1.1);
     transition: all .9s ease;
-    width: 100%;
+    width: 170px;
 }
 
 .single-project-item:hover .img-holder img {
@@ -4858,7 +4858,7 @@ select:focus {
 .single-product-item .img-holder img {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    height: 300px;
+    height: auto;
 }
 
 .single-product-item:hover .img-holder img {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AboutHeader;
+use App\ContactUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Product;
@@ -26,6 +27,7 @@ class IndexController extends Controller
 //        $cookie_value = Str::random(12);
 //        setcookie($cookie_name, $cookie_value, time() + (86400 * 30)); // 86400 = 1 day
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(9);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
@@ -35,6 +37,7 @@ class IndexController extends Controller
             'categories'=>$categories,
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
         ]);
 
     }

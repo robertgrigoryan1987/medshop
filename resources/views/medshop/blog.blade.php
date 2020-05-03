@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="text-holder">
                                         <a href="{{route('blog.show', $post->slug)}}">
-                                            <h3 class="blog-title">{{$post->title}}</h3>
+                                            <h3 class="blog-title">{{$post->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
                                         </a>
                                         <div class="text">
                                             <p>{{mb_substr($post['excerpt'],0, 150).'...'}}</p>
@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="title-holder">
                                             <a href="#">
-                                                <h5 class="post-title">{{$popular_post->title}}</h5>
+                                                <h5 class="post-title">{{$popular_post->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                             </a>
                                             <h6 class="post-date">{{$popular_post->getDate($post->created_at)}}</h6>
                                         </div>

@@ -77,7 +77,7 @@
                                     <span class="flaticon-pin"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h5><span>@lang('main.address')</span> 121, Армения <br>Армения</h5>
+                                    <h5><span>@lang('main.address')</span> {{$contact_us->getTranslatedAttribute('address',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                 </div>
                             </li>
                             <li>
@@ -85,7 +85,7 @@
                                     <span class="flaticon-technology"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h5><span>@lang('main.phone'):</span> (123) 0200 12345 &<br>1800-45-678-9012</h5>
+                                    <h5><span>@lang('main.phone'):</span> {{$contact_us->phone}}</h5>
                                 </div>
                             </li>
                             <li>
@@ -93,16 +93,13 @@
                                     <span class="flaticon-interface"></span>
                                 </div>
                                 <div class="text-holder">
-                                    <h5><span>@lang('main.email'):</span> Армения@Армения.com</h5>
+                                    <h5><span>@lang('main.email'):</span> {{$contact_us->email}}</h5>
                                 </div>
                             </li>
                         </ul>
                         <ul class="social-links">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>

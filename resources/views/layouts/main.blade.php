@@ -46,7 +46,7 @@ $set_lang = UrlController::set_language();
             <div class="row">
                 <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 mb-xs-10 mb-sm-10">
                     <div class="top-left">
-                        <p><span class="flaticon-phone"></span>@lang('main.24-hour') +321 789 01 2345</p>
+                        <p><span class="flaticon-phone"></span>@lang('main.24-hour') {{$contact_us->phone}}</p>
                     </div>
                 </div>
                 <div class="col-lg-0 col-md-2 col-sm-12 col-xs-12">
@@ -98,7 +98,7 @@ $set_lang = UrlController::set_language();
                                 </div>
                                 <div class="text-holder">
                                     <h4>@lang('main.call-us-now')</h4>
-                                    <span>+1-888-987-6543</span>
+                                    <span>{{$contact_us->phone}}</span>
                                 </div>
                             </li>
                             <li>
@@ -221,7 +221,7 @@ $set_lang = UrlController::set_language();
                                 <span class="border"></span>
                             </div>
                             <div class="our-info">
-                                <p>{{$about_headers->header}}</p>
+                                <p>{{$about_headers->getTranslatedAttribute('header',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                 <a href="/about">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>

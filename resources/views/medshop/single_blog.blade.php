@@ -11,15 +11,12 @@
                                 <img src="/storage/{{$post->image}}" alt="Awesome Image">
                             </div>
                             <div class="text-holder">
-                                <h3 class="blog-title">{{$post->title}}</h3>
+                                <h3 class="blog-title">{{$post->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
                                 <div class="text">
-                                    <p>{{strip_tags($post->body)}}</p>
+                                    <p>{{strip_tags($post->getTranslatedAttribute('body',config('app.locale'),config('voyager.multilingual.default')))}}</p>
                                 </div>
                                 <ul class="meta-info">
                                     <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{$post->getDate($post->created_at)}}</a></li>
-                                    @if($post->author  != null)
-                                        <i class="fa fa-user" ></i>{{$post->author->name}}
-                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -46,7 +43,7 @@
                                     </div>
                                     <div class="title-holder">
                                         <a href="#">
-                                            <h5 class="post-title">{{$popular_post->title}}</h5>
+                                            <h5 class="post-title">{{$popular_post->getTranslatedAttribute('title',config('app.locale'),config('voyager.multilingual.default'))}}</h5>
                                         </a>
                                         <h6 class="post-date">{{$popular_post->getDate($post->created_at)}}</h6>
                                     </div>
