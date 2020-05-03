@@ -22,6 +22,14 @@
             text-align: center;
             color: #ffffff;
         }
+
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            background-color: #0E9A00;
+        }
     </style>
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
@@ -132,9 +140,16 @@
                                                 <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Products</span>
                                             </a>
 
-                                            <a href="" title="Paid" class="btn btn-sm btn-warning pull-right view">
-                                                <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Paid</span>
-                                            </a>
+                                            @if($product->order_status==0)
+                                                <a href="" title="Paid" class="btn btn-sm btn-warning pull-right red add-paid" data-id="{{$product->id}}">
+                                                    <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Paid</span>
+                                                </a>
+                                            @else
+                                                <a href="" title="Paid" class="btn btn-sm btn-warning pull-right green">
+                                                    <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Paid</span>
+                                                </a>
+
+                                            @endif
 
                                         </td>
                                     </tr>
@@ -180,6 +195,31 @@
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     <script>
         $(document).ready(function () {
+
+            $('.add-paid').click(function(e){
+                e.preventDefault();
+                var ordered_product_id = $(this).data( "id" );
+                if ( confirm("Olredy paid this order?")) {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/order_add_paid',
+                        data: {ordered_product_id: ordered_product_id},
+                        error: function (data) {
+                            var errors = data.responseJSON;
+                            console.log(errors);
+                        },
+                        success: function (resp) {
+                            $(".no-paid").text(1);
+                            $(".no-paid").addClass("paid");
+                            $(".no-paid").removeClass("no-paid");
+                            $(this).removeClass("red");
+                            $(this).addClass("green");
+                            $(this).removeClass("add-paid");
+                        }
+                    });
+                }
+            });
 
             $('#search-input select').select2({
                 minimumResultsForSearch: Infinity

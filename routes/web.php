@@ -23,6 +23,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/products_in_order/{id}', 'Voyager\VoyagerOrderProductsController@orderingProducts');
     Route::get('/cash_orderings', 'Voyager\VoyagerCashProductsController@cashProducts');
+    Route::post('/order_add_paid', 'Voyager\VoyagerCashProductsController@order_add_paid');
+
 
 
 });

@@ -44,4 +44,15 @@ class VoyagerCashProductsController extends BaseVoyagerController
 
         return back();
     }
+
+    public function order_add_paid(Request $request){
+        $id = $request->ordered_product_id;
+        $order_paid = Ordering::where('id',$id)->first();
+        $order_paid->order_status = 1;
+        if($order_paid->save()){
+            echo 'paid';exit;
+        }else{
+            echo 'error';exit;
+        }
+    }
 }
