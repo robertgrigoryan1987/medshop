@@ -112,7 +112,7 @@
             }
         });
 
-        $("#price").click(function (e) {
+        $("#piece").click(function (e) {
             e.preventDefault();
             console.log("radio click");
             var singl_price = $(this).data("singlprice");
