@@ -49,6 +49,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/contact', 'ContactController@index')->name('contact');
 
+    Route::post('/contact', 'ContactController@message')->name('contact_post');
+
     Route::get('/product_order', 'ShopController@product_order')->name('product_order');
 
     Route::get('/product/{id}', 'ProductController@product');
