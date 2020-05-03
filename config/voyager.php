@@ -113,7 +113,7 @@ return [
         'locales' => [
             'en',
             'ru',
-            'am',
+            'hy',
         ],
     ],
 

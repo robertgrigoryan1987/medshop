@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="text-box pb-30">
                                         <h3>{{$about_headers->getTranslatedAttribute('second_title',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
-                                        <p>{{$about_headers->getTranslatedAttribute('second_title',config('app.locale'),config('voyager.multilingual.default'))}}</p>
+                                        <p>{{$about_headers->getTranslatedAttribute('second_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
                                 </div>
                             </li>
