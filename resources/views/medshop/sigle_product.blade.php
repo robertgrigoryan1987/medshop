@@ -44,7 +44,7 @@
                                         <div class="location-box">
                                             @if($product->hatavachar != null)
                                                 <div class="radio">
-                                                    <input id="packet" name="sort" type="radio" class="ml-40" checked>
+                                                    <input id="main-piece-packet" name="sort" type="radio" class="ml-40" checked data-singlprice="{{$product->price}}">
                                                     <label for="packet" class="radio-label">@lang('main.packet')</label>
                                                 </div>
                                                 <div class="radio">
