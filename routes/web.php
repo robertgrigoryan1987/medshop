@@ -67,9 +67,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::post('/shop_cart_quantity', 'ShopController@shop_cart_quantity');
 
-    Route::post('/idram_paymant_fail', 'PaymentController@idram_paymant_fail');
+    Route::any('/idram_paymant_fail', 'PaymentController@idram_paymant_fail');
 
-    Route::post('/idram_payment_success', 'PaymentController@idram_payment_success');
+    Route::any('/idram_payment_success', 'PaymentController@idram_payment_success');
 
     Route::post('/idram_paymant_result', 'PaymentController@idram_paymant_result');
 

@@ -107,7 +107,7 @@ $( document ).ready(function() {
         }
     });
 
-    $("#piece").click(function (e) {
+    $("#piece").change(function (e) {
         e.preventDefault();
         console.log("radio click");
         var singl_price = $(this).data("singlprice");
