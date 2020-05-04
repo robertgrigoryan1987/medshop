@@ -110,7 +110,7 @@ $( document ).ready(function() {
     $("#piece").change(function (e) {
         e.preventDefault();
         var singl_price = $(this).data("singlprice");
-
+        console.log(singl_price);
         $('.single-price').text(singl_price);
         $('#addtocart-single').data('price', singl_price);
 
