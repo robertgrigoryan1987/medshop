@@ -80,7 +80,7 @@ class PaymentController extends Controller
     }
 
     public function idram_paymant($data){
-        return view('wixon.payment.idbank')->with(['array'=>$data]);
+        return view('medshop.payment.idbank')->with(['array'=>$data]);
     }
 
     public function pay_ok(){

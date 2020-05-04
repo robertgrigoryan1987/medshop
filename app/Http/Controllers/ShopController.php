@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use App\OrderingProduct;
 use Session;
+use App\Araqum;
 
 class ShopController extends Controller
 {
@@ -97,12 +98,17 @@ class ShopController extends Controller
         foreach ($product_orders as $product){
             $sum = $sum+($product->product_price*$product->quantity);
         }
+        $araqum_sum = Araqum::where('id',1)->first();
+
+        $araqum_sum = $araqum_sum->price;
+
         return view('medshop.ordering_cart')->with([
             'ordering_products_count'=>$ordering_products_count,
             'sum'=>$sum,
             'product_orders'=>$product_orders,
             'about_headers'=> $about_headers,
             'contact_us' => $contact_us,
+            'araqum_sum' => $araqum_sum
         ]);
 
     }

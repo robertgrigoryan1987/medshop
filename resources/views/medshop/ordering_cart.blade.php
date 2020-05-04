@@ -107,7 +107,17 @@
                                         <ul class="cart-total-table">
                                             <li class="clearfix">
                                                 <span class="col col-title"><h3>@lang('main.total')</h3></span>
+
                                                 <span class="col"><h4 class="single-price">{{$sum}}</h4> <span class="single-currency"> AMD</span></span>
+
+                                                <span class="col"><h4>{{$sum}}</h4></span>
+
+                                                <span class="col col-title"><h3>Araqum</h3></span>
+                                                <span class="col"><h4>{{$araqum_sum}}</h4></span>
+
+                                                <span class="col col-title"><h3>@lang('main.total')</h3></span>
+                                                <span class="col"><h4>{{$sum + $araqum_sum}}</h4></span>
+
                                             </li>
                                         </ul>
                                         <br>
@@ -135,7 +145,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="sum" value="{{$sum}}">
+                                    <input type="hidden" name="sum" value="{{$sum+$araqum_sum}}">
                                     <div class="placeorder-button text-left ">
                                         <button class="thm-btn bgclr-1 checkbutton" type="submit">@lang('main.pay')</button>
                                     </div>
