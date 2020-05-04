@@ -98,6 +98,8 @@ class ShopController extends Controller
         }
         $araqum_sum = Araqum::where('id',1)->first();
 
+        $araqum_sum = $araqum_sum->price;
+
         return view('medshop.ordering_cart')->with([
             'ordering_products_count'=>$ordering_products_count,
             'sum'=>$sum,
