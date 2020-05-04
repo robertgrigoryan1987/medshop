@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use App\OrderingProduct;
 use Session;
+use App\Araqum;
 
 class ShopController extends Controller
 {
@@ -33,6 +34,7 @@ class ShopController extends Controller
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(18);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+        $araqum_sum = Araqum::where('id',1)->first();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
         return view('medshop.shop')->with([
