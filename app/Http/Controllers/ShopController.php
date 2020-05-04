@@ -34,7 +34,6 @@ class ShopController extends Controller
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(18);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
-        $araqum_sum = Araqum::where('id',1)->first();
 
         $categories = Category::where('parent_id',null)->with('children')->get();
         return view('medshop.shop')->with([
@@ -97,12 +96,15 @@ class ShopController extends Controller
         foreach ($product_orders as $product){
             $sum = $sum+($product->product_price*$product->quantity);
         }
+        $araqum_sum = Araqum::where('id',1)->first();
+
         return view('medshop.ordering_cart')->with([
             'ordering_products_count'=>$ordering_products_count,
             'sum'=>$sum,
             'product_orders'=>$product_orders,
             'about_headers'=> $about_headers,
             'contact_us' => $contact_us,
+            'araqum_sum' => $araqum_sum
         ]);
 
     }
