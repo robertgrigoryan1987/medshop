@@ -24,7 +24,7 @@
                                             <li><i class="fa fa-star-half"></i></li>
                                         </ul>
                                     </div>
-                                    <span class="price">{{$product->price}} AMD</span>
+                                    <span class="single-price">{{$product->price}}</span> <span> AMD</span>
 
                                     @if($product->active_substance != null)
                                         <h3><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
@@ -40,22 +40,19 @@
                                     <div class="text">
                                         <p>{{$product->getTranslatedAttribute('description',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                     </div>
-
-                                        <div class="location-box">
-                                            @if($product->hatavachar != null)
-                                                <div class="radio">
-                                                    <input id="paket" name="sort" type="checkbox" class="ml-40">
-                                                    <label for="paket" class="radio-label">@lang('main.packet')</label>
-                                                </div>
-                                                <div class="radio">
-                                                    <input id="hat" name="hatavchar" type="checkbox" class="ml-40" data-singlprice="{{$product->hatavachar}}">
-                                                    <label  for="hat" class="radio-label">@lang('main.piece')</label>
-                                                </div>
-                                            @endif
-                                            <button class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                                        </div>
-
-
+                                    <div class="location-box">
+                                        @if($product->hatavachar != null)
+                                            <div class="radio">
+                                                <input id="main-piece-packet" name="sort" type="radio" class="ml-40" checked data-singlprice="{{$product->price}}">
+                                                <label for="packet" class="radio-label">@lang('main.packet')</label>
+                                            </div>
+                                            <div class="radio">
+                                                <input id="piece" name="sort" type="radio" class="ml-40" data-singlprice="{{$product->hatavachar}}">
+                                                <label  for="piece" class="radio-label">@lang('main.piece')</label>
+                                            </div>
+                                        @endif
+                                        <button id="addtocart-single" class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
