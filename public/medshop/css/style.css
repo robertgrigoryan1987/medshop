@@ -5721,18 +5721,18 @@ select:focus {
     font-family: 'Poppins', sans-serif;
 }
 
-.cart-total-table li span.col {
-    color: #999999;
-    display: block;
-    float: left;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-    padding: 10px 18px;
-    position: relative;
-    width: 50%;
-    font-family: 'Open Sans', sans-serif;
-}
+/*.cart-total-table li span.col {*/
+/*    color: #999999;*/
+/*    display: block;*/
+/*    float: left;*/
+/*    font-size: 16px;*/
+/*    font-weight: 400;*/
+/*    line-height: 28px;*/
+/*    padding: 10px 18px;*/
+/*    position: relative;*/
+/*    width: 50%;*/
+/*    font-family: 'Open Sans', sans-serif;*/
+/*}*/
 
 .cart-total-table li span.col b {
     color: #0392ce;

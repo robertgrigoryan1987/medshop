@@ -106,18 +106,14 @@
                                     <div class="">
                                         <ul class="cart-total-table">
                                             <li class="clearfix">
-                                                <span class="col col-title"><h3>@lang('main.total')</h3></span>
-
+                                                <span class="col col-title"><h3>@lang('main.pre-result')</h3></span>
                                                 <span class="col"><h4 class="single-price">{{$sum}}</h4> <span class="single-currency"> AMD</span></span>
 
-                                                <span class="col"><h4>{{$sum}}</h4></span>
-
-                                                <span class="col col-title"><h3>Araqum</h3></span>
-                                                <span class="col"><h4>{{$araqum_sum}}</h4></span>
+                                                <span class="col col-title"><h3>@lang('main.delivery-and-handling')</h3></span>
+                                                <span class="col"><h4 class="single-price">{{$araqum_sum}}</h4><span class="single-currency"> AMD</span></span>
 
                                                 <span class="col col-title"><h3>@lang('main.total')</h3></span>
-                                                <span class="col"><h4>{{$sum + $araqum_sum}}</h4></span>
-
+                                                <span class="col"><h4 class="single-price">{{$sum + $araqum_sum}}</h4><span class="single-currency"> AMD</span></span>
                                             </li>
                                         </ul>
                                         <br>
@@ -134,14 +130,14 @@
                                         <div class="option-block"></div>
                                         <div class="option-block">
                                             <div class="radio-block cc-selector">
-                                                <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>
-                                                <label class="drinkcard-cc visa" for="visa"></label>
+{{--                                                <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>--}}
+{{--                                                <label class="drinkcard-cc visa" for="visa"></label>--}}
 
                                                 <input  type="radio" name="payment_type" value="idram" id="idram"/>
                                                 <label class="drinkcard-cc idram" for="idram"></label>
 
-                                                <input  type="radio" name="payment_type" value="telcell" id="telcell"/>
-                                                <label class="drinkcard-cc telcell" for="telcell"></label>
+{{--                                                <input  type="radio" name="payment_type" value="telcell" id="telcell"/>--}}
+{{--                                                <label class="drinkcard-cc telcell" for="telcell"></label>--}}
                                             </div>
                                         </div>
                                     </div>

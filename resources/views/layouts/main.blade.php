@@ -39,7 +39,7 @@ $set_lang = UrlController::set_language();
 
 <div class="boxed_wrapper">
 
-    <div class="preloader"></div>
+{{--    <div class="preloader"></div>--}}
 
     <section class="top-bar-area">
         <div class="container">

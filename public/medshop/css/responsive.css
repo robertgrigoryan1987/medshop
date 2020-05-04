@@ -1,12 +1,23 @@
 
 /* Large Layout: 1200px. */
 @media only screen and (min-width: 1200px){
-.container {padding: 0;}
-.container-fluid{padding: 0;}
+    .container {padding: 0;}
+    .container-fluid{padding: 0;}
     .loginBtn {
         width: 47%;
     }
-
+    .cart-total-table li span.col {
+        color: #999999;
+        display: block;
+        float: left;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        padding: 10px 18px;
+        position: relative;
+        width: 50%;
+        font-family: 'Open Sans', sans-serif;
+    }
 }
 
 
@@ -15,6 +26,18 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .loginBtn {
         width: 47%;
+    }
+    .cart-total-table li span.col {
+        color: #999999;
+        display: block;
+        float: left;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        padding: 10px 18px;
+        position: relative;
+        width: 50%;
+        font-family: 'Open Sans', sans-serif;
     }
 /***
 =============================================
@@ -261,6 +284,18 @@
     Top bar Area style
 =============================================
 ***/
+.cart-total-table li span.col {
+    color: #999999;
+    display: block;
+     float: left;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 10px 18px;
+    position: relative;
+    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+}
 .top-bar-area {}
 .top-bar-area .top-left {
     overflow: hidden;
@@ -1374,6 +1409,18 @@
     Blog style
 =============================================
 ***/
+.cart-total-table li span.col {
+    color: #999999;
+    display: block;
+    /* float: left; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 10px 18px;
+    position: relative;
+    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+}
 
 .loginBtn {
     width: 47%;
@@ -1396,8 +1443,19 @@
     height: auto;
 }
 
-
-
 }
-
+@media only screen and (max-width: 480px) {
+    .cart-total-table li span.col {
+        color: #999999;
+        display: block;
+        /* float: left; */
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        padding: 10px 18px;
+        position: relative;
+        width: 50%;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
 

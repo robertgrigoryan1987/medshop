@@ -58,7 +58,7 @@ return [
     'order-total' => 'Order Total',
     'checkout' => 'Checkout',
     'pay' => 'Pay',
-    'delivery-and-handling' => 'Delivery and handling',
+    'delivery-and-handling' => 'Delivery',
 
     'send-us-message' => 'Send us message',
     'send' => 'Send',
@@ -122,5 +122,6 @@ return [
     'cash' => 'Cash',
     'aftor' => 'Aftor',
     'active_sub' => 'Active Substanse',
-    'count' => 'Count'
+    'count' => 'Count',
+    'pre-result' => 'Preliminary result',
 ];
