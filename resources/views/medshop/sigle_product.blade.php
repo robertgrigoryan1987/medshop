@@ -24,7 +24,7 @@
                                             <li><i class="fa fa-star-half"></i></li>
                                         </ul>
                                     </div>
-                                    <span class="price">{{$product->price}} AMD</span>
+                                    <span class="single-price">{{$product->price}}</span> <span> AMD</span>
 
                                     @if($product->active_substance != null)
                                         <h3><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
@@ -52,7 +52,7 @@
                                                     <label  for="piece" class="radio-label">@lang('main.piece')</label>
                                                 </div>
                                             @endif
-                                            <button class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                            <button id="addtocart-single" class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
                                         </div>
 
 

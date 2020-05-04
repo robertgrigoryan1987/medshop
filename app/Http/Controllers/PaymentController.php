@@ -51,8 +51,8 @@ class PaymentController extends Controller
 
     public function idram_paymant_result(Request $request){
 
-        $SECRET_KEY = "WsQ4SSNENgNG9CgJwdAzajYBWcRqrvSYQBDbMV";
-        $EDP_REC_ACCOUNT = "110000291";
+        $SECRET_KEY = "g6K5YuXajQzWMecH3FPJk5tkERQScDEASE5aNm";
+        $EDP_REC_ACCOUNT = "110000298";
 
         if(isset($_REQUEST['EDP_PRECHECK']) && isset($_REQUEST['EDP_BILL_NO']) && isset($_REQUEST['EDP_REC_ACCOUNT']) && isset($_REQUEST['EDP_AMOUNT'])) {
             if($_REQUEST['EDP_PRECHECK'] == "YES") {
