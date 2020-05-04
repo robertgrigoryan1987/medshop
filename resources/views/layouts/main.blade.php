@@ -81,7 +81,7 @@ $set_lang = UrlController::set_language();
 
     <section class="header-area">
         <div class="container">
-            <div class="row">
+            <div class="row pb-lg-30 pb-md-30">
                 <div class="col-lg-3 col-md-3 pb-xs-30">
                     <div class="logo">
                         <a href="/">
@@ -221,7 +221,7 @@ $set_lang = UrlController::set_language();
                                 <span class="border"></span>
                             </div>
                             <div class="our-info">
-                                <p>{{$about_headers->getTranslatedAttribute('header',config('app.locale'),config('voyager.multilingual.default'))}}</p>
+                                <p>{{$about_headers->getTranslatedAttribute('image_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
                                 <a href="/about">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>

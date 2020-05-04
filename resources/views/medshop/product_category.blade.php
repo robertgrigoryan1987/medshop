@@ -6,22 +6,6 @@
             <div class="row">
                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 pull-right">
                     <div class="shop-content">
-                        <div class="row showing-result-shorting">
-                            <div class="col-md-12">
-                                <div class="shorting pull-right">
-                                    <select class="selectmenu">
-                                        <option selected="selected">Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                        <option>Сортировка По Умолчанию</option>
-                                    </select>
-                                </div>
-                                <div class="showing pull-left">
-                                    <p>Показано 1-9 из 12 результатов</p>
-                                </div>
-                            </div>
-                        </div>
-
                         <?php $count = 1; $products_count = count($products); ?>
 
                         @foreach($products as $product)
@@ -91,38 +75,27 @@
                             <div class="sec-title">
                                 <h3>Категории</h3>
                             </div>
-
-                            <ul class="categories clearfix">
-                                @foreach($categories  as $item)
-                                    @if($item->children->count() > 0)
-                                        <li>
-                                            <a >{{ $item->name }} <span class="caret"></span></a>
-
-                                            <ul>
+                            <div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.1s; overflow: visible !important;">
+                                <div class="ui accordion">
+                                    @foreach($categories  as $item)
+                                        @if($item->children->count() > 0)
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
+                                            </div>
+                                            <div class="content">
                                                 @foreach($item->children as $submenu)
-                                                    <li><a href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
+                                                    <a class="item" href="/{{config('app.locale')}}/products/{{$submenu->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                 @endforeach
-                                            </ul>
-                                        </li>
-                                    @else
-                                        <li><a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a></li>
-
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="single-sidebar">
-                            <div class="sec-title">
-                                <h3>Фильтровать По Цене</h3>
-                            </div>
-                            <div class="price-ranger">
-                                <div id="slider-range"></div>
-                                <div class="ranger-min-max-block">
-                                    <input type="submit" value="Филтр">
-                                    <span>Цена:</span>
-                                    <input type="text" readonly class="min">
-                                    <span>-</span>
-                                    <input type="text" readonly class="max">
+                                            </div>
+                                        @else
+                                            <div class="title item">
+                                                <i class="dropdown icon"></i>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
+                                            </div>
+                                            <div class="content">
+                                                <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

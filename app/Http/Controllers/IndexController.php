@@ -33,7 +33,7 @@ class IndexController extends Controller
         $home_slider3 = HomeSlider::where('id', 3)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
-        $products = Product::where('id','>',0)->paginate(9);
+        $products = Product::where('id','>',0)->paginate(18);
         $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
 
         $categories = Category::where('parent_id',null)->with('children')->get();

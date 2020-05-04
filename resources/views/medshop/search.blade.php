@@ -91,21 +91,6 @@
                         </div>
                         <div class="single-sidebar">
                             <div class="sec-title">
-                                <h3>@lang('main.filter-price')</h3>
-                            </div>
-                            <div class="price-ranger">
-                                <div id="slider-range"></div>
-                                <div class="ranger-min-max-block">
-                                    <input type="submit" value="@lang('main.search')">
-                                    <span>@lang('main.price'):</span>
-                                    <input type="text" readonly class="min">
-                                    <span>-</span>
-                                    <input type="text" readonly class="max">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-sidebar">
-                            <div class="sec-title">
                                 <h3>@lang('main.popular-item')</h3>
                             </div>
                             <ul class="popular-product">

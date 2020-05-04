@@ -44,12 +44,12 @@
                                         <div class="location-box">
                                             @if($product->hatavachar != null)
                                                 <div class="radio">
-                                                    <input id="packet" name="sort" type="radio" class="ml-40" checked>
-                                                    <label for="packet" class="radio-label">@lang('main.packet')</label>
+                                                    <input id="paket" name="sort" type="checkbox" class="ml-40">
+                                                    <label for="paket" class="radio-label">@lang('main.packet')</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input id="piece" name="sort" type="radio" class="ml-40" data-singlprice="{{$product->hatavachar}}">
-                                                    <label  for="piece" class="radio-label">@lang('main.piece')</label>
+                                                    <input id="hat" name="hatavchar" type="checkbox" class="ml-40" data-singlprice="{{$product->hatavachar}}">
+                                                    <label  for="hat" class="radio-label">@lang('main.piece')</label>
                                                 </div>
                                             @endif
                                             <button class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>

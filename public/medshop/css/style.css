@@ -4082,7 +4082,7 @@ select:focus {
     padding: 20px;
     background: #fff;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     position: relative;
 }
 
@@ -4107,7 +4107,7 @@ select:focus {
 
 .sidebar-wrapper .single-sidebar .search-form input[type="text"] {
     background: #fff;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #0392ce;
     color: #ababab;
     display: block;
     font-size: 14px;
@@ -7014,7 +7014,8 @@ input#datepicker {
 }
 .regist {
     display: inline-block;
-    width: 35%;
+    width: 100%;
+    margin-top: 15px;
 }
 .invalid-feedback {
     color: red;
@@ -7499,4 +7500,14 @@ input#datepicker {
 .log-btn:hover {
     background: transparent;
     color: #222222;
+}
+.ui-accordion .ui-accordion-content {
+    padding: 1px 5px;
+    border-top: 0;
+    overflow: auto;
+}
+.ui-widget-content a {
+    color: #333;
+    font-size: 16px;
+    border-bottom: 1px solid #0392ce;
 }

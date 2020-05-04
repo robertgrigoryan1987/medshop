@@ -98,7 +98,7 @@
                     <button class="loginBtn loginBtn--google ">
                         Login with Google
                     </button>
-                    <h3 class="ml-xs-15 ml-70 mt-30 pb-30">@lang('main.do-you-have-an-account') <a href="{{route('login')}}" class="log-btn bgclr-1 regist ml-5" type="submit">@lang('main.login-now')</a></h3>
+                    <h3 class="p-15 mt-30 pb-30">@lang('main.do-you-have-an-account') <a href="{{route('login')}}" class="log-btn bgclr-1 regist ml-5" type="submit">@lang('main.login-now')</a></h3>
                 </div>
             </div>
             <div class="col-md-3"></div>

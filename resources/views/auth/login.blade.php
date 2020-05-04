@@ -62,7 +62,7 @@
                     <a href="{{ url('auth/facebook') }}" class="loginBtn loginBtn--facebook ml-10 ml-xs-0"> Login with Facebook</a>
                     <a href="{{ url('auth/google') }}" class="loginBtn loginBtn--google  ml-10 ml-xs-0"> Login with Google</a>
 
-                    <h4 class="ml-xs-15 ml-70 mt-30 pb-30">@lang('main.dont-have-an-account-yet') <a href="{{route('register')}}" class="log-btn bgclr-1 regist ml-5" type="submit">@lang('main.register') </a></h4>
+                    <h4 class="p-15 mt-30 pb-30">@lang('main.dont-have-an-account-yet') <a href="{{route('register')}}" class="log-btn bgclr-1 regist ml-5" type="submit">@lang('main.register') </a></h4>
                 </div>
             </div>
             <div class="col-md-3"></div>
