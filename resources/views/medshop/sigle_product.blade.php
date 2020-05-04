@@ -44,11 +44,11 @@
                                         @if($product->hatavachar != null)
                                             <div class="radio">
                                                 <input id="main-piece-packet" name="sort" type="radio" class="ml-40" checked data-singlprice="{{$product->price}}">
-                                                <label for="packet" class="radio-label">@lang('main.packet')</label>
+                                                <label for="packet" class="radio-label pl-70">@lang('main.packet')</label>
                                             </div>
                                             <div class="radio">
                                                 <input id="piece" name="sort" type="radio" class="ml-40" data-singlprice="{{$product->hatavachar}}">
-                                                <label  for="piece" class="radio-label">@lang('main.piece')</label>
+                                                <label  for="piece" class="radio-label pl-70">@lang('main.piece')</label>
                                             </div>
                                         @endif
                                         <button id="addtocart-single" class="thm-btn bgclr-1 addtocart shoping-cart"  data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-image="{{$product->image_path}}">@lang('main.add-to-card') <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
