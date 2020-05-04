@@ -82,7 +82,7 @@ $set_lang = UrlController::set_language();
     <section class="header-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-3 pb-xs-30">
                     <div class="logo">
                         <a href="/">
                             <img src="/medshop/images/resources/logo.png" alt="Awesome Logo">
