@@ -39,7 +39,7 @@ $set_lang = UrlController::set_language();
 
 <div class="boxed_wrapper">
 
-{{--    <div class="preloader"></div>--}}
+    <div class="preloader"></div>
 
     <section class="top-bar-area">
         <div class="container">
@@ -241,8 +241,12 @@ $set_lang = UrlController::set_language();
                             </ul>
                             <ul class="usefull-links">
                                 <li><a href="/shop-cart">@lang('main.basket')</a></li>
-                                <li><a href="/login">@lang('main.login')</a></li>
-                                <li><a href="/register">@lang('main.register')</a></li>
+                                @if(Auth::user() == null)
+                                    <li><a href="/login">@lang('main.login')</a></li>
+                                    <li><a href="/register">@lang('main.register')</a></li>
+                                @else
+                                    <li><a href="/login">@lang('main.my-profile')</a></li>
+                                @endif
 
                             </ul>
                         </div>
@@ -328,7 +332,7 @@ $set_lang = UrlController::set_language();
                 <div class="row">
                     <div class="col-md-8">
                         <div class="copyright-text">
-                            <p>Copyrights © 2020 <a href="#">Армения.</a></p>
+                            <p>Copyrights © 2020 <a href="https://evasa.am/">Evasa.am</a></p>
                         </div>
                     </div>
                     <div class="col-md-4">

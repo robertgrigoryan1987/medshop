@@ -3,13 +3,15 @@
 @section('content')
     <section class="checkout-area">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="exisitng-customer">
-                        <h5>@lang('main.do-you-have-an-account')<a href="{{route('login')}}">@lang('main.login-now')</a></h5>
+            @if(Auth::user() == null)
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="exisitng-customer">
+                            <h5>@lang('main.do-you-have-an-account')<a href="{{route('login')}}">@lang('main.login-now')</a></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="row cart-area mb-30 " id="cart-area-ordering">
                 <div class="col-md-12">
                     <div class="table-outer">
@@ -42,7 +44,7 @@
                                         </div>
                                     </td>
                                     <td class="price"><span>{{$product->product_price}}</span></td>
-                                    <td class="sub-total"><span>{{$product->product_price * $product->quantity}}</span></td>
+                                    <td class="sub-total"><span>{{$product->product_price * $product->quantity}}</span><span class="single-currency"> AMD</span></td>
                                 </tr>
                             @endforeach()
                             </tbody>
@@ -105,7 +107,7 @@
                                         <ul class="cart-total-table">
                                             <li class="clearfix">
                                                 <span class="col col-title"><h3>@lang('main.total')</h3></span>
-                                                <span class="col"><h4>{{$sum}}</h4></span>
+                                                <span class="col"><h4 class="single-price">{{$sum}}</h4> <span class="single-currency"> AMD</span></span>
                                             </li>
                                         </ul>
                                         <br>

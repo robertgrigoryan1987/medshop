@@ -38,7 +38,7 @@
                                     </div>
                                 </td>
                                 <td class="price">{{$product->product_price}}</td>
-                                <td class="sub-total">{{$product->product_price * $product->quantity}}</td>
+                                <td class="sub-total">{{$product->product_price * $product->quantity}} <span class="single-currency"> AMD</span></td>
                                 <td>
                                     <div class="remove">
                                         <div class="checkbox">

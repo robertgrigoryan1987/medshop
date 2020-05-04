@@ -39,7 +39,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-value">
-                                                    <h4>{{$product->price}}</h4>
+                                                    <h4 class="single-price">{{$product->price}}</h4><span class="single-currency"> AMD</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                             <a href="/{{config('app.locale')}}/product/{{$popular_product->id}}">
                                                 <h4>{{$popular_product->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default'))}}</h4>
                                             </a>
-                                            <h5>{{$popular_product->price}}</h5>
+                                            <h5 class="single-price">{{$popular_product->price}}</h5><span class="single-currency"> AMD</span>
                                             <div class="review-box">
                                                 <ul>
                                                     <li><i class="fa fa-star"></i></li>

@@ -29,6 +29,7 @@ class ShopController extends Controller
 //            echo "Cookie  is set!<br>";
 //            echo "Value is: " . $_COOKIE["customer"];
 //        }
+        $popular_products = Product::inRandomOrder()->take(3)->get();
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('id','>',0)->paginate(18);
@@ -41,6 +42,7 @@ class ShopController extends Controller
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
             'contact_us' => $contact_us,
+            'popular_products' => $popular_products,
         ]);
     }
 

@@ -21,13 +21,13 @@
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
                                         </ul>
                                     </div>
-                                    <span class="single-price">{{$product->price}}</span> <span> AMD</span>
+                                    <span class="single-price ">{{$product->price}}</span> <span class="single-currency"> AMD</span>
 
                                     @if($product->active_substance != null)
-                                        <h3><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
+                                        <h3 class="mt-20"><strong>@lang('main.active_sub')։ </strong>{{$product->getTranslatedAttribute('active_substance',config('app.locale'),config('voyager.multilingual.default'))}}</h3>
                                     @endif
 
                                     @if($product->aftor != null)
@@ -86,7 +86,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-value">
-                                                <h4>{{$popular_product->price}}</h4>
+                                                <h4 class="single-price">{{$popular_product->price}}</h4><span class="single-currency"> AMD</span>
                                             </div>
                                         </div>
                                     </div>

@@ -4858,7 +4858,7 @@ select:focus {
 .single-product-item .img-holder img {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    height: auto;
+    height: 280px;
 }
 
 .single-product-item:hover .img-holder img {
@@ -7511,7 +7511,15 @@ input#datepicker {
     font-size: 16px;
     border-bottom: 1px solid #0392ce;
 }
-single-price {
-    font-size: 22px;
+.single-price {
+    display: inline-block;
+    color: #0392ce;
+    font-size: 25px;
     font-weight: 500;
 }
+.single-currency {
+    color: #000;
+    padding-left: 10px;
+    display: inline-block;
+}
+
