@@ -12,5 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Araqum extends Model
 {
+    public $timestamps = false;
 
 }
