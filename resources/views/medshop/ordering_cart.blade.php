@@ -73,25 +73,25 @@
                                     <div class="col-md-12">
                                         <div class="field-label">@lang('main.name')</div>
                                         <div class="field-input">
-                                            <input type="text" required  name="name" placeholder="@lang('main.your-name')" value="<?= isset(Auth::user()->user) ? Auth::user()->name : '' ?>">
+                                            <input type="text" required  name="name" placeholder="@lang('main.your-name')" value=" <?= Auth::user() != null ? Auth::user()->name : '' ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="field-label">@lang('main.phone')</div>
                                         <div class="field-input">
-                                            <input type="text" required name="phone" placeholder="@lang('main.your-phone')" value="<?= isset(Auth::user()->user) ? Auth::user()->phone : '' ?>">
+                                            <input type="text" required name="phone" placeholder="@lang('main.your-phone')" value=" <?= Auth::user() != null ? Auth::user()->phone : '' ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="field-label">@lang('main.email')</div>
                                         <div class="field-input">
-                                            <input type="text" required  name="email" placeholder="@lang('main.your-email')" value="<?= isset(Auth::user()->user) ? Auth::user()->email : '' ?>">
+                                            <input type="text" required  name="email" placeholder="@lang('main.your-email')" value=" <?= Auth::user() != null ? Auth::user()->email : '' ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="field-label">@lang('main.address')</div>
                                         <div class="field-input">
-                                            <input type="text" required name="address" placeholder="@lang('main.your-address')" value="<?= isset(Auth::user()->user) ? Auth::user()->address : '' ?>">
+                                            <input type="text" required name="address" placeholder="@lang('main.your-address')" value=" <?= Auth::user() != null ? Auth::user()->address : '' ?>">
 
                                         </div>
                                     </div>
