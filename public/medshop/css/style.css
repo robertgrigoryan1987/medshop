@@ -4079,7 +4079,7 @@ select:focus {
 }
 
 .sidebar-wrapper .single-sidebar {
-    padding: 20px;
+    padding: 0px;
     background: #fff;
     overflow: hidden;
     margin-bottom: 30px;
@@ -7524,3 +7524,110 @@ input#datepicker {
     display: inline-block;
 }
 
+/*a {*/
+/*    text-decoration: none;*/
+/*}*/
+/*ul, ul ul {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    list-style: none;*/
+/*}*/
+.menu {
+    width: auto;
+    height: auto;
+}
+.menu > li > a {
+    background-color: #0392ce;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-indent: 12px;
+    display: block;
+    position: relative;
+    color: #fff;
+    font-size: 19px;
+}
+.menu ul li a {
+    background: #ffffff;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 30px;
+    display: block;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+.menu ul li a:hover {
+    color: #337ab7;
+}
+.menu li a img {
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+}
+.menu li a .ttl {
+    margin: 1px 0 0 -5px;
+    position: absolute;
+}
+.menu ul li:last-child a {
+    border-bottom: 1px solid #c1c1c1;
+}
+.menu > li > a:hover, .menu > li > a.active {
+    color: #000;
+}
+.menu > li > a .ttl_arrow {
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    line-height: 18px;
+    margin: -10px 0 0 0;
+    color: #fff;
+    text-indent: 0;
+    text-align: center;
+    transition: all 0s ease;
+}
+.menu > li > a:hover .ttl_arrow, .menu > li a.active .ttl_arrow {
+    transform: rotate(-90deg);
+}
+.menu > li > ul li a:before {
+    content: '●';
+    font-size: 16px;
+    color: #337ab7;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    left: -15px;
+}
+
+.menu > li > ul li:hover a, .menu > li > ul li:hover a span, .menu > li > ul li:hover a:before {
+    color: #32373D;
+}
+.menu ul > li > a span {
+    font-size: 0.857em;
+    display: inline-block;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    background: #fff;
+    border: 1px solid #d0d0d3;
+    line-height: 1em;
+    height: 1em;
+    padding: 3px 4px;
+    margin: -8px -5px 0 0;
+    color: #878d95;
+    text-indent: 0;
+    text-align: center;
+    -webkit-border-radius: .769em;
+    -moz-border-radius: 769em;
+    border-radius: 769em;
+    text-shadow: 0px 0px 0px rgba(255,255,255,.01);
+}

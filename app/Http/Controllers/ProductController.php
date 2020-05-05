@@ -42,6 +42,7 @@ class ProductController extends Controller
     }
 
     public function product_category($id){
+        $popular_products = Product::inRandomOrder()->take(3)->get();
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
         $about_headers = AboutHeader::where('id', 1)->firstOrFail();
         $products = Product::where('category',$id)->paginate(9);
@@ -54,6 +55,7 @@ class ProductController extends Controller
             'ordering_products_count'=>$ordering_products_count,
             'about_headers'=> $about_headers,
             'contact_us' => $contact_us,
+            'popular_products' => $popular_products,
         ]);
 
     }
