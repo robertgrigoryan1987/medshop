@@ -21,15 +21,15 @@ base64_encode($order_id)
 ?>
 
 
-<form target="_blank" action="https://telcellmoney.am/invoices" method="POST" id="telcell_form">'
-    <input type="hidden" name="description" value="{{base64_encode($desc)}}"/>
-    <input type="hidden" name="sum" value="{{$sum}} "/>
+<form target="_blank" action="https://telcellmoney.am/invoices" method="POST" id="telcell_form">
+    <input type="hidden" name="description" value="{{urlencode(base64_encode($desc))}}"/>
+    <input type="hidden" name="sum" value="{{$sum}}"/>
     <input type="hidden" name="currency" value="{{$currency}}"/>
-    <input type="hidden" name="issuer_id" value="{{base64_encode($order_id)}}"/>
+    <input type="hidden" name="issuer_id" value="{{urlencode(base64_encode($order_id))}}"/>
     <input type="hidden" name="valid_days" value="{{$valid_days}}"/>
-    <input type="hidden" name="bill:issuer" value="{{base64_encode($shop_id)}} "/>
+    <input type="hidden" name="bill:issuer" value="{{urlencode($shop_id)}}"/>
     <input type="hidden" name="buyer" value="3283005053463"/>
-    <input type="hidden" name="checksum" value="{{$signature}} "/>
+    <input type="hidden" name="checksum" value="{{$signature}}"/>
     <input type="submit" value="Pay telcell"/>
     <a class="button cancel" href="/">Cancel payment and return back</a>
  </form>

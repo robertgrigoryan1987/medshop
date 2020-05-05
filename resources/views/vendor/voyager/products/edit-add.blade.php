@@ -1,6 +1,8 @@
 @php
     $edit = !is_null($dataTypeContent->getKey());
     $add  = is_null($dataTypeContent->getKey());
+    use App\Category;
+    $categories = Category::where('parent_id',null)->with('children')->get();
 @endphp
 
 @extends('voyager::master')
@@ -30,6 +32,9 @@
                             class="form-edit-add"
                             action="{{ $edit ? route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) : route('voyager.'.$dataType->slug.'.store') }}"
                             method="POST" enctype="multipart/form-data">
+
+
+
                         <!-- PUT Method if we are editing -->
                         @if($edit)
                             {{ method_field("PUT") }}
@@ -54,6 +59,27 @@
                             @php
                                 $dataTypeRows = $dataType->{($edit ? 'editRows' : 'addRows' )};
                             @endphp
+
+                                @foreach($categories  as $item)
+                                    @if($item->children->count() > 0)
+                                        <ul>
+                                            <li>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
+                                                <ul>
+                                            @foreach($item->children as $submenu)
+                                                <li data-value="{{$submenu->id}}">{{$submenu->name}}</li>
+                                            @endforeach
+                                                    </ul>
+                                            </li>
+                                        </ul>
+                                    @else
+                                        <a href="#"><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><</span></a>
+                                        <ul>
+                                            <li class="subitem1">
+                                                <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                            </li>
+                                        </ul>
+                                    @endif
+                                @endforeach
 
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
