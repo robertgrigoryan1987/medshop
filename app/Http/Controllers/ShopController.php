@@ -56,6 +56,9 @@ class ShopController extends Controller
         $ordering_product->product_price =  $request->product_price  ;
         $ordering_product->image =  $request->product_image  ;
         $ordering_product->quantity =  1 ;
+        if(Auth::user() != null ){
+            $ordering_product->user_id = Auth::id();
+        }
         $ordering_product->session =  Session::getId();
 
         if($ordering_product->save()){
