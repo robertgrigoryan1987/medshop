@@ -100,7 +100,7 @@
                                     <div class="col-md-12">
                                         <div class="field-label">@lang('main.index')</div>
                                         <div class="field-input">
-                                            <input  type="text" required name="post_index"  placeholder="" value="">
+                                            <input  type="text" required name="post_index"  placeholder="@lang('main.index')" value="<?= Auth::user() != null ? Auth::user()->post_index : '' ?>">
                                         </div>
                                     </div>
                                     <div class="">

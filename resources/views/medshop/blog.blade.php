@@ -107,6 +107,13 @@
                                     <li>
                                         <div class="img-holder">
                                             <img src="/storage/{{$blog_image->image}}" alt="Awesome Image">
+                                            <div class="overlay-style-one">
+                                                <div class="box">
+                                                    <div class="content">
+                                                        <a><i class="fa fa-link" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </li>
                                 @endforeach

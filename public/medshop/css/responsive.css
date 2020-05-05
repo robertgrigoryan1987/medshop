@@ -1403,6 +1403,9 @@
 
 /* Wide Mobile Layout: 480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .rev_slider_wrapper {
+        display: none;
+    }
 
 /***
 =============================================
@@ -1445,6 +1448,9 @@
 
 }
 @media only screen and (max-width: 480px) {
+    .rev_slider_wrapper {
+        display: none;
+    }
     .cart-total-table li span.col {
         color: #999999;
         display: block;

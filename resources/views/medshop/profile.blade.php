@@ -73,7 +73,7 @@
                                 <div class="col-md-12">
                                     <div class="field-label">@lang('main.index')</div>
                                     <div class="field-input">
-                                        <input type="text" name="post-index" placeholder="">
+                                        <input type="text" name="post_index" placeholder="">
                                     </div>
                                 </div>
 

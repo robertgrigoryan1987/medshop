@@ -195,24 +195,28 @@
             </div>
         </div>
     </section>
-    <section class="certificates-area">
-        <div class="container">
-            <div class="sec-title">
-                <h1>@lang('main.awards')</h1>
-                <span class="border"></span>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="certificates">
-                        @foreach($about_avards as $about_avard)
-                            <div class="single-item">
-                                <img src="/storage/{{$about_avard->image}}" alt="Awesome Image">
-                            </div>
-                        @endforeach
+    @if($about_avards->isEmpty())
+        <section class="p-15"></section>
+    @else
+        <section class="certificates-area">
+            <div class="container">
+                <div class="sec-title">
+                    <h1>@lang('main.awards')</h1>
+                    <span class="border"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="certificates">
+                            @foreach($about_avards as $about_avard)
+                                <div class="single-item">
+                                    <img src="/storage/{{$about_avard->image}}" alt="Awesome Image">
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 @endsection

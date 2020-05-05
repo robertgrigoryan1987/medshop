@@ -22,6 +22,7 @@ class MyProfileController extends Controller
         $contact_us = ContactUs::where('id', 1)->firstOrFail();
 
         $user_order_products = OrderingProduct::all()->where('user_id', $user->id);
+        
         return view('medshop.profile')->with([
             'ordering_products_count'=>$ordering_products_count,
             'user_order_products' => $user_order_products,
