@@ -4302,7 +4302,8 @@ select:focus {
 .single-sidebar .instagram li .img-holder img {
     transform: scale(1.1, 1.1);
     transition: all 0.5s ease 0s;
-    width: 100%;
+    width: 107px;
+    height: 107px;
 }
 
 .single-sidebar .instagram li .img-holder .overlay-style-one .box .content a i {

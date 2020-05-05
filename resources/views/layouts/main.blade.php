@@ -81,7 +81,7 @@ $set_lang = UrlController::set_language();
 
     <section class="header-area">
         <div class="container">
-            <div class="row pb-lg-30 pb-md-30">
+            <div class="row pb-lg-30  pb-md-30">
                 <div class="col-lg-3 col-md-3 pb-xs-30">
                     <div class="logo">
                         <a href="/">
