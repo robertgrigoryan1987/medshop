@@ -239,6 +239,7 @@ class ShopController extends Controller
 
                 }elseif ($request->payment_type == 'telcell'){
 
+
                 }elseif($request->payment_type == 'ameria'){
                     $this->ameria_payment($array);
                 }

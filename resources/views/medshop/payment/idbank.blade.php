@@ -1,7 +1,7 @@
 
 <form id="redirect_to_idram" style="display: none" action="https://money.idram.am/payment.aspx" method="POST">
     <input type="hidden" name="EDP_LANGUAGE" value="{{app()->getLocale()}}">
-    <input type="hidden" name="EDP_REC_ACCOUNT" value="110000291">
+    <input type="hidden" name="EDP_REC_ACCOUNT" value="110000298">
     <input type="hidden" name="EDP_DESCRIPTION" value="Description">
     <input type="hidden" name="EDP_AMOUNT" value="{{$array["Amount"]}}">
     <input type="hidden" name="EDP_BILL_NO" value="{{$array["OrderID"]}}">
