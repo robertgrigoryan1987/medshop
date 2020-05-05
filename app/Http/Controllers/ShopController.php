@@ -56,6 +56,9 @@ class ShopController extends Controller
         $ordering_product->product_price =  $request->product_price  ;
         $ordering_product->image =  $request->product_image  ;
         $ordering_product->quantity =  1 ;
+        if(Auth::user() != null ){
+            $ordering_product->user_id = Auth::id();
+        }
         $ordering_product->session =  Session::getId();
 
         if($ordering_product->save()){
@@ -146,7 +149,7 @@ class ShopController extends Controller
             $isset_ordering->customer_addres = $request->address;
             $isset_ordering->customer_telephone = $request->phone;
             $isset_ordering->amount = $request->sum;
-            $isset_ordering->user_id =isset(Auth::user()->user) ? Auth::user()->user : null;
+            $isset_ordering->user_id =(Auth::user() != null) ? Auth::user()->id : null;
             if($request->pay == "non_cash"){
                 $isset_ordering->cash = 1;
                 if($isset_ordering->save()){
@@ -195,9 +198,9 @@ class ShopController extends Controller
             $ordering->customer_telephone = $request->phone;
             $ordering->customer_city = $request->city;
             $ordering->amount = $request->sum;
-            $ordering->user_id =isset(Auth::user()->user) ? Auth::user()->user : null;
+            $ordering->user_id =(Auth::user() != null) ? Auth::user()->id : null;
             $ordering->session =Session::getId();
-            if(isset(Auth::user()->user)){
+            if((Auth::user()!=null)){
                 $ordering->user_id = Auth::id();
             }
 
@@ -238,6 +241,7 @@ class ShopController extends Controller
                     return view('medshop.payment.idbank')->with(['array'=>$array]);
 
                 }elseif ($request->payment_type == 'telcell'){
+
 
                 }elseif($request->payment_type == 'ameria'){
                     $this->ameria_payment($array);
