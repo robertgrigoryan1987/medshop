@@ -84,4 +84,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/auth/{provider}', 'Auth\RegisterController@redirectToProvider');
     Route::get('/auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
+    Route::get('/telcel_test', 'TelcelController@index');
+
+
 });

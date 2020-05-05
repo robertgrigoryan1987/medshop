@@ -136,8 +136,8 @@
                                                 <input  type="radio" name="payment_type" value="idram" id="idram"/>
                                                 <label class="drinkcard-cc idram" for="idram"></label>
 
-                                                {{--<input  type="radio" name="payment_type" value="telcell" id="telcell"/>--}}
-                                                {{--<label class="drinkcard-cc telcell" for="telcell"></label>--}}
+                                                <input  type="radio" name="payment_type" value="telcell" id="telcell"/>
+                                                <label class="drinkcard-cc telcell" for="telcell"></label>
                                             </div>
                                         </div>
                                     </div>

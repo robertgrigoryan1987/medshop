@@ -185,7 +185,7 @@ class ShopController extends Controller
                     return view('medshop.payment.idbank')->with(['array'=>$array]);
 
                 }elseif ($request->payment_type == 'telcell'){
-
+                    return view('medshop.payment.telcel')->with(['order_id'=>$order_id]);
                 }elseif($request->payment_type == 'ameria'){
                     $this->ameria_payment($array);
                 }
@@ -241,6 +241,7 @@ class ShopController extends Controller
                     return view('medshop.payment.idbank')->with(['array'=>$array]);
 
                 }elseif ($request->payment_type == 'telcell'){
+                    return view('medshop.payment.telcel')->with(['order_id'=>$order_id]);
 
 
                 }elseif($request->payment_type == 'ameria'){
@@ -356,13 +357,42 @@ class ShopController extends Controller
 //            "MerchntId" => "141111",eere
 //        ];
 
-
         return redirect()->route('login');
 
-
         return View::make('wixon.payment.idbank')->with(['array'=>$array]);
+    }
 
+    public function telcel_form($order_id){
+        $shop_key = "LEnGy<Hp!s*|n_T!7f{5O]QfTKGod2^gN{O(aBXFchE?ahZPQvSMI6Yq|-z>i9rt[$^HkdWPty?8Oq^ZEb=-i8pxlhdLq7OFZgXBc%IBD>KuYJ[eC{zl3DU1vPuTa9qL";
+        $shop_id = $order_id;
+        $sum = number_format(1, 2, '.', '');
+        $desc = "Telcel paymant". $order_id;
+        $currency = "AMD";
+        $cur_locale = 'en';
+        $locale = 'en';
 
+        $signature = md5($shop_key.
+            $shop_id.
+            '֏'.
+            $sum.
+            base64_encode($desc).
+            base64_encode($order_id).
+            '1'
+        );
+
+        return
+            '<form target="_blank" action="https://telcellmoney.am/invoices" method="POST" id="telcell_form">'
+            . '<input type="hidden" name="action" value="PostInvoice"/>'
+            . '<input type="hidden" name="issuer" value="'. $shop_id .'"/>'
+            . '<input type="hidden" name="currency" value="֏"/>'
+            . '<input type="hidden" name="price" value="'. $sum .'"/>'
+            . '<input type="hidden" name="product" value="'. base64_encode($desc) .'"/>'
+            . '<input type="hidden" name="issuer_id" value="'. base64_encode($order_id) .'"/>'
+            . '<input type="hidden" name="valid_days" value="1"/>'
+            . '<input type="hidden" name="security_code" value="'. $signature .'"/>'
+            . '<input type="submit" value="Pay telcell"/>'
+            . '<a class="button cancel" href="/">Cancel payment and return back to card</a>'
+            . '</form>';
     }
 
 }
