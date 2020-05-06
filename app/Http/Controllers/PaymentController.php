@@ -132,7 +132,31 @@ class PaymentController extends Controller
     }
 
     public function ameria_payment_success(){
-        var_dump($_REQUEST);exit;
+        $resposneCode = $_REQUEST['resposneCode'];
+        if($resposneCode === "00"){
+            $paymenment_order = Ordering::where('order_id', $_REQUEST['orderID'])->first();
+            if(isset($paymenment_order)){
+                $paymenment_order->update([
+                    'order_status' => 1,
+                    'payment_id' => $_REQUEST['paymentID']
+                ]);
+            }
+
+            $sesion = $paymenment_order->session;
+            $product_orders = OrderingProduct::all()->where('session',$sesion);
+
+            if(isset($product_orders)){
+                foreach ($product_orders as $product_order){
+                    OrderingProduct::where('id', $product_order->id)->update([
+                        'session' => 1,
+                        'order_id' => $_REQUEST['orderID'],
+                    ]);
+                }
+            }
+
+            return redirect()->route('home')->with('status', 'You are pay succesfuly!');
+
+        }
     }
 
 
