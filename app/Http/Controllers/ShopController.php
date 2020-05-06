@@ -269,14 +269,11 @@ class ShopController extends Controller
         $array["ClientID"] = $clientID;
         $array["Username"] = $username;
         $array["Password"] = $password;
-        $array["CardHolderID"] = "24242";
-        $array["BackURL"] = "https://deghatun1.am/ameria_payment_success";
-        $array["Amount"] = "10";
-        $array["OrderID"] = "2325001";
-        $array["PaymentType"] = 0;
-        $array["Description"] = "ameria payment";
         $array["Currency"] = "AMD";
-        $array["Opaque"] = "46464646";
+        $array["Description"] = "ameria payment";
+        $array["OrderID"] = "2327801";
+        $array["Amount"] = "10";
+        $array["BackURL"] = "https://deghatun1.am/ameria_payment_success";
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
 
