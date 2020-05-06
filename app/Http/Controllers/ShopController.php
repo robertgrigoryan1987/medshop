@@ -279,7 +279,6 @@ class ShopController extends Controller
         $array["Opaque"] = "46464646";
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
-        var_dump($postData);exit;
 
         $url = "https://servicestest.ameriabank.am/VPOS/api/VPOS/InitPayment";
         $curl = curl_init();
