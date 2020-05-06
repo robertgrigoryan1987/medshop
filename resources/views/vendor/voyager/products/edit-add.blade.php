@@ -132,6 +132,7 @@
             margin-bottom: 15px;
             padding: 5px
         }
+
     </style>
     {{--    end css--}}
 
@@ -182,7 +183,7 @@
                                                 <a><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a>
                                                 <ul>
                                                     @foreach($item->children as $submenu)
-                                                        <li class="subitem1">
+                                                        <li class="subitem1" id="category-{{$submenu->id}}" data-id="{{$submenu->id}}" data-name="{{$submenu->name}}">
                                                             <a>{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                         </li>
                                                     @endforeach
@@ -190,8 +191,8 @@
                                             @else
                                                 <a><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><</span></a>
                                                 <ul>
-                                                    <li class="subitem1">
-                                                        <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                                    <li class="subitem1 category-{{$submenu->id}}" data-id="{{$item->id}}" data-name="{{$item->name}}">
+                                                        <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
                                                     </li>
                                                 </ul>
                                             @endif
@@ -309,7 +310,28 @@
         $('document').ready(function () {
             $('.toggleswitch').bootstrapToggle();
 
-            $("input[name='category']").val($('select').val());
+
+
+            $('.subitem1').click(function (e) {
+                e.preventDefault();
+                var cat_name = $(this).data('name');
+                var cat_id = $(this).data('id');
+                $('.menu-cat').val(cat_name);
+                $("input[name='category']").val(cat_id);
+                console.log( $("input[name='category']").val());
+            });
+
+            var categori_id = $("input[name='category']").val();
+            if(categori_id>0){
+                var select = "#category-"+categori_id;
+                console.log(select);
+
+                var category_name = $("#category-"+categori_id).attr('data-name');
+                console.log(category_name);
+                $('.menu-cat').val(category_name);
+            }
+
+            console.log($("input[name='category']").val());
 
             $('select').change( function () {
                 var option_val =  $(this).val();

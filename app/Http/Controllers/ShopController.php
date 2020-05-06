@@ -259,7 +259,7 @@ class ShopController extends Controller
 
     public function ameria_payment($array){
 
-        $clientID = "c0a7031d-b864-4891-992d-8b4c4fc3bf9c";
+        $clientID = "8c7fd9b1-0ef9-4736-9074-a9d692ca2cf9";
         $username =  "3d19541048";
         $password = "lazY2k";
         $headers = [
@@ -270,15 +270,16 @@ class ShopController extends Controller
         $array["Username"] = $username;
         $array["Password"] = $password;
         $array["CardHolderID"] = "24242";
-        $array["BackURL"] = "http:://medshop/ameria_payment_success";
+        $array["BackURL"] = "https://deghatun1.am/ameria_payment_success";
         $array["Amount"] = "10";
-        $array["OrderID"] = "2325008";
+        $array["OrderID"] = "2325001";
         $array["PaymentType"] = 0;
         $array["Description"] = "ameria payment";
         $array["Currency"] = "AMD";
         $array["Opaque"] = "46464646";
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
+        var_dump($postData);exit;
 
         $url = "https://servicestest.ameriabank.am/VPOS/api/VPOS/InitPayment";
         $curl = curl_init();

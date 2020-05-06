@@ -86,5 +86,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/telcel_test', 'TelcelController@index');
 
+    Route::any('/ameria_payment_success', 'PaymentController@ameria_payment_success');
+
 
 });

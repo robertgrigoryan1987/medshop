@@ -131,6 +131,10 @@ class PaymentController extends Controller
 
     }
 
+    public function ameria_payment_success(){
+        var_dump($_REQUEST);exit;
+    }
+
 
 
 }

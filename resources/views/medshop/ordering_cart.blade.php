@@ -130,8 +130,8 @@
                                         <div class="option-block"></div>
                                         <div class="option-block">
                                             <div class="radio-block cc-selector">
-{{--                                                <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>--}}
-{{--                                                <label class="drinkcard-cc visa" for="visa"></label>--}}
+                                                <input  type="radio" name="payment_type" value="ameria" id="visa" class="pl-40 pl-xs-0 pl-sm-0"/>
+                                                <label class="drinkcard-cc visa" for="visa"></label>
 
                                                 <input  type="radio" name="payment_type" value="idram" id="idram"/>
                                                 <label class="drinkcard-cc idram" for="idram"></label>
