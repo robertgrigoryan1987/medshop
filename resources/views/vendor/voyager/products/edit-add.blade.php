@@ -22,6 +22,119 @@
 @stop
 
 @section('content')
+{{--    css--}}
+    <style>
+        .menu {
+            width: auto;
+            height: auto;
+        }
+        .menu li {
+            list-style-type: none;
+        }
+        .menu > li > a {
+            background-color: #0392ce;
+            border-bottom: 2px solid #fff;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            text-indent: 12px;
+            display: block;
+            position: relative;
+            color: #fff;
+            font-size: 19px;
+        }
+        .menu ul li a {
+            background: #ffffff;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 30px;
+            display: block;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #000;
+        }
+        .menu ul li a:hover {
+            color: #337ab7;
+        }
+        .menu li a img {
+            height: 30px;
+            width: 30px;
+            margin-top: 5px;
+        }
+        .menu li a .ttl {
+            margin: 1px 0 0 -5px;
+            position: absolute;
+        }
+        .menu ul li:last-child a {
+            border-bottom: 1px solid #c1c1c1;
+        }
+        .menu > li > a:hover, .menu > li > a.active {
+            color: #000;
+        }
+        .menu > li > a .ttl_arrow {
+            font-family: Tahoma;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            line-height: 18px;
+            margin: -10px 0 0 0;
+            color: #fff;
+            text-indent: 0;
+            text-align: center;
+            transition: all 0s ease;
+        }
+        .menu > li > a:hover .ttl_arrow, .menu > li a.active .ttl_arrow {
+            transform: rotate(-90deg);
+        }
+        .menu > li > ul li a:before {
+            content: '●';
+            font-size: 16px;
+            color: #337ab7;
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            top: 0;
+            left: -15px;
+        }
+
+        .menu > li > ul li:hover a, .menu > li > ul li:hover a span, .menu > li > ul li:hover a:before {
+            color: #32373D;
+        }
+        .menu ul > li > a span {
+            font-size: 0.857em;
+            display: inline-block;
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            background: #fff;
+            border: 1px solid #d0d0d3;
+            line-height: 1em;
+            height: 1em;
+            padding: 3px 4px;
+            margin: -8px -5px 0 0;
+            color: #878d95;
+            text-indent: 0;
+            text-align: center;
+            -webkit-border-radius: .769em;
+            -moz-border-radius: 769em;
+            border-radius: 769em;
+            text-shadow: 0px 0px 0px rgba(255,255,255,.01);
+        }
+        .menu-cat {
+            border: 2px solid #0392ce;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 5px
+        }
+    </style>
+    {{--    end css--}}
+
     <div class="page-content edit-add container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -60,26 +173,32 @@
                                 $dataTypeRows = $dataType->{($edit ? 'editRows' : 'addRows' )};
                             @endphp
 
-                                @foreach($categories  as $item)
-                                    @if($item->children->count() > 0)
-                                        <ul>
-                                            <li>{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}
+                                <ul class="menu">
+                                    <h3>Category</h3>
+                                    <input type="text" name=""  class="menu-cat">
+                                    <li class="item1">
+                                        @foreach($categories  as $item)
+                                            @if($item->children->count() > 0)
+                                                <a><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a>
                                                 <ul>
-                                            @foreach($item->children as $submenu)
-                                                <li data-value="{{$submenu->id}}">{{$submenu->name}}</li>
-                                            @endforeach
-                                                    </ul>
-                                            </li>
-                                        </ul>
-                                    @else
-                                        <a href="#"><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><</span></a>
-                                        <ul>
-                                            <li class="subitem1">
-                                                <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
-                                            </li>
-                                        </ul>
-                                    @endif
-                                @endforeach
+                                                    @foreach($item->children as $submenu)
+                                                        <li class="subitem1">
+                                                            <a>{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @else
+                                                <a><span class="ttl">{{ $item->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</span><span class="ttl_arrow"><</span></a>
+                                                <ul>
+                                                    <li class="subitem1">
+                                                        <a href="/{{config('app.locale')}}/products/{{$item->id}}">{{ $submenu->getTranslatedAttribute('name',config('app.locale'),config('voyager.multilingual.default')) }}</a>
+                                                    </li>
+                                                </ul>
+                                            @endif
+                                        @endforeach
+                                    </li>
+                                </ul>
+
 
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
@@ -243,5 +362,24 @@
             });
             $('[data-toggle="tooltip"]').tooltip();
         });
+        $(function() {
+            var menu_ul = $('.menu > li > ul'), menu_a = $('.menu > li > a');
+
+            menu_ul.hide();
+
+            menu_a.click(function(e) {
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    menu_a.removeClass('active');
+                    menu_ul.filter(':visible').slideUp('normal');
+                    $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                } else {
+                    $(this).removeClass('active');
+                    $(this).next().stop(true, true).slideUp('normal');
+                }
+            });
+        });
     </script>
+    {{--js--}}
+
 @stop
