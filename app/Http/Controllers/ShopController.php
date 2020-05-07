@@ -233,8 +233,6 @@ class ShopController extends Controller
                     "OrderID" => $order_id,
                     "Description" => "paymant test",
                     "Currency" => "AMD",
-                    "CardHolderID" => "45454",
-                    "Opaque" => "5454545",
                 );
 
                 if($request->payment_type == 'idram'){
@@ -270,14 +268,12 @@ class ShopController extends Controller
         $array["Username"] = $username;
         $array["Password"] = $password;
         $array["Currency"] = "AMD";
-        $array["Description"] = "ameria payment";
-        $array["OrderID"] = "2327801";
-        $array["Amount"] = "10";
+        $array["Description"] = "Product payment";
         $array["BackURL"] = "https://deghatun1.am/ameria_payment_success";
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
 
-        $url = "https://servicestest.ameriabank.am/VPOS/api/VPOS/InitPayment";
+        $url = "https://servicestest.ameriabank.am/VPOS/";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

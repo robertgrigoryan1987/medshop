@@ -7,6 +7,7 @@ $currency = 51;
 $cur_locale = 'en';
 $locale = 'en';
 $valid_days =1;
+$order_id = "fgfg456456dfdf";
 
 $signature = md5($shop_key.
 $shop_id.
