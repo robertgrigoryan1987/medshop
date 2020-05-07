@@ -27,11 +27,13 @@
         .menu {
             width: auto;
             height: auto;
+            padding-left: 0;
         }
         .menu li {
             list-style-type: none;
         }
         .menu > li > a {
+            cursor: pointer;
             background-color: #0392ce;
             border-bottom: 2px solid #fff;
             width: 100%;
@@ -52,9 +54,9 @@
             display: block;
             position: relative;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 400;
-            color: #000;
+            color: #666;
         }
         .menu ul li a:hover {
             color: #337ab7;
@@ -104,7 +106,8 @@
         }
 
         .menu > li > ul li:hover a, .menu > li > ul li:hover a span, .menu > li > ul li:hover a:before {
-            color: #32373D;
+            color: #0392ce;
+            cursor: pointer;
         }
         .menu ul > li > a span {
             font-size: 0.857em;

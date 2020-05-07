@@ -38,6 +38,44 @@
 @stop
 
 @section('content')
+    <style>
+        nav ul li:first-child {
+            display: none;
+        }
+        nav ul li:last-child {
+            display: none;
+        }
+        .post-pagination {
+            display: flex;
+        }
+        .post-pagination li {
+            margin: 15px 5px;
+            padding: 4px 10px;
+            list-style-type: none;
+            border: 2px solid #22A7F0;
+        }
+        .post-pagination li:hover {
+            background-color: #22A7F0;
+        }
+
+        .post-pagination li a {
+            color: #000;
+        }
+        .post-pagination li a:hover {
+            font-weight: bold;
+            color: #fff;
+        }
+        nav ul .active {
+            background-color: #22A7F0;
+        }
+        nav ul .disabled {
+            font-weight: bold;
+        }
+        nav ul .active a.page-link{
+            color: #fff;
+            font-weight: bold;;
+        }
+    </style>
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
         <div class="row">
