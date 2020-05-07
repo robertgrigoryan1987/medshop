@@ -185,7 +185,7 @@ class ShopController extends Controller
                 }elseif ($request->payment_type == 'telcell'){
                     return view('medshop.payment.telcel')->with(['order_id'=>$order_id]);
                 }elseif($request->payment_type == 'ameria'){
-                    $this->ameria_payment();
+                    $this->ameria_payment($array);
                 }
             }
 
@@ -238,10 +238,8 @@ class ShopController extends Controller
 
                 }elseif ($request->payment_type == 'telcell'){
                     return view('medshop.payment.telcel')->with(['order_id'=>$order_id]);
-
-
                 }elseif($request->payment_type == 'ameria'){
-                    $this->ameria_payment();
+                    $this->ameria_payment($array);
                 }
             }
 
@@ -253,7 +251,7 @@ class ShopController extends Controller
         var_dump($request->all());exit;
     }
 
-    public function ameria_payment(){
+    public function ameria_payment($array){
 
         $clientID = "8c7fd9b1-0ef9-4736-9074-a9d692ca2cf9";
         $username =  "3d19541048";
@@ -267,12 +265,9 @@ class ShopController extends Controller
         $array["Password"] = $password;
         $array["Currency"] = "AMD";
         $array["Description"] = "Product payment";
-        $array["OrderID"] = "12hgjh12";
-        $array["Amount"] = "10";
         $array["BackURL"] = "https://deghatun1.am/ameria_payment_success";
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
-
 
         $url = "https://servicestest.ameriabank.am/VPOS";
         $curl = curl_init();
@@ -292,10 +287,9 @@ class ShopController extends Controller
 
         curl_close($curl);
 
-
         /* Check if response code is 1 then go further if not, false return */
         $result_json_decoded = json_decode($result);
-var_dump($result_json_decoded);exit;
+
         //string(92) "{"PaymentID":"3AFD362B-56E1-4341-80A5-F7C8A0A8A98F","ResponseCode":1,"ResponseMessage":"OK"}"
         if ($result_json_decoded->ResponseCode !== 1) {
             echo 'Error processing checkout. Please contact administrator.';
