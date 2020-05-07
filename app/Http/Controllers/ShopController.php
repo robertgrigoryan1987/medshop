@@ -290,15 +290,12 @@ class ShopController extends Controller
 
         $result = curl_exec($curl);
 
-        var_dump($result_json_decoded);exit;
-
-
         curl_close($curl);
 
 
         /* Check if response code is 1 then go further if not, false return */
         $result_json_decoded = json_decode($result);
-
+var_dump($result_json_decoded);exit;
         //string(92) "{"PaymentID":"3AFD362B-56E1-4341-80A5-F7C8A0A8A98F","ResponseCode":1,"ResponseMessage":"OK"}"
         if ($result_json_decoded->ResponseCode !== 1) {
             echo 'Error processing checkout. Please contact administrator.';
