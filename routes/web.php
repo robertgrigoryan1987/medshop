@@ -88,5 +88,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::any('/ameria_payment_success', 'PaymentController@ameria_payment_success');
 
+    Route::get('/product/category/{id}', 'ProductController@product_category_id')->name('product.category.id');
+
+
 
 });

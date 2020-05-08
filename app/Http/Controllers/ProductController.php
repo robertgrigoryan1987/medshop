@@ -96,4 +96,35 @@ class ProductController extends Controller
             echo $request->ordered_product;exit;
         }
     }
+
+    public function product_category_id($id){
+        $categories = Category::all()->where('parent_id',$id);
+        $popular_products = Product::inRandomOrder()->take(3)->get();
+        $contact_us = ContactUs::where('id', 1)->firstOrFail();
+        $about_headers = AboutHeader::where('id', 1)->firstOrFail();
+        $ordering_products_count = OrderingProduct::all()->where('session', Session::getId())->count();
+
+        $products = Product::where(function ($query ) use ($categories) {
+            foreach($categories as $category) {
+
+                $query->orWhere('category',$category->id);
+            }
+        })->paginate(18);
+//        $query = Product::all();
+//        foreach($categories as $category){
+//            $query->orWhere('category', $category->id);
+//        }
+//        $products = $query->paginate(18);
+
+        $categories = Category::where('parent_id',null)->with('children')->get();
+        return view('medshop.products_parentcategory')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'ordering_products_count'=>$ordering_products_count,
+            'about_headers'=> $about_headers,
+            'contact_us' => $contact_us,
+            'popular_products' => $popular_products,
+        ]);
+
+        }
 }
