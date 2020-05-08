@@ -269,7 +269,7 @@ class ShopController extends Controller
 
         $postData = json_encode($array,JSON_PRESERVE_ZERO_FRACTION);
 
-        $url = "https://servicestest.ameriabank.am/VPOS";
+        $url = "https://services.ameriabank.am/VPOS/";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
