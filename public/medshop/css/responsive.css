@@ -24,6 +24,8 @@
 
 /* Medium screen  */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+
     .loginBtn {
         width: 47%;
     }
@@ -280,6 +282,9 @@
         width: 47%;
     }
 /***
+
+
+
 =============================================
     Top bar Area style
 =============================================
@@ -1465,3 +1470,36 @@
     }
 }
 
+@media only screen and (min-width: 992px) {
+    #trigger  {
+        padding: 7px 30px;
+    }
+    .dropdown-menu>li>a {
+        padding: 5px 20px;
+    }
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        display:none;
+        margin-top: -1px;
+        border-top-left-radius:0;
+        border-bottom-left-radius:0;
+        border-left-color:#fff;
+        box-shadow:none;
+    }
+}
+@media only screen and (max-width: 992px) {
+
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: static;
+        top: 0;
+        display:none;
+        margin-top: -1px;
+        border-top-left-radius:0;
+        border-bottom-left-radius:0;
+        border-left-color:#fff;
+        box-shadow:none;
+    }
+}

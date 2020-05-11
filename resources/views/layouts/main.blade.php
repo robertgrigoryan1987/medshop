@@ -17,11 +17,11 @@
 
     <!-- Styles -->
     <!-- master stylesheet -->
-
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{{ asset('/medshop/css/custom-bootstrap-margin-padding.css') }}">
     <link rel="stylesheet" href="{{ asset('/medshop/css/responsive.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('/medshop/css/menu.css') }}">
     <link rel="stylesheet" href="{{ asset('/medshop/css/style.css') }}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/medshop/images/favicon/apple-touch-icon.png">
@@ -221,7 +221,7 @@ $set_lang = UrlController::set_language();
                                 <span class="border"></span>
                             </div>
                             <div class="our-info">
-                                <p>{{$about_headers->getTranslatedAttribute('image_text',config('app.locale'),config('voyager.multilingual.default'))}}</p>
+                                <p>{{mb_substr($about_headers->getTranslatedAttribute('image_text',config('app.locale'),config('voyager.multilingual.default')),0,150)}}</p>
                                 <a href="/about">@lang('main.learn-more')<i class="fa fa-caret-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -367,9 +367,10 @@ $set_lang = UrlController::set_language();
         <script src="{{asset('/medshop/js/validation.js')}}"></script>
         <!-- mixit up -->
         <script src="{{asset('/medshop/js/jquery.mixitup.min.js')}}"></script>
+
+        <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
         <!-- easing -->
         <script src="{{asset('/medshop/js/jquery.easing.min.js')}}"></script>
-
         <script src="{{asset('/medshop/js/map-helper.js')}}"></script>
         <!-- fancy box -->
         <script src="{{asset('/medshop/js/jquery.fancybox.pack.js')}}"></script>
